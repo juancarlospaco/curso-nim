@@ -1,7 +1,6 @@
 # Curso
 
 Curso aprende a programar desde cero, castellano espanol, autoguiado, autoevaluado, 2021.
-Este es un curso rapido de programacion. Se realiza en forma remota virtual asincronica.
 
 # Audiencia
 
