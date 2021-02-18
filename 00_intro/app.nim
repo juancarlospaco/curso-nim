@@ -17,10 +17,10 @@ writeFile "index.html", prepro(block: buildHtml(tdiv):
       Comenzaremos por el tradicional programa 'Hola Mundo',
       que es un programa que muestra 'Hola Mundo' al ejecutarse."""
 
-  code:
-    t"""
-    # Esto es un "Comentario" y comienza con 1 caracter "#".
-    # Es ignorado y puede usarse para escribir observaciones.
-    echo "Hola Mundo"
-    """
+    code:
+      t"""
+      # Esto es un "Comentario" y comienza con 1 caracter "#".
+      # Es ignorado y puede usarse para escribir observaciones.
+      echo "Hola Mundo"
+      """
   )
