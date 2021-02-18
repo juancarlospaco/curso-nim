@@ -14,3 +14,8 @@ Es un curso intensivo y desafiante.
 - No se puede hacer el curso desde el celular.
 - Comprometerse a realizar todos los ejercicios.
 - Registrarse gratis en https://repl.it/languages/nim
+
+# Opcionales
+
+- Registrarse gratis en https://github.com
+- [Instalar el compilador.](https://nim-lang.org/install.html)
