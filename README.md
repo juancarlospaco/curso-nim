@@ -10,12 +10,12 @@ Es un curso intensivo y desafiante.
 
 # Requerimientos
 
-- Hacer este curso requiere PC o Notebook con Internet.
-- No se puede hacer el curso desde el celular.
+- Hacer este curso requiere PC o notebook con internet y navegador web.
+- No se puede hacer el curso desde el celular o tablet.
 - Comprometerse a realizar todos los ejercicios.
-- Registrarse gratis en https://repl.it/languages/nim
 
 # Opcionales
 
 - Registrarse gratis en https://github.com
 - [Instalar el compilador.](https://nim-lang.org/install.html)
+- Registrarse gratis en https://repl.it/languages/nim
