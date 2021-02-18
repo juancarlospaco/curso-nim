@@ -2,9 +2,9 @@ import strutils, karax / [karaxdsl, vdom]
 
 template t(s: static string): VNode = text(s)
 
-template prepro(s: VNode): string = multiReplace($(s), [("<div>", ""), ("</div>", "")]).strip
+# template prepro(s: VNode): string = multiReplace($(s), [("<div>", ""), ("</div>", "")]).strip
 
-writeFile "index.html", prepro(block: buildHtml(tdiv):
+writeFile "index.html", $(block: buildHtml(tdiv):
   section:
     h1:
       t"Bienvenida"
@@ -19,8 +19,8 @@ writeFile "index.html", prepro(block: buildHtml(tdiv):
 
     code:
       t"""
-      # Esto es un "Comentario" y comienza con 1 caracter "#".
-      # Es ignorado y puede usarse para escribir observaciones.
+      # Esto es un "Comentario", la linea comienza con 1 caracter "#" al principio.
+      # Toda la linea es ignorada y puede usarse para escribir observaciones.
       echo "Hola Mundo"
       """
   )
