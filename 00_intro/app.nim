@@ -1,8 +1,10 @@
-import karax / [karaxdsl, vdom]
+import strutils, karax / [karaxdsl, vdom]
 
 template t(s: static string): VNode = text(s)
 
-writeFile "index.html", $(block: buildHtml(tdiv):
+template prepro(s: VNode): string = multiReplace($(s), [("<div>", ""), ("</div>", "")]).strip
+
+writeFile "index.html", prepro(block: buildHtml(tdiv):
   section:
     h1:
       t"Bienvenida"
@@ -15,10 +17,10 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       Comenzaremos por el tradicional programa 'Hola Mundo',
       que es un programa que muestra 'Hola Mundo' al ejecutarse."""
 
-    code:
-      t"""
-      # Esto es un "Comentario" y comienza con 1 caracter "#".
-      # Es ignorado y puede usarse para escribir observaciones.
-      echo "Hola Mundo"
-      """
+  code:
+    t"""
+    # Esto es un "Comentario" y comienza con 1 caracter "#".
+    # Es ignorado y puede usarse para escribir observaciones.
+    echo "Hola Mundo"
+    """
   )
