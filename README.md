@@ -6,10 +6,11 @@ Curso aprende a programar desde cero, castellano espanol, autoguiado, autoevalua
 
 El curso está orientado a personas >18 de edad.
 No asume conocimientos previos extensos.
-Es un curso intensivo y desafiante, que invita a pensar.
+Es un curso intensivo y desafiante.
 
 # Requerimientos
 
-Hacer este curso requiere PC o Notebook con Internet.
-No se puede hacer el curso desde el celular.
-Comprometerse a realizar todos los ejercicios.
+- Hacer este curso requiere PC o Notebook con Internet.
+- No se puede hacer el curso desde el celular.
+- Comprometerse a realizar todos los ejercicios.
+- Registrarse gratis en https://repl.it/languages/nim
