@@ -4,8 +4,7 @@ template t(s: static string): VNode = text(s.strip.unindent)
 
 writeFile "index.html", $(block: buildHtml(tdiv):
   section:
-    h1:
-      t"Bienvenida"
+    h1: t"Bienvenida"
 
     t"""En la primera clase se introduce algunos conceptos basicos.
       Comenzando desde cero vas a aprender a crear y ejecutar programas basicos.
@@ -14,6 +13,10 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       Mas adelante en el curso aprenderas lo necesario para crear programas mas avanzados.
       Comenzaremos por el tradicional programa 'Hola Mundo',
       que es un programa que muestra 'Hola Mundo' al ejecutarse."""
+
+    ol:
+      li: t"Apreta el boton amarillo que dice 'Run!' para ejecutar el programa."
+      li: t"Apreta el boton amarillo que dice 'Next' para avanzar de nivel."
 
     code:
       t"""
