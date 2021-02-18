@@ -1,11 +1,11 @@
 # Curso
 
-Curso aprende a programar desde cero, castellano espanol, autoguiado, autoevaluado, 2021.
+- Curso aprende a programar desde cero, castellano espanol, autoguiado, autoevaluado, 2021.
 
 # Audiencia
 
 El curso está orientado a personas >18 de edad.
-No asume conocimientos previos extensos.
+No asume conocimientos previos extensos de programacion.
 Es un curso intensivo y desafiante.
 
 # Requerimientos
@@ -18,4 +18,3 @@ Es un curso intensivo y desafiante.
 
 - Registrarse gratis en https://github.com
 - [Instalar el compilador.](https://nim-lang.org/install.html)
-- Registrarse gratis en https://repl.it/languages/nim

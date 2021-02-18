@@ -17,10 +17,13 @@ writeFile "index.html", $(block: buildHtml(tdiv):
     ol:
       li: t"Apreta el boton amarillo que dice 'Run!' para ejecutar el programa."
       li: t"Apreta el boton amarillo que dice 'Next' para avanzar de nivel."
+      li: t"Apreta el boton gris de 'Share to ix' para compartir tu codigo via link."
 
-    code:
-      t"""
+    code: t"""
       # Esto es un "Comentario", la linea comienza con 1 caracter "#" al principio.
       # Toda la linea es ignorada y puede usarse para escribir observaciones.
       echo "Hola Mundo" """
+
+
+
   )
