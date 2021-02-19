@@ -137,13 +137,14 @@ echo 4 mod 2 """
   section:
     h1: t"Variables"
 
-    t"""Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
+    p: t"""Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
     idealmente los nombres de las variables deberian ser descriptivos de su contenido.
     Las variables necesitan ser declaradas usando 'var' y el nombre de la variable,
     luego de que son declaradas pueden utilizarse asignandole valores del mismo tipo,
     es decir si una variable tenia enteros solo puede alojar enteros,
-    una variable tenia booleanos solo puede alojar booleanos, etc.
-    Es posible declarar una variable usando su tipo en lugar de un valor.
+    una variable tenia booleanos solo puede alojar booleanos, etc."""
+
+    p: t"""Es posible declarar una variable usando su tipo en lugar de un valor.
     Es posible asignarle una variable a una variable, copiando una variable en otra.
     No es posible declarar una variable con el mismo nombre varias veces,
     por que se perderia el valor de la variable original si se pisan mutuamente.

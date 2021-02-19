@@ -65,23 +65,27 @@ echo 2 * 2
 echo 4 &#x2F; 2
 echo 4 div 2
 echo 4 mod 2</code></section>
-  <section><h1>Variables</h1>Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
+  <section>
+    <h1>Variables</h1>
+    <p>Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
     idealmente los nombres de las variables deberian ser descriptivos de su contenido.
     Las variables necesitan ser declaradas usando &#x27;var&#x27; y el nombre de la variable,
     luego de que son declaradas pueden utilizarse asignandole valores del mismo tipo,
     es decir si una variable tenia enteros solo puede alojar enteros,
-    una variable tenia booleanos solo puede alojar booleanos, etc.
-    Es posible declarar una variable usando su tipo en lugar de un valor.
+    una variable tenia booleanos solo puede alojar booleanos, etc.</p>
+    <p>Es posible declarar una variable usando su tipo en lugar de un valor.
     Es posible asignarle una variable a una variable, copiando una variable en otra.
     No es posible declarar una variable con el mismo nombre varias veces,
     por que se perderia el valor de la variable original si se pisan mutuamente.
     Mas adelante se explicara un uso mas avanzado de las variables.
-    Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo.<ul>
+    Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo.</p>
+    <ul>
       <li>Tipo &#x27;bool&#x27; son valores como &#x27;true&#x27; o &#x27;false&#x27;.</li>
       <li>Tipo &#x27;int&#x27; son valores como &#x27;0&#x27;, &#x27;9&#x27;, &#x27;-1&#x27;, &#x27;-99&#x27;, &#x27;42&#x27;.</li>
       <li>Tipo &#x27;float&#x27; son valores como &#x27;1.0&#x27;, &#x27;3.14&#x27;, &#x27;-9.5&#x27;, &#x27;5.555&#x27;.</li>
       <li>Tipo &#x27;string&#x27; son valores como &#x27;&quot;a&quot;&#x27;, &#x27;&quot;&quot;&#x27;, &#x27;&quot;OwO&quot;&#x27;, &#x27;&quot;palabras&quot;&#x27;.</li>
-    </ul><code>var numero = 1      # Variable declarada usando un valor.
+    </ul>
+    <code>var numero = 1      # Variable declarada usando un valor.
 numero = 99
 numero = -3
 echo numero
@@ -95,7 +99,8 @@ echo booleano
 var copia = numero
 echo copia          # Variable copiada en otra variable.
 echo numero
-# var copia = 5     # ERROR: La variable ya existe.</code></section>
+# var copia = 5     # ERROR: La variable ya existe.</code>
+  </section>
   <section><h1>Comparacion</h1>La comparacion booleana sirve para comparar 2 valores o variables,
     y devolver un booleano &#x27;true&#x27; o &#x27;false&#x27;, dependiendo de los valores comparados.<ul>
       <li>Para comparar si dos valores son iguales se usa &#x27;==&#x27;.</li>
