@@ -85,6 +85,9 @@ while true:
     p: t"""La computadora representa las letras en el texto como numeros enteros,
     por lo tanto un 'char' es compatible con un 'int', es un valor ordinal numerico,
     'char' puede usar 'inc', 'dec', '..', '..<', '+', '-' que vimos anteriormente,
+    es posible agregar uno o mas 'char' a un 'string' usando 'add',
+    es posible obtener un 'char' de un 'string' por su indice usando '[]',
+    es decir 'texto[3]' para el 'char' en la posicion '3' del 'string',
     por ejemplo el valor entero del 'char' de 'a' es '97',
     si al 'a' le sumas 1 obtienes 'b', si al 'a' le sumas 2 obtienes 'c', etc."""
 
@@ -96,8 +99,10 @@ while true:
 var caracter = 'a'
 assert caracter is char
 
-var numeros = '0'..'9'
-echo numeros
+var texto = "ave"
+assert texto[1] == 'v'
+texto.add('s')
+assert texto == "aves"
 
 for letra in "ejemplo":  # Es posible iterar los 'char' de un 'string' directamente.
   echo letra, ' ', ord(letra)   # ' ' es un char de Espacio.

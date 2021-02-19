@@ -67,6 +67,9 @@ while true:
     <p>La computadora representa las letras en el texto como numeros enteros,
     por lo tanto un &#x27;char&#x27; es compatible con un &#x27;int&#x27;, es un valor ordinal numerico,
     &#x27;char&#x27; puede usar &#x27;inc&#x27;, &#x27;dec&#x27;, &#x27;..&#x27;, &#x27;..&lt;&#x27;, &#x27;+&#x27;, &#x27;-&#x27; que vimos anteriormente,
+    es posible agregar uno o mas &#x27;char&#x27; a un &#x27;string&#x27; usando &#x27;add&#x27;,
+    es posible obtener un &#x27;char&#x27; de un &#x27;string&#x27; por su indice usando &#x27;[]&#x27;,
+    es decir &#x27;texto[3]&#x27; para el &#x27;char&#x27; en la posicion &#x27;3&#x27; del &#x27;string&#x27;,
     por ejemplo el valor entero del &#x27;char&#x27; de &#x27;a&#x27; es &#x27;97&#x27;,
     si al &#x27;a&#x27; le sumas 1 obtienes &#x27;b&#x27;, si al &#x27;a&#x27; le sumas 2 obtienes &#x27;c&#x27;, etc.</p>
     <ul>
@@ -76,8 +79,10 @@ while true:
     <code>var caracter = &#x27;a&#x27;
 assert caracter is char
 
-var numeros = &#x27;0&#x27;..&#x27;9&#x27;
-echo numeros
+var texto = &quot;ave&quot;
+assert texto[1] == &#x27;v&#x27;
+texto.add(&#x27;s&#x27;)
+assert texto == &quot;aves&quot;
 
 for letra in &quot;ejemplo&quot;:  # Es posible iterar los &#x27;char&#x27; de un &#x27;string&#x27; directamente.
   echo letra, &#x27; &#x27;, ord(letra)   # &#x27; &#x27; es un char de Espacio.
