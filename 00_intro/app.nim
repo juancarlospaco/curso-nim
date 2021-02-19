@@ -149,7 +149,7 @@ writeFile "index.html", $(block: buildHtml(tdiv):
 
 
   section:
-    h1: t"Comparacion booleana"
+    h1: t"Comparacion"
 
     t"""La comparacion booleana sirve para comparar 2 valores o variables,
     y devolver un booleano 'true' o 'false', dependiendo de los valores comparados."""
@@ -162,12 +162,8 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       li: t"Para comparar si un valor es menor o igual que otro se usa '=<'."
 
     code: t"""
-      var numero = 5    # Puedes probar cambiar este numero entero.
-      echo numero == 0
-      echo numero > 0
-      echo numero >= 0
-      echo numero < 0
-      echo numero =< 0 """
+      var numero = 5  # Puedes probar cambiar este numero entero.
+      echo numero == 5 """
 
 
   section:
