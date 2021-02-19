@@ -145,15 +145,17 @@ assert resultado == "gato" """
     la variable 'result' es automaticamente creada dentro del bloque de codigo de la funcion,
     puedes asignar los resultados a 'result' en el cuerpo de la funcion,
     se construye con 'proc' y el nombre de la funcion,
-    tambien sus argumentos con sus tipos, y el tipo del 'result' si es que retorna algo.
-    Debes declarar una funcion antes de poder usarla.
-    Usa nombres descriptivos para las funciones."""
+    tambien sus argumentos con sus tipos, y el tipo del 'result' si es que retorna algo."""
+
+    p: t"""Debes declarar una funcion antes de poder usarla.
+    Usa nombres descriptivos para las funciones,
+    piensa que el codigo debe ser facil de entender para otras personas."""
 
     p: t"""Es posible "autodetectar" el tipo de argumento o tipo de resultado de una funcion,
     usando el tipo 'auto' como tipo de argumento o tipo de retorno,
-    pero es mejor usar un tipo de dato concreto si se lo conoce,
     usando 'auto' el programa intentara inferir el tipo desde el codigo,
-    puede fallar en ejecutarse si no logra inferir el tipo."""
+    puede fallar en ejecutarse si no logra inferir el tipo,
+    es mejor usar un tipo de dato concreto si se lo conoce."""
 
     code: t"""
 # Esta funcion no toma ningun argumento, y no retorna un resultado.

@@ -119,14 +119,15 @@ assert resultado == &quot;gato&quot;</code>
     la variable &#x27;result&#x27; es automaticamente creada dentro del bloque de codigo de la funcion,
     puedes asignar los resultados a &#x27;result&#x27; en el cuerpo de la funcion,
     se construye con &#x27;proc&#x27; y el nombre de la funcion,
-    tambien sus argumentos con sus tipos, y el tipo del &#x27;result&#x27; si es que retorna algo.
-    Debes declarar una funcion antes de poder usarla.
-    Usa nombres descriptivos para las funciones.</p>
+    tambien sus argumentos con sus tipos, y el tipo del &#x27;result&#x27; si es que retorna algo.</p>
+    <p>Debes declarar una funcion antes de poder usarla.
+    Usa nombres descriptivos para las funciones,
+    piensa que el codigo debe ser facil de entender para otras personas.</p>
     <p>Es posible &quot;autodetectar&quot; el tipo de argumento o tipo de resultado de una funcion,
     usando el tipo &#x27;auto&#x27; como tipo de argumento o tipo de retorno,
-    pero es mejor usar un tipo de dato concreto si se lo conoce,
     usando &#x27;auto&#x27; el programa intentara inferir el tipo desde el codigo,
-    puede fallar en ejecutarse si no logra inferir el tipo.</p>
+    puede fallar en ejecutarse si no logra inferir el tipo,
+    es mejor usar un tipo de dato concreto si se lo conoce.</p>
     <code># Esta funcion no toma ningun argumento, y no retorna un resultado.
 proc ejemplo0() =
   echo &quot;Hola mundo&quot;
