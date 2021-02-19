@@ -114,11 +114,14 @@ assert resultado == &quot;gato&quot;</code>
     <h1>Leer y Escribir Archivos</h1>
     <p>Para leer archivos se usa &#x27;readFile&#x27;,
     la funcion &#x27;readFile&#x27; toma un argumento de tipo &#x27;string&#x27; que es la ruta al archivo en el disco de la PC,
-    y devuelve un resultado de tipo &#x27;string&#x27; que es el contenido del archivo.</p>
+    y devuelve un resultado de tipo &#x27;string&#x27; que es el contenido del archivo.
+    La ruta al archivo debe existir en el disco de la PC.
+    El programa debe poder leer el archivo.</p>
     <p>Para escribir archivos se usa &#x27;writeFile&#x27;,
     la funcion &#x27;writeFile&#x27; toma dos argumentos de tipo &#x27;string&#x27;,
     uno es la ruta al archivo en el disco de la PC y el otro es el contenido del archivo,
-    esta funcion no retorna ningun resultado.</p>
+    esta funcion no retorna ningun resultado.
+    El programa debe poder escribir el archivo.</p>
     <code>writeFile(&quot;&#x2F;tmp&#x2F;ejemplo.txt&quot;, &quot;contenidos&quot;)
 var contenido = readFile(&quot;&#x2F;tmp&#x2F;ejemplo.txt&quot;)
 echo contenido</code>
@@ -175,5 +178,21 @@ proc ejemplo4(num0: auto, num1: auto, num2: auto): auto =
   result = num0 + num1 + num2
 
 echo ejemplo4(1, 2, 3)</code>
+  </section>
+  <section>
+    <h1>Desafio</h1>
+    <p>Lenguaje inclusivo: Realiza un programa para convertir palabras,
+    cambiando el anteultimo caracter desde &#x27;o&#x27; hacia &#x27;e&#x27;,
+    el programa toma como argumento una secuencia de &#x27;string&#x27; y devuelve un resultado tipo &#x27;string&#x27;,
+    si y solo si el anteultimo caracter es &#x27;o&#x27;,
+    es decir si el anteultimo caracter es &#x27;o&#x27;, entonces cambiarlo por &#x27;e&#x27;,
+    parece como un &#x27;if&#x27; verdad?.</p>
+    <code>proc inclusivador(palabras: seq[string]): string =
+  for palabra in palabras:
+    var variable = palabra
+    # EDITA EL CODIGO ACA.
+
+# Debe mostrar &quot;todes les programadores&quot;.
+echo inclusivador(@[&quot;todos&quot;, &quot;los&quot;, &quot;programadores&quot;])</code>
   </section>
 </div>
