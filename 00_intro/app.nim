@@ -219,7 +219,7 @@ echo numero == 5  # Puedes probar cambiar este operador de comparacion por otro.
     h1: t"if, elif, else"
 
     t"""Control de flujo con if, elif, else.
-    La indentacion se usa para marcar grupos de comandos que van juntos, delimita un bloque de codigo."""
+    La indentacion con 2 espacios se usa para marcar grupos de comandos que van juntos, delimita un bloque de codigo."""
 
     ul:
       li: t"'if' sirve para ejecutar o no un bloque de codigo dependiendo de una condicion booleana."
