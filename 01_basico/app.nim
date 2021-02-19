@@ -96,6 +96,9 @@ while true:
 var caracter = 'a'
 assert caracter is char
 
+var numeros = '0'..'9'
+echo numeros
+
 for letra in "ejemplo":  # Es posible iterar los 'char' de un 'string' directamente.
   echo letra, ' ', ord(letra)   # ' ' es un char de Espacio.
   assert letra is char
@@ -105,6 +108,27 @@ for letra in 'a'..'z':  # Como es un valor ordinal se puede crear rangos de letr
   echo letra, '\t', ord(letra)  # '\t' es un caracter de Tabulador (Tab).
   assert letra is char
   assert ord(letra) is int """
+
+
+  section:
+    h1: t"Desafio"
+
+    p: t"""El 'char' es un valor numerico ordinal, si a un 'A' le sumas '32' da un 'a',
+    usando este simple hecho desarrolla un programa para convertir un 'string' en MAYUSCULAS a minusculas."""
+
+    code: t"""
+var mayuscula = 'A'                       # Letra 'A' (mayuscula).
+var minuscula = char(ord(mayuscula) + 32) # Letra 'a' (minuscula).
+assert minuscula == 'a'                   # Minuscula es 'a'
+
+var resultado = ""
+for letra in "GATO":
+
+  # Edita tu codigo aca.
+
+  resultado.add(minuscula)
+assert resultado == "gato" """
+
 
 
 )

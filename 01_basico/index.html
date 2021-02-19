@@ -76,6 +76,9 @@ while true:
     <code>var caracter = &#x27;a&#x27;
 assert caracter is char
 
+var numeros = &#x27;0&#x27;..&#x27;9&#x27;
+echo numeros
+
 for letra in &quot;ejemplo&quot;:  # Es posible iterar los &#x27;char&#x27; de un &#x27;string&#x27; directamente.
   echo letra, &#x27; &#x27;, ord(letra)   # &#x27; &#x27; es un char de Espacio.
   assert letra is char
@@ -85,5 +88,21 @@ for letra in &#x27;a&#x27;..&#x27;z&#x27;:  # Como es un valor ordinal se puede 
   echo letra, &#x27;\t&#x27;, ord(letra)  # &#x27;\t&#x27; es un caracter de Tabulador (Tab).
   assert letra is char
   assert ord(letra) is int</code>
+  </section>
+  <section>
+    <h1>Desafio</h1>
+    <p>El &#x27;char&#x27; es un valor numerico ordinal, si a un &#x27;A&#x27; le sumas &#x27;32&#x27; da un &#x27;a&#x27;,
+    usando este simple hecho desarrolla un programa para convertir un &#x27;string&#x27; en MAYUSCULAS a minusculas.</p>
+    <code>var mayuscula = &#x27;A&#x27;                       # Letra &#x27;A&#x27; (mayuscula).
+var minuscula = char(ord(mayuscula) + 32) # Letra &#x27;a&#x27; (minuscula).
+assert minuscula == &#x27;a&#x27;                   # Minuscula es &#x27;a&#x27;
+
+var resultado = &quot;&quot;
+for letra in &quot;GATO&quot;:
+
+  # Edita tu codigo aca.
+
+  resultado.add(minuscula)
+assert resultado == &quot;gato&quot;</code>
   </section>
 </div>

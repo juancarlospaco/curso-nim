@@ -86,13 +86,16 @@ echo -0  # -0 es 0"""
 
     t"""El texto o cadenas de texto o cadenas de caracteres se llaman 'string',
     y puede contener cualquier texto como palabras, numeros, puntuacion, etc.
-    Cuando se crea un string su valor por defecto es '""', que es un string vacio."""
+    Cuando se crea un string su valor por defecto es '""', que es un string vacio.
+    Se puede concatenar 2 'string' usando '&'. """
 
     code: t"""
 echo "Hola"
 echo "1234"
 echo "true"
-echo ""  # String vacio """
+echo ""     # String vacio
+echo "ab" & "cd"  # Concatenacion
+"""
 
 
   section:
@@ -356,7 +359,7 @@ echo seqArra """
     Tambien algunas funciones basicas para mostrar distinta informacion en pantalla.
     Los conceptos explicados van a ser progresivamente mas desafiantes."""
 
-    h3: t"""Ejercicios"""
+    h3: t"""Desafio"""
     p: t"""El codigo del ejercicio es un convertidor de temperaturas, pero el codigo esta incompleto,
     si la temperatura en 'kelvin' es igual a la temperatura 'celsius' mas 273 grados,
     complete el codigo para hacerlo funcionar."""
