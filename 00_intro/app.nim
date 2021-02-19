@@ -13,7 +13,8 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       enteros, flotantes, booleanos, strings, funciones y variables.
       Mas adelante en el curso aprenderas lo necesario para crear programas mas avanzados.
       Comenzaremos por el tradicional programa 'Hola Mundo',
-      que es un programa que muestra 'Hola Mundo' al ejecutarse."""
+      que es un programa que muestra 'Hola Mundo' al ejecutarse.
+      La funcion 'echo' muestra en pantalla el valor que se le pasa como argumento."""
 
     ol:
       li: t"Apreta el boton amarillo que dice 'Run!' para ejecutar el programa."
@@ -146,6 +147,51 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       var numero = 5
       echo numero - 10 """
 
+
+  section:
+    h1: t"Comparacion booleana"
+
+    t"""La comparacion booleana sirve para comparar 2 valores o variables,
+    y devolver un booleano 'true' o 'false', dependiendo de los valores comparados."""
+
+    ul:
+      li: t"Para comparar si dos valores son iguales se usa '=='."
+      li: t"Para comparar si un valor es mayor que otro se usa '>'."
+      li: t"Para comparar si un valor es mayor o igual que otro se usa '>='."
+      li: t"Para comparar si un valor es menor que otro se usa '<'."
+      li: t"Para comparar si un valor es menor o igual que otro se usa '=<'."
+
+    code: t"""
+      var numero = 5    # Puedes probar cambiar este numero entero.
+      echo numero == 0
+      echo numero > 0
+      echo numero >= 0
+      echo numero < 0
+      echo numero =< 0 """
+
+
+  section:
+    h1: t"Control de flujo con if, elif, else"
+
+    ul:
+      li: t"'if' sirve para ejecutar o no un bloque de codigo dependiendo de una condicion booleana."
+      li: t"'elif' se usa para agrupar varios 'if' juntos de manera tal que solo 1 de los 'elif' se ejecute."
+      li: t"'else' se usa para ejecutar un bloque de codigo si ninguno de los 'if' y 'elif' se ejecuto."
+
+    code: t"""
+      var condicion = false
+      if condicion:
+        echo "condicion es true"
+      else:
+        echo "condicion es false"
+
+      var numero = 0
+      if numero == 0:
+        echo "Numero es igual a cero"
+      elif numero > 0:
+        echo "Numero es mayor que cero"
+      else:
+        echo "Numero es menor que cero" """
 
 
 
