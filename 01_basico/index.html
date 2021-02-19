@@ -62,17 +62,26 @@ while true:
     <p>Ahora que sabemos usar bucles podemos iterar el texto en los &#x27;string&#x27;,
     descubriremos que las letras individuales tambien tienen un tipo concreto,
     el caracter &#x27;char&#x27; representa 1 letra, de ahi viene el nombre &quot;cadena de caracteres&quot;,
-    el char se construye con dos comillas simples.</p>
+    el char se construye con dos comillas simples y solo puede contener 1 caracter.
+    El espacio en blanco, tabulador y la nueva linea (salto de linea) tambien son caracteres.</p>
     <p>La computadora representa las letras en el texto como numeros enteros,
     por lo tanto un &#x27;char&#x27; es compatible con un &#x27;int&#x27;, es un valor ordinal numerico,
-    &#x27;char&#x27; se puede convertir en &#x27;int&#x27; usando &#x27;ord&#x27;,
-    &#x27;int&#x27; se puede convertir en &#x27;char&#x27; usando &#x27;char&#x27;.</p>
-    <code>for letra in &quot;ejemplo&quot;:
-  echo letra
-  echo ord(letra)
-  assert letra is char
+    &#x27;char&#x27; puede usar &#x27;inc&#x27;, &#x27;dec&#x27;, &#x27;..&#x27;, &#x27;..&lt;&#x27; que vimos anteriormente.</p>
+    <ul>
+      <li>&#x27;char&#x27; se puede convertir en &#x27;int&#x27; usando &#x27;ord&#x27;.</li>
+      <li>&#x27;int&#x27; se puede convertir en &#x27;char&#x27; usando &#x27;char&#x27;.</li>
+    </ul>
+    <code>var caracter = &#x27;a&#x27;
+assert caracter is char
 
-for letra in &#x27;a&#x27;..&#x27;z&#x27;:
-  echo letra</code>
+for letra in &quot;ejemplo&quot;:  # Es posible iterar los &#x27;char&#x27; de un &#x27;string&#x27; directamente.
+  echo letra, &#x27; &#x27;, ord(letra)   # &#x27; &#x27; es un char de Espacio.
+  assert letra is char
+  assert ord(letra) is int
+
+for letra in &#x27;a&#x27;..&#x27;z&#x27;:  # Como es un valor ordinal se puede crear rangos de letras.
+  echo letra, &#x27;\t&#x27;, ord(letra)  # &#x27;\t&#x27; es un caracter de Tabulador.
+  assert letra is char
+  assert ord(letra) is int</code>
   </section>
 </div>

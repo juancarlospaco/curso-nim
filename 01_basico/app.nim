@@ -79,21 +79,30 @@ while true:
     p: t"""Ahora que sabemos usar bucles podemos iterar el texto en los 'string',
     descubriremos que las letras individuales tambien tienen un tipo concreto,
     el caracter 'char' representa 1 letra, de ahi viene el nombre "cadena de caracteres",
-    el char se construye con dos comillas simples."""
+    el char se construye con dos comillas simples y solo puede contener 1 caracter.
+    El espacio en blanco, tabulador y la nueva linea (salto de linea) tambien son caracteres."""
 
     p: t"""La computadora representa las letras en el texto como numeros enteros,
     por lo tanto un 'char' es compatible con un 'int', es un valor ordinal numerico,
-    'char' se puede convertir en 'int' usando 'ord',
-    'int' se puede convertir en 'char' usando 'char'."""
+    'char' puede usar 'inc', 'dec', '..', '..<' que vimos anteriormente."""
+
+    ul:
+      li: t"'char' se puede convertir en 'int' usando 'ord'."
+      li: t"'int' se puede convertir en 'char' usando 'char'."
 
     code: t"""
-for letra in "ejemplo":
-  echo letra
-  echo ord(letra)
-  assert letra is char
+var caracter = 'a'
+assert caracter is char
 
-for letra in 'a'..'z':
-  echo letra
+for letra in "ejemplo":  # Es posible iterar los 'char' de un 'string' directamente.
+  echo letra, ' ', ord(letra)   # ' ' es un char de Espacio.
+  assert letra is char
+  assert ord(letra) is int
+
+for letra in 'a'..'z':  # Como es un valor ordinal se puede crear rangos de letras.
+  echo letra, '\t', ord(letra)  # '\t' es un caracter de Tabulador.
+  assert letra is char
+  assert ord(letra) is int
 """
 
 
