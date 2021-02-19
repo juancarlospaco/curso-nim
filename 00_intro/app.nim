@@ -97,6 +97,10 @@ echo ""  # String vacio """
     pueden ser negativos, positivos, cero, e infinito.
     Cuando se crea un flotante su valor por defecto es '0.0'."""
 
+    p: t"""'float' de acuerdo con el estandard de numeros de punto flotante tiene unos valores especiales,
+    que indican infinito negativo e infinito positivo, que son numeros tan grandes que la PC no los puede interpretar,
+    tambien una forma de No-Numero (Not A Number), estos "valores especiales" no se trataran en detalle en este curso."""
+
     code: t"""
 echo 2.0
 echo 3.14
@@ -204,6 +208,70 @@ elif numero == 3:
 else:
   echo "Numero es algun otro valor" """
 
+
+  section:
+    h1: t"Secuencias"
+
+    t"""Las secuencias son colleciones de valores, valores agrupados en un mismo contenedor,
+    las secuencias pueden hacerse mas grandes o mas chicas, agregando o quitando valores,
+    todos los items de una collecion deben ser del mismo tipo,
+    la secuencia siempre tiene un tipo especifico que puede alojar, pero puede estar vacia tambien.
+    La secuencia es construida con '@[]' y uno o mas valores, es decir por ejemplo '@[1]',
+    los items de una secuencia se separan con comas, es decir por ejemplo '@[1, 2, 3]',
+    tambien se puede crear usando el tipo en lugar del valor literal, por ejemplo 'seq[int]',
+    basicamente '@[1, 2, 3]' es el mismo tipo de secuencia que 'seq[int]',
+    si se trata de 'string' es '@["a", "b", "c"]' con tipo de secuencia que 'seq[string]',
+    si se trata de 'float' es '@[1.0, 2.0, 3.0]' con tipo de secuencia que 'seq[float]', etc.
+    """
+
+    code: t"""
+echo @[1, 2, 3]
+echo @["a", "b", "c"]
+echo @[1.0, 2.0, 3.0]
+var secuencia0: seq[int]
+var secuancia1: seq[bool]
+var secuencia2: seq[float]
+var secuencia3 = @[true, false, true] """
+
+
+  section:
+    h1: t"Secuencias en detalle"
+
+    p: t"""Los items dentro de la secuencia tienen un numero entero de indice unico,
+    el indice de las secuencias comienza por '0' para el primer item, hasta el ultimo item de la secuencia.
+    No existen los indices negativos."""
+
+    p: t"""Los items de una secuencia se pueden obtener por indice usando '[]',
+    es decir secuencia[indice], por ejemplo 'secuencia[3]', que devuelve el item en el indice '3'."""
+
+    p: t"""Para asignar un valor a un item de una secuencia, es decir modificar un item de la secuencia,
+    se pueden asignar por indice usando '[]=', es decir secuencia[indice] = valor,
+    por ejemplo 'secuencia[3] = 42', que asigna '42' al item en el indice '3'."""
+
+    p: t"""Para saber la longitud total de una secuencia se puede usar 'len',
+    es decir 'len(secuencia)' que devuelve un numero entero que es la longitud."""
+
+    p: t"""Para agregar items a una secuencia se usa 'add', es decir 'secuencia.add(nuevoItem)'."""
+
+    p: t"""Para borrar items de una secuencia se usa 'delete',
+    de la forma 'secuencia.delete(indice)', es decir 'secuencia.delete(3)' para borrar el item en el indice '3'."""
+
+    code: t"""
+var secuencia: seq[int]
+echo secuencia
+echo len(secuencia)
+secuencia.add(1)
+secuencia.add(2)
+echo len(secuencia)
+echo secuencia[1]
+secuencia.add(3)
+echo secuencia[1] = 9
+secuencia.delete(1)
+echo secuencia
+# secuencia.add(2.0)  ERROR: Es una secuencia de 'int' y '2.0' es 'float'.
+# secuencia.delete(9) ERROR: No existe el indice '9' en la secuencia.
+# secuencia[9] = 5    ERROR: No existe el indice '9' en la secuencia.
+"""
 
 
 

@@ -43,7 +43,9 @@ echo &quot;true&quot;
 echo &quot;&quot;  # String vacio</code></section>
   <section><h1>Flotantes</h1>Los numeros de punto flotante o numeros de coma flotante se llaman &#x27;float&#x27;,
     pueden ser negativos, positivos, cero, e infinito.
-    Cuando se crea un flotante su valor por defecto es &#x27;0.0&#x27;.<code>echo 2.0
+    Cuando se crea un flotante su valor por defecto es &#x27;0.0&#x27;.<p>&#x27;float&#x27; de acuerdo con el estandard de numeros de punto flotante tiene unos valores especiales,
+    que indican infinito negativo e infinito positivo, que son numeros tan grandes que la PC no los puede interpretar,
+    tambien una forma de No-Numero (Not A Number), estos &quot;valores especiales&quot; no se trataran en detalle en este curso.</p><code>echo 2.0
 echo 3.14
 echo 99.50</code></section>
   <section><h1>Matematica</h1>Matematica basica se puede realizar con distintos operadores, numeros y variables.<ul>
@@ -114,4 +116,50 @@ elif numero == 3:
   echo &quot;Numero es igual a tres&quot;
 else:
   echo &quot;Numero es algun otro valor&quot;</code></section>
+  <section><h1>Secuencias</h1>Las secuencias son colleciones de valores, valores agrupados en un mismo contenedor,
+    las secuencias pueden hacerse mas grandes o mas chicas, agregando o quitando valores,
+    todos los items de una collecion deben ser del mismo tipo,
+    la secuencia siempre tiene un tipo especifico que puede alojar, pero puede estar vacia tambien.
+    La secuencia es construida con &#x27;@[]&#x27; y uno o mas valores, es decir por ejemplo &#x27;@[1]&#x27;,
+    los items de una secuencia se separan con comas, es decir por ejemplo &#x27;@[1, 2, 3]&#x27;,
+    tambien se puede crear usando el tipo en lugar del valor literal, por ejemplo &#x27;seq[int]&#x27;,
+    basicamente &#x27;@[1, 2, 3]&#x27; es el mismo tipo de secuencia que &#x27;seq[int]&#x27;,
+    si se trata de &#x27;string&#x27; es &#x27;@[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]&#x27; con tipo de secuencia que &#x27;seq[string]&#x27;,
+    si se trata de &#x27;float&#x27; es &#x27;@[1.0, 2.0, 3.0]&#x27; con tipo de secuencia que &#x27;seq[float]&#x27;, etc.<code>echo @[1, 2, 3]
+echo @[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+echo @[1.0, 2.0, 3.0]
+var secuencia0: seq[int]
+var secuancia1: seq[bool]
+var secuencia2: seq[float]
+var secuencia3 = @[true, false, true]</code></section>
+  <section>
+    <h1>Secuencias en detalle</h1>
+    <p>Los items dentro de la secuencia tienen un numero entero de indice unico,
+    el indice de las secuencias comienza por &#x27;0&#x27; para el primer item, hasta el ultimo item de la secuencia.
+    No existen los indices negativos.</p>
+    <p>Los items de una secuencia se pueden obtener por indice usando &#x27;[]&#x27;,
+    es decir secuencia[indice], por ejemplo &#x27;secuencia[3]&#x27;, que devuelve el item en el indice &#x27;3&#x27;.</p>
+    <p>Para asignar un valor a un item de una secuencia, es decir modificar un item de la secuencia,
+    se pueden asignar por indice usando &#x27;[]=&#x27;, es decir secuencia[indice] = valor,
+    por ejemplo &#x27;secuencia[3] = 42&#x27;, que asigna &#x27;42&#x27; al item en el indice &#x27;3&#x27;.</p>
+    <p>Para saber la longitud total de una secuencia se puede usar &#x27;len&#x27;,
+    es decir &#x27;len(secuencia)&#x27; que devuelve un numero entero que es la longitud.</p>
+    <p>Para agregar items a una secuencia se usa &#x27;add&#x27;, es decir &#x27;secuencia.add(nuevoItem)&#x27;.</p>
+    <p>Para borrar items de una secuencia se usa &#x27;delete&#x27;,
+    de la forma &#x27;secuencia.delete(indice)&#x27;, es decir &#x27;secuencia.delete(3)&#x27; para borrar el item en el indice &#x27;3&#x27;.</p>
+    <code>var secuencia: seq[int]
+echo secuencia
+echo len(secuencia)
+secuencia.add(1)
+secuencia.add(2)
+echo len(secuencia)
+echo secuencia[1]
+secuencia.add(3)
+echo secuencia[1] = 9
+secuencia.delete(1)
+echo secuencia
+# secuencia.add(2.0)  ERROR: Es una secuencia de &#x27;int&#x27; y &#x27;2.0&#x27; es &#x27;float&#x27;.
+# secuencia.delete(9) ERROR: No existe el indice &#x27;9&#x27; en la secuencia.
+# secuencia[9] = 5    ERROR: No existe el indice &#x27;9&#x27; en la secuencia.</code>
+  </section>
 </div>
