@@ -239,6 +239,9 @@ styledEcho fgYellow, bgBlack, &quot; en Colores &quot;</code>
   <section>
     <h1>Tablas</h1>
     <p>Tablas son una collecion o mapeo de &#x27;clave: valor&#x27;,
+    solo puede contener items de un mismo tipo para clave o valor,
+    es decir todas las claves deben ser del mismo tipo,
+    y todos los valores deben ser del mismo tipo,
     donde cada clave tiene un valor, el valor puede tener uno o mas items,
     el valor tambien puede estar vacio, como un &#x27;string&#x27; vacio o un &#x27;int&#x27; que es cero,
     puedes leer y escribir un valor con una clave en una variable.
@@ -270,10 +273,57 @@ var vacia = initTable[string, int]()  # Tabla vacia con clave tipo &#x27;string&
 assert len(vacia) == 0
 var otra = initTable[string, float]() # Tabla vacia con clave tipo &#x27;string&#x27; y valor tipo &#x27;float&#x27;.
 assert len(otra) == 0
-
 echo {
   &quot;nombre&quot;: &quot;pepe&quot;,
   &quot;id&quot;:     &quot;abc123&quot;,
-}</code>
+}.toTable</code>
+  </section>
+  <section>
+    <h1>JSON</h1>
+    <p>JSON es un mapeo de &#x27;clave: valor&#x27;,
+    puede contener items de cualquier tipo para clave y valor, incluido tipos mixtos mezclados,
+    es decir todas las claves no deben ser del mismo tipo, las claves pueden ser de cualquier tipo,
+    y todos los valores no deben ser del mismo tipo, los valores pueden ser de cualquier tipo,
+    donde cada clave tiene un valor, el valor puede tener uno o mas items,
+    el valor tambien puede estar vacio, como un &#x27;string&#x27; vacio o un &#x27;int&#x27; que es cero,
+    puedes leer y escribir un valor con una clave en una variable.
+    json es parte de la Libreria Estandard y necesita ser importado usando &#x27;import json&#x27;.</p>
+    <ul>
+      <li>Para convertir a JSON se usa &#x27;%*&#x27;.</li>
+      <li>Para convertir valores individuales a JSON se usa &#x27;%&#x27;, es decir %valor.</li>
+      <li>Para obtener la longitud de un JSON se usa &#x27;len&#x27;.</li>
+      <li>Para leer un valor por su clave se usa &#x27;[]&#x27;, es decir jsn[clave].</li>
+      <li>Para escribir un valor por su clave se usa &#x27;[]=&#x27;, es decir jsn[clave] = valor.</li>
+      <li>Para borrar una clave de una Tabla se puede usar &#x27;del&#x27;, es decir tabla.del(clave).</li>
+      <li>Para saber si una clave existe en una Tabla se puede usar &#x27;in&#x27;, es decir valor in tabla.</li>
+      <li>Para saber si una clave no existe en una Tabla se puede usar &#x27;notin&#x27;, es decir valor notin tabla.</li>
+      <li>Para mostrar JSON con un formato amigable para humanos &#x27;pretty&#x27;.</li>
+    </ul>
+    <code>import json
+
+var jsn = %*{&quot;clave&quot;: &quot;valor&quot;}
+assert jsn[&quot;clave&quot;] == %&quot;valor&quot;
+jsn[&quot;clave&quot;] = %&quot;nuevo&quot;
+assert jsn[&quot;clave&quot;] == %&quot;nuevo&quot;
+echo len(jsn)
+assert &quot;clave&quot; in jsn
+assert &quot;inexistente&quot; notin jsn
+jsn.add(&quot;otro&quot;, %&quot;valor&quot;)
+echo jsn
+echo pretty(jsn)
+jsn.delete(&quot;otro&quot;)
+var vacia = %*{}  # JSON vacio.
+assert len(vacia) == 0
+let ejemplo = pretty(%*{
+  &quot;nombre&quot;: &quot;pepe&quot;, # El valor es &#x27;string&#x27;.
+  &quot;id&quot;:     42,     # El valor es &#x27;int&#x27;.
+  &quot;rank&quot;:   3.14,   # El valor es &#x27;float&#x27;.
+  &quot;online&quot;: true,   # El valor es &#x27;bool&#x27;.
+})
+echo ejemplo
+assert ejemplo is string
+# Obtener JSON desde un &#x27;string&#x27;.
+assert parseJson(ejemplo) is JsonNode
+assert parseJson(\&quot;\&quot;\&quot;{&quot;nombre&quot;:&quot;pepe&quot;,&quot;id&quot;:42,&quot;rank&quot;:3.14,&quot;online&quot;:true}\&quot;\&quot;\&quot;) is JsonNode</code>
   </section>
 </div>
