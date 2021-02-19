@@ -95,27 +95,33 @@ for letra in &#x27;a&#x27;..&#x27;z&#x27;:  # Como es un valor ordinal se puede 
   assert ord(letra) is int</code>
   </section>
   <section>
-    <h1>Tuplas</h1>
-    <p>Las tuplas son colleciones de items que pueden contener items de distintos tipos,
-    existen 2 tipos de tuplas, tuplas anonimas donde los items no tienen nombre,
-    los items de la tupla anonima solo se pueden leer por su indice,
-    y tuplas nombradas donde cada item tienen un nombre,
-    los items de la tupla nombrada se pueden leer por su indice y por su nombre.</p>
-    <p>Las tuplas son de capacidad fija, es decir no pueden crecer,
-    no se puede agregar mas items a una tupla, pero se puede modificar los valores existentes.
-    Las tuplas son muy utiles en las funciones para retornar mas de un valor en el &#x27;result&#x27;.</p>
-    <code>var tuplaAnon = (9, true, &quot;UwU&quot;, 2.0, false, -5)
-assert tuplaAnon is tuple
-assert tuplaAnon[2] == &quot;UwU&quot;
-var tuplaNombrada = (clave0: 9, clave1: true, clave2: &quot;OwO&quot;)
-assert tuplaNombrada is tuple
-assert tuplaNombrada[2] == &quot;OwO&quot;
-assert tuplaNombrada.clave2 == &quot;OwO&quot;
+    <h1>UFCS: llamadas a funcion</h1>
+    <p>Puedes llamar una funcion de la manera que sea mas comoda y
+    mas adecuada al contexto que estes trabajando en el codigo.
+    Antiguamente algunas funciones se llamaban de la manera &#x27;funcion(argumento)&#x27;,
+    otras funciones se llamaban de la manera &#x27;funcion argumento&#x27;,
+    e inclusive se llamaban de la manera &#x27;argumento.funcion&#x27;,
+    a veces la forma cambiaba y el codigo se rompia,
+    o se usaba la manera incorrecta y el codigo fallaba,
+    para solucionar estos problemas (Bugs),
+    se penso una nueva manera de hacer las llamadas a funcion,
+    haciendo que el compilador trabaje por nosotros.</p>
+    <p>Todas las formas se interpretan como si fueran exactamente iguales,
+    es decir &#x27;funcion(argumento)&#x27;, &#x27;funcion argumento&#x27;, &#x27;argumento.funcion&#x27;, etc
+    son exactamente lo mismo y compilan a exactamente el mismo codigo.</p>
+    <p>Tambien permite encadenar funciones de manera automatica sin necesidad de modificar dichas funciones,
+    es decir &#x27;argumento.funcion.funcion.funcion.funcion()&#x27;, etc
+    y compilan a exactamente el mismo codigo que la forma no encadenada.</p>
+    <code>import strutils
 
-proc retornaMuchasCosas(): auto =
-  result = (clave0: 9, clave1: true, clave2: &quot;texto&quot;, clave3: 3.14)
+echo &quot;hello world&quot;
+echo(&quot;hello world&quot;)
+&quot;hello world&quot;.echo()
+&quot;hello world&quot;.echo
 
-echo retornaMuchasCosas()</code>
+echo &quot; 42 666 &quot;.unindent.strip.normalize.split
+# Es exactamente lo mismo que escribir:
+echo(split(normalize(strip(unindent(&quot;  HOLA MUNDO  &quot;))))</code>
   </section>
   <section>
     <h1>Desafio</h1>
@@ -206,6 +212,29 @@ proc ejemplo4(num0: auto, num1: auto, num2: auto): auto =
 echo ejemplo4(1, 2, 3)</code>
   </section>
   <section>
+    <h1>Tuplas</h1>
+    <p>Las tuplas son colleciones de items que pueden contener items de distintos tipos,
+    existen 2 tipos de tuplas, tuplas anonimas donde los items no tienen nombre,
+    los items de la tupla anonima solo se pueden leer por su indice,
+    y tuplas nombradas donde cada item tienen un nombre,
+    los items de la tupla nombrada se pueden leer por su indice y por su nombre.</p>
+    <p>Las tuplas son de capacidad fija, es decir no pueden crecer,
+    no se puede agregar mas items a una tupla, pero se puede modificar los valores existentes.
+    Las tuplas son muy utiles en las funciones para retornar mas de un valor en el &#x27;result&#x27;.</p>
+    <code>var tuplaAnon = (9, true, &quot;UwU&quot;, 2.0, false, -5)
+assert tuplaAnon is tuple
+assert tuplaAnon[2] == &quot;UwU&quot;
+var tuplaNombrada = (clave0: 9, clave1: true, clave2: &quot;OwO&quot;)
+assert tuplaNombrada is tuple
+assert tuplaNombrada[2] == &quot;OwO&quot;
+assert tuplaNombrada.clave2 == &quot;OwO&quot;
+
+proc retornaMuchasCosas(): auto =
+  result = (clave0: 9, clave1: true, clave2: &quot;texto&quot;, clave3: 3.14)
+
+echo retornaMuchasCosas()</code>
+  </section>
+  <section>
     <h1>Libreria Estandard</h1>
     <p>Libreria Estandard (standard library), son archivos con funciones,
     las funciones se pueden usar importandolas en nuestro codigo usando &#x27;import&#x27;,
@@ -247,7 +276,7 @@ echo fmt&quot;suma {1 + 2}, resta {4 - 2}&quot;
 
 # &#x27;terminal.styledEcho&#x27; es similar a &#x27;echo&#x27; pero con colores.
 styledEcho fgRed, bgBlue, &quot; Hola Mundo &quot;
-styledEcho fgYellow, bgBlack, &quot; en Colores &quot;</code>
+styledEcho fgYellow, bgGreen, &quot; en Colores &quot;</code>
   </section>
   <section>
     <h1>Tablas</h1>
@@ -280,6 +309,10 @@ echo len(tabla)
 tabla.add(&quot;otro&quot;, &quot;valor&quot;)
 assert &quot;otro&quot; in tabla
 echo tabla
+
+for key, value in tabla:
+  echo key, &#x27; &#x27;, value
+
 tabla.del(&quot;otro&quot;)
 assert &quot;otro&quot; notin tabla
 
@@ -302,6 +335,8 @@ echo {
     donde cada clave tiene un valor, el valor puede tener uno o mas items,
     el valor tambien puede estar vacio, como un &#x27;string&#x27; vacio o un &#x27;int&#x27; que es cero,
     puedes leer y escribir un valor con una clave en una variable.
+    JSON es de capacidad dinamica, es decir puede crecer,
+    se pueden agregar mas items a un JSON y se puede modificar los valores existentes tambien.
     JSON es siempre de tipo &#x27;JsonNode&#x27;.
     JSON es parte de la Libreria Estandard y necesita ser importado usando &#x27;import json&#x27;.</p>
     <ul>
