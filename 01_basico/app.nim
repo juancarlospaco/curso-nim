@@ -37,9 +37,6 @@ assert palabra == "verde"
 for i in 0..0:
   echo "Esto se ejecuta 1 sola vez por que el rango tiene 1 item"
 
-for i in 0..<0:
-  echo "Esto jamas se ejecuta por que el rango esta vacio"
-
 for i in 5..9:
   echo i
   if i == 7: break """
