@@ -253,10 +253,12 @@ assert &quot;otro&quot; in tabla
 echo tabla
 tabla.del(&quot;otro&quot;)
 assert &quot;otro&quot; notin tabla
+
 var vacia = initTable[string, int]()  # Tabla vacia con clave tipo &#x27;string&#x27; y valor tipo &#x27;int&#x27;.
 assert len(vacia) == 0
 var otra = initTable[string, float]() # Tabla vacia con clave tipo &#x27;string&#x27; y valor tipo &#x27;float&#x27;.
 assert len(otra) == 0
+
 echo {
   &quot;nombre&quot;: &quot;pepe&quot;,
   &quot;id&quot;:     &quot;abc123&quot;,
@@ -298,8 +300,10 @@ jsn.add(&quot;otro&quot;, %&quot;valor&quot;)
 echo jsn
 echo pretty(jsn)
 jsn.delete(&quot;otro&quot;)
+
 var vacia = %*{}  # JSON vacio.
 assert len(vacia) == 0
+
 let ejemplo = pretty(%*{
   &quot;nombre&quot;: &quot;pepe&quot;, # El valor es &#x27;string&#x27;.
   &quot;id&quot;:     42,     # El valor es &#x27;int&#x27;.
