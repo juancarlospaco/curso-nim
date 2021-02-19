@@ -42,6 +42,17 @@ echo &quot;&quot;  # String vacio</code></section>
     Cuando se crea un flotante su valor por defecto es &#x27;0.0&#x27;.<code>echo 2.0
 echo 3.14
 echo 99.50</code></section>
+  <section><h1>Matematica</h1>Matematica basica se puede realizar con distintos operadores, numeros y variables.<ul>
+      <li>Sumar usa el operador &#x27;+&#x27;.</li>
+      <li>Restar usa el operador &#x27;-&#x27;.</li>
+      <li>Multiplicar usa el operador &#x27;*&#x27;.</li>
+      <li>Division entera usa el operador &#x27;div&#x27;.</li>
+      <li>Division flotante usa el operador &#x27;&#x2F;&#x27;.</li>
+    </ul><code>echo 1 + 2
+echo 2 - 1
+echo 2 * 2
+echo 4 &#x2F; 2
+echo 4 div 2</code></section>
   <section><h1>Variables</h1>Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
     idealmente los nombres de las variables deberian ser descriptivos de su contenido.
     Las variables necesitan ser declaradas usando &#x27;var&#x27; y el nombre de la variable,
@@ -68,19 +79,6 @@ var copia = numero
 echo copia          # Variable copiada en otra variable.
 echo numero
 # var copia = 5     # ERROR: La variable ya existe.</code></section>
-  <section><h1>Matematica</h1>Matematica basica se puede realizar con distintos operadores, numeros y variables.<ul>
-      <li>Sumar usa el operador &#x27;+&#x27;.</li>
-      <li>Restar usa el operador &#x27;-&#x27;.</li>
-      <li>Multiplicar usa el operador &#x27;*&#x27;.</li>
-      <li>Division entera usa el operador &#x27;div&#x27;.</li>
-      <li>Division flotante usa el operador &#x27;&#x2F;&#x27;.</li>
-    </ul><code>echo 1 + 2
-echo 2 - 1
-echo 2 * 2
-echo 4 &#x2F; 2
-echo 4 div 2
-var numero = 5
-echo numero - 10</code></section>
   <section><h1>Comparacion</h1>La comparacion booleana sirve para comparar 2 valores o variables,
     y devolver un booleano &#x27;true&#x27; o &#x27;false&#x27;, dependiendo de los valores comparados.<ul>
       <li>Para comparar si dos valores son iguales se usa &#x27;==&#x27;.</li>
@@ -88,7 +86,8 @@ echo numero - 10</code></section>
       <li>Para comparar si un valor es mayor o igual que otro se usa &#x27;&gt;=&#x27;.</li>
       <li>Para comparar si un valor es menor que otro se usa &#x27;&lt;&#x27;.</li>
       <li>Para comparar si un valor es menor o igual que otro se usa &#x27;=&lt;&#x27;.</li>
-    </ul><code>var numero = 5  # Puedes probar cambiar este numero entero.
+    </ul><code># Puedes probar cambiar este numero entero.
+var numero = 5
 echo numero == 5</code></section>
   <section><h1>if, elif, else</h1>Control de flujo con if, elif, else.<ul>
       <li>&#x27;if&#x27; sirve para ejecutar o no un bloque de codigo dependiendo de una condicion booleana.</li>
@@ -108,5 +107,7 @@ elif numero == 1:
 elif numero == 2:
   echo &quot;Numero es igual a dos&quot;
 elif numero == 3:
-  echo &quot;Numero es igual a tres&quot;</code></section>
+  echo &quot;Numero es igual a tres&quot;
+else:
+  echo &quot;Numero es mayor que tres&quot;</code></section>
 </div>
