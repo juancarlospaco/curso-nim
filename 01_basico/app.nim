@@ -135,5 +135,48 @@ for letra in "GATO":
 assert resultado == "gato" """
 
 
+  section:
+    h1: t"Funciones"
+
+    p: t"""Una funcion o procedimiento es un bloque de codigo que se puede ejecutar por su nombre,
+    puede tomar ninguno, uno o mas argumentos, los argumentos tambien tienen un nombre,
+    y devolver un resultado, el resultado siempre tiene el nombre 'result',
+    la variable 'result' es automaticamente creada dentro del bloque de codigo de la funcion,
+    puedes asignar los resultados a 'result' en el cuerpo de la funcion,
+    se construye con 'proc' y el nombre de la funcion,
+    tambien sus argumentos y tipos, y el tipo del 'result'."""
+
+    code: t"""
+# Esta funcion no toma ningun argumento, y no retorna un resultado.
+proc ejemplo0() =
+  echo "Hola mundo"
+
+ejemplo0()
+
+
+# Esta funcion no toma ningun argumento, y retorna un 'result' de tipo 'string'.
+proc ejemplo1(): string =    # El tipo de 'result' va aqui.
+  result = "resultado"     # Se asigna a la variable 'result'.
+
+echo ejemplo1()
+
+
+# Esta funcion toma un argumento, y retorna un 'result' de tipo 'string'.
+proc ejemplo2(texto: string): string =
+  result = "Hola " & texto
+
+echo ejemplo1("Mundo")
+
+
+# Esta funcion toma varios argumentos, y retorna un 'result' de tipo 'int'.
+proc ejemplo3(num0: int, num1: int, num2: int): int =   # Los argumentos se separan con coma.
+  result = num0 + num1 + num2
+
+echo ejemplo3(1, 2, 3)
+"""
+
+
+
+
 
 )

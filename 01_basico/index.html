@@ -110,4 +110,40 @@ for letra in &quot;GATO&quot;:
   resultado.add(minuscula)
 assert resultado == &quot;gato&quot;</code>
   </section>
+  <section>
+    <h1>Funciones</h1>
+    <p>Una funcion o procedimiento es un bloque de codigo que se puede ejecutar por su nombre,
+    puede tomar ninguno, uno o mas argumentos, los argumentos tambien tienen un nombre,
+    y devolver un resultado, el resultado siempre tiene el nombre &#x27;result&#x27;,
+    la variable &#x27;result&#x27; es automaticamente creada dentro del bloque de codigo de la funcion,
+    puedes asignar los resultados a &#x27;result&#x27; en el cuerpo de la funcion,
+    se construye con &#x27;proc&#x27; y el nombre de la funcion,
+    tambien sus argumentos y tipos, y el tipo del &#x27;result&#x27;.</p>
+    <code># Esta funcion no toma ningun argumento, y no retorna un resultado.
+proc ejemplo0() =
+  echo &quot;Hola mundo&quot;
+
+ejemplo0()
+
+
+# Esta funcion no toma ningun argumento, y retorna un &#x27;result&#x27; de tipo &#x27;string&#x27;.
+proc ejemplo1(): string =    # El tipo de &#x27;result&#x27; va aqui.
+  result = &quot;resultado&quot;     # Se asigna a la variable &#x27;result&#x27;.
+
+echo ejemplo1()
+
+
+# Esta funcion toma un argumento, y retorna un &#x27;result&#x27; de tipo &#x27;string&#x27;.
+proc ejemplo2(texto: string): string =
+  result = &quot;Hola &quot; &amp; texto
+
+echo ejemplo1(&quot;Mundo&quot;)
+
+
+# Esta funcion toma varios argumentos, y retorna un &#x27;result&#x27; de tipo &#x27;int&#x27;.
+proc ejemplo3(num0: int, num1: int, num2: int): int =   # Los argumentos se separan con coma.
+  result = num0 + num1 + num2
+
+echo ejemplo3(1, 2, 3)</code>
+  </section>
 </div>
