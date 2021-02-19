@@ -148,8 +148,8 @@ assert resultado == "gato" """
     esta funcion no retorna ningun resultado."""
 
     code: t"""
-writeFile("ejemplo.txt", "contenidos")
-var contenido = readFile("ejemplo.txt")
+writeFile("/tmp/ejemplo.txt", "contenidos")
+var contenido = readFile("/tmp/ejemplo.txt")
 echo contenido """
 
 
