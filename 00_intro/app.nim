@@ -101,7 +101,9 @@ writeFile "index.html", $(block: buildHtml(tdiv):
     es decir si una variable tenia enteros solo puede alojar enteros,
     una variable tenia booleanos solo puede alojar booleanos, etc.
     Es posible declarar una variable usando su tipo en lugar de un valor.
-    Es posible asignarle una variable a una variable.
+    Es posible asignarle una variable a una variable, copiando una variable en otra.
+    No es posible declarar una variable con el mismo nombre varias veces,
+    por que se perderia el valor de la variable original si se pisan mutuamente.
     Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo."""
 
     code: t"""
@@ -117,7 +119,10 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       booleano = true
       echo booleano
       var copia = numero
-      echo copia          # Variable copiada en otra variable."""
+      echo copia          # Variable copiada en otra variable.
+      echo numero
+      # var copia = 5     # ERROR: La variable ya existe.
+      """
 
 
 
