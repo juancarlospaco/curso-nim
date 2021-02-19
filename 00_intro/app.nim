@@ -350,11 +350,8 @@ echo seqArra """
     es posible iterar por indices o por los items directamente,
     'for' itera de inicio a fin de algun argumento iterable."""
 
-    p: t"""Aqui tambien se presentan los operadores '..' y '..<',
-    para crear rangos de valores ordinales, como valores numericos.
-    La diferencia entre '..' y '..<' es que '..' es inclusivo,
-    es decir incluye el ultimo numero en el rango de valores generado,
-    mientras que '..<' es No-inclusivo, no incluye el ultimo numero en el rango. """
+    p: t"""Aqui tambien se presentan el operador '..',
+    que sirve para para crear rangos de valores ordinales, como valores numericos."""
 
     code: t"""
 var secuencia = @[1, 2, 3, 4, 5, 6]
@@ -372,10 +369,7 @@ assert palabra == "verde"
 for i in 0..0:
   echo "Esto jamas se ejecuta por que el rango esta vacio"
 
-# Observe la diferencia en los 'for'
 for i in 5..9:
-  echo i
-for i in 5..<9:
   echo i """
 
 

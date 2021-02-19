@@ -213,11 +213,8 @@ echo seqArra</code>
     para aplicar algun tipo de logica a los items individualmente,
     es posible iterar por indices o por los items directamente,
     &#x27;for&#x27; itera de inicio a fin de algun argumento iterable.</p>
-    <p>Aqui tambien se presentan los operadores &#x27;..&#x27; y &#x27;..&lt;&#x27;,
-    para crear rangos de valores ordinales, como valores numericos.
-    La diferencia entre &#x27;..&#x27; y &#x27;..&lt;&#x27; es que &#x27;..&#x27; es inclusivo,
-    es decir incluye el ultimo numero en el rango de valores generado,
-    mientras que &#x27;..&lt;&#x27; es No-inclusivo, no incluye el ultimo numero en el rango.</p>
+    <p>Aqui tambien se presentan el operador &#x27;..&#x27;,
+    que sirve para para crear rangos de valores ordinales, como valores numericos.</p>
     <code>var secuencia = @[1, 2, 3, 4, 5, 6]
 for item in secuencia:
   if item mod 2 == 0:
@@ -233,10 +230,7 @@ assert palabra == &quot;verde&quot;
 for i in 0..0:
   echo &quot;Esto jamas se ejecuta por que el rango esta vacio&quot;
 
-# Observe la diferencia en los &#x27;for&#x27;
 for i in 5..9:
-  echo i
-for i in 5..&lt;9:
   echo i</code>
   </section>
   <section>
