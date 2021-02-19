@@ -215,13 +215,15 @@ else:
 
 
   section:
-    h1: t"assert, type, is"
+    h1: t"assert, repr, type, is"
 
     p: t"""La funcion 'assert' sirve para chequear que una expresion es verdadera, si es falsa emite un error. """
 
-    p: t"""La funcion 'type' sirve para mostrar el tipo concreto de un valor."""
+    p: t"""La funcion 'type' sirve para mostrar el tipo concreto de cualquier valor."""
 
     p: t"""La funcion 'is' sirve para chequear si un valor es de un tipo especifico."""
+
+    p: t"""'repr' es similar a 'echo' pero devuelve una representacion cruda del valor en la memoria de la PC."""
 
     code: t"""
 assert true
@@ -232,7 +234,8 @@ assert "x" is string
 var variable = "ejemplo"
 echo type(variable)
 echo type(true)
-echo type(5) """
+echo type(5)
+echo repr(variable) """
 
 
   section:
