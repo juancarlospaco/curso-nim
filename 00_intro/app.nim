@@ -121,15 +121,17 @@ echo 99.50 """
       li: t"Sumar usa el operador '+'."
       li: t"Restar usa el operador '-'."
       li: t"Multiplicar usa el operador '*'."
-      li: t"Division entera usa el operador 'div'."
       li: t"Division flotante usa el operador '/'."
+      li: t"Division entera usa el operador 'div'."
+      li: t"Modulo usa el operador 'mod'."
 
     code: t"""
 echo 1 + 2
 echo 2 - 1
 echo 2 * 2
 echo 4 / 2
-echo 4 div 2 """
+echo 4 div 2
+echo 4 mod 2 """
 
 
   section:
@@ -338,6 +340,43 @@ var arra = [1, 2, 3]
 var seqArra = @arra   # 'array[int]' convertido en 'seq[int]' usando '@'.
 seqArra.add(4)
 echo seqArra """
+
+
+  section:
+    h1: t"For"
+
+    p: t"""El bucle 'for' sirve para iterar un valor iterable,
+    para aplicar algun tipo de logica a los items individualmente,
+    es posible iterar por indices o por los items directamente,
+    'for' itera de inicio a fin de algun argumento iterable."""
+
+    p: t"""Aqui tambien se presentan los operadores '..' y '..<',
+    para crear rangos de valores ordinales, como valores numericos.
+    La diferencia entre '..' y '..<' es que '..' es inclusivo,
+    es decir incluye el ultimo numero en el rango de valores generado,
+    mientras que '..<' es No-inclusivo, no incluye el ultimo numero en el rango. """
+
+    code: t"""
+var secuencia = @[1, 2, 3, 4, 5, 6]
+for item in secuencia:
+  if item mod 2 == 0:
+    echo "item es par"
+  else:
+    echo "item es impar"
+
+var palabra: string
+for item in ["v", "e", "r", "d", "e"]:
+  palabra.add(item)
+assert palabra == "verde"
+
+for i in 0..0:
+  echo "Esto jamas se ejecuta por que el rango esta vacio"
+
+# Observe la diferencia en los 'for'
+for i in 5..9:
+  echo i
+for i in 5..<9:
+  echo i """
 
 
   section:

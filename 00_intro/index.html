@@ -56,13 +56,15 @@ echo 99.50</code></section>
       <li>Sumar usa el operador &#x27;+&#x27;.</li>
       <li>Restar usa el operador &#x27;-&#x27;.</li>
       <li>Multiplicar usa el operador &#x27;*&#x27;.</li>
-      <li>Division entera usa el operador &#x27;div&#x27;.</li>
       <li>Division flotante usa el operador &#x27;&#x2F;&#x27;.</li>
+      <li>Division entera usa el operador &#x27;div&#x27;.</li>
+      <li>Modulo usa el operador &#x27;mod&#x27;.</li>
     </ul><code>echo 1 + 2
 echo 2 - 1
 echo 2 * 2
 echo 4 &#x2F; 2
-echo 4 div 2</code></section>
+echo 4 div 2
+echo 4 mod 2</code></section>
   <section><h1>Variables</h1>Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
     idealmente los nombres de las variables deberian ser descriptivos de su contenido.
     Las variables necesitan ser declaradas usando &#x27;var&#x27; y el nombre de la variable,
@@ -204,6 +206,38 @@ var arra = [1, 2, 3]
 var seqArra = @arra   # &#x27;array[int]&#x27; convertido en &#x27;seq[int]&#x27; usando &#x27;@&#x27;.
 seqArra.add(4)
 echo seqArra</code>
+  </section>
+  <section>
+    <h1>For</h1>
+    <p>El bucle &#x27;for&#x27; sirve para iterar un valor iterable,
+    para aplicar algun tipo de logica a los items individualmente,
+    es posible iterar por indices o por los items directamente,
+    &#x27;for&#x27; itera de inicio a fin de algun argumento iterable.</p>
+    <p>Aqui tambien se presentan los operadores &#x27;..&#x27; y &#x27;..&lt;&#x27;,
+    para crear rangos de valores ordinales, como valores numericos.
+    La diferencia entre &#x27;..&#x27; y &#x27;..&lt;&#x27; es que &#x27;..&#x27; es inclusivo,
+    es decir incluye el ultimo numero en el rango de valores generado,
+    mientras que &#x27;..&lt;&#x27; es No-inclusivo, no incluye el ultimo numero en el rango.</p>
+    <code>var secuencia = @[1, 2, 3, 4, 5, 6]
+for item in secuencia:
+  if item mod 2 == 0:
+    echo &quot;item es par&quot;
+  else:
+    echo &quot;item es impar&quot;
+
+var palabra: string
+for item in [&quot;v&quot;, &quot;e&quot;, &quot;r&quot;, &quot;d&quot;, &quot;e&quot;]:
+  palabra.add(item)
+assert palabra == &quot;verde&quot;
+
+for i in 0..0:
+  echo &quot;Esto jamas se ejecuta por que el rango esta vacio&quot;
+
+# Observe la diferencia en los &#x27;for&#x27;
+for i in 5..9:
+  echo i
+for i in 5..&lt;9:
+  echo i</code>
   </section>
   <section>
     <h1>Cierre</h1>
