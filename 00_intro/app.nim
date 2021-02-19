@@ -36,6 +36,11 @@ echo "Hola Mundo" """
     puede tomar cualquier cantidad de argumentos de cualquier tipo, pero debe tener por lo menos 1 argumento,
     la representacion de 'string' es legible por humanos."""
 
+    ol:
+      li: t"Apreta el boton amarillo que dice 'Run!' para ejecutar el programa."
+      li: t"Apreta el boton amarillo que dice 'Next' para avanzar de nivel."
+      li: t"Apreta el boton gris de 'Previous' para retroceder."
+
     code: t"""echo 1, true, 2.0, "OwO", false, -9, 0"""
 
 
@@ -213,12 +218,12 @@ else:
     h1: t"Arrays"
 
     t"""Los Arrays son colleciones de valores, valores agrupados en un mismo contenedor,
-    las secuencias son de capacidad y longitud fija, por lo tanto no pueden crecer,
+    los Arrays son de capacidad y longitud fija, por lo tanto no pueden crecer,
     no se puede agregar ni quitar mas valores, pero si se pueden modificar los valores existentes,
     todos los items de un array deben ser del mismo tipo,
     el array siempre tiene un tipo especifico que puede alojar.
     El array es construido con '[ ]' y uno o mas valores, es decir por ejemplo '[1]',
-    los items de una secuencia se separan con comas, es decir por ejemplo '[1, 2, 3]',
+    los items de un Array se separan con comas, es decir por ejemplo '[1, 2, 3]',
     tambien se puede crear usando el tipo en lugar del valor literal,
     es decir array[longitud, tipo], por ejemplo 'array[3, int]' para un array de 3 'int',
     basicamente '[1, 2, 3]' es el mismo tipo que 'array[3, int]',
