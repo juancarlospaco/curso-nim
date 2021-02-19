@@ -122,7 +122,7 @@ assert resultado == &quot;gato&quot;</code>
     uno es la ruta al archivo en el disco de la PC y el otro es el contenido del archivo,
     esta funcion no retorna ningun resultado.
     El programa debe poder escribir el archivo.</p>
-    <code>writeFile(&quot;&#x2F;tmp&#x2F;ejemplo.txt&quot;, &quot;contenidos&quot;)
+    <code>writeFile(&quot;&#x2F;tmp&#x2F;ejemplo.txt&quot;, &quot;contenidos&quot;)   # La ruta al archivo debe existir en la PC.
 var contenido = readFile(&quot;&#x2F;tmp&#x2F;ejemplo.txt&quot;)
 echo contenido</code>
   </section>
@@ -194,5 +194,43 @@ echo ejemplo4(1, 2, 3)</code>
 
 # Debe mostrar &quot;todes les programadores&quot;.
 echo inclusivador(@[&quot;todos&quot;, &quot;los&quot;, &quot;programadores&quot;])</code>
+  </section>
+  <section>
+    <h1>Libreria Estandard</h1>
+    <p>Libreria Estandard (standard library), son archivos con funciones,
+    las funciones se pueden usar importandolas en nuestro codigo usando &#x27;import&#x27;,
+    y agregan funcionalidades utiles &quot;listas para usar&quot;,
+    de una manera mas facil que implementando todo manualmente.
+    A veces se abrevia &quot;Libreria Estandard&quot; como &quot;stdlib&quot;.
+    La documentacion de la Libreria Estandard usualmente se encuentra disponible via web,
+    y suele incluir ejemplos de como usar las funciones,
+    con sus tipos de argumentos y tipos de retorno.
+    La &quot;stdlib&quot; suele incluir funcionalidades para todos los niveles,
+    asi que no te asustes si no entiendes aun alguna funcion de la Libreria Estandard.</p>
+    <ul><li><a href="https://nim-lang.github.io/Nim/lib.html">Documentacion de la Libreria Estandard.</a></li></ul>
+    <code>import terminal  # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;terminal.html
+import strutils  # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;strutils.html
+import strformat # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;strformat.html
+
+
+# &#x27;strutils.parseInt&#x27; puede obtener un &#x27;int&#x27; dentro de un &#x27;string&#x27;.
+var a = parseInt(&quot;42&quot;)
+assert a is int
+# &#x27;strutils.parseFloat&#x27; puede parsear un &#x27;float&#x27; dentro de un &#x27;string&#x27;.
+var b = parseFloat(&quot;3.14&quot;)
+assert b is float
+# &#x27;strutils.parseBool&#x27; puede parsear un &#x27;bool&#x27; dentro de un &#x27;string&#x27;.
+var c = parseBool(&quot;true&quot;)
+assert c is bool
+
+
+# &#x27;strformat.fmt&#x27; permite crear &#x27;string&#x27; formateadas con valores literales o variables.
+echo fmt&quot;a es {a}, b es {b}, c es {c}&quot;
+echo fmt&quot;suma {1 + 2}, resta {4 - 2}&quot;
+
+
+# &#x27;terminal.styledEcho&#x27; es similar a &#x27;echo&#x27; pero con colores.
+styledEcho fgRed, bgBlue, &quot; Hola Mundo &quot;
+styledEcho fgYellow, bgBlack, &quot; en Colores &quot;</code>
   </section>
 </div>
