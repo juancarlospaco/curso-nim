@@ -14,14 +14,24 @@
     </ol><code># Esto es un &quot;Comentario&quot;, la linea comienza con 1 caracter &quot;#&quot; al principio.
 # Toda la linea es ignorada y puede usarse para escribir observaciones.
 echo &quot;Hola Mundo&quot;</code></section>
-  <section><h1>echo</h1>La funcion &#x27;echo&#x27; sirve para mostrar por pantalla cualquier valor en una representacion de &#x27;string&#x27;,
+  <section>
+    <h1>echo</h1>
+    <p>La funcion &#x27;echo&#x27; sirve para mostrar por pantalla cualquier valor en una representacion de &#x27;string&#x27;,
     &#x27;echo&#x27; convertira los valores a &#x27;string&#x27; y los imprimira en la linea de comando,
     puede tomar cualquier cantidad de argumentos de cualquier tipo, pero debe tener por lo menos 1 argumento,
-    la representacion de &#x27;string&#x27; es legible por humanos.<ol>
+    la representacion de &#x27;string&#x27; es legible por humanos.</p>
+    <p>Se observa que existen distintos &quot;Tipos de Datos&quot;,
+    esto es por que una computadora no puede distinguir los datos,
+    no puede distinguir cuando te refieres a un tres de la palabra &quot;Tres&quot;,
+    o cuando te refieres a un tres del numero &quot;3&quot;,
+    o cuando te refieres a un tres del numero con coma flotante &quot;3.0&quot;.</p>
+    <ol>
       <li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li>
       <li>Apreta el boton amarillo que dice &#x27;Next&#x27; para avanzar de nivel.</li>
       <li>Apreta el boton gris de &#x27;Previous&#x27; para retroceder.</li>
-    </ol><code>echo 1, true, 2.0, &quot;OwO&quot;, false, -9, 0</code></section>
+    </ol>
+    <code>echo 1, true, 2.0, &quot;OwO&quot;, false, -9, 0</code>
+  </section>
   <section><h1>Booleanos</h1>El tipo booleano solo puede tener 2 valores, verdadero que es &#x27;true&#x27; o falso que es &#x27;false&#x27;.
     Se puede invertir el valor usando &#x27;not&#x27;, por ejemplo &#x27;not true&#x27; es &#x27;false&#x27; y &#x27;not false&#x27; es &#x27;true&#x27;.
     Cuando se crea un booleano su valor por defecto es &#x27;false&#x27;.<ol>
@@ -42,7 +52,7 @@ echo -0  # -0 es 0</code></section>
   <section><h1>Strings</h1>El texto o cadenas de texto o cadenas de caracteres se llaman &#x27;string&#x27;,
     y puede contener cualquier texto como palabras, numeros, puntuacion, etc.
     Cuando se crea un string su valor por defecto es &#x27;&quot;&quot;&#x27;, que es un string vacio.
-    Se puede concatenar 2 &#x27;string&#x27; usando &#x27;&amp;&#x27;.<code>echo &quot;Hola&quot;
+    Se puede concatenar dos o mas &#x27;string&#x27; usando &#x27;&amp;&#x27;.<code>echo &quot;Hola&quot;
 echo &quot;1234&quot;
 echo &quot;true&quot;
 echo &quot;&quot;  # String vacio</code></section>
@@ -68,11 +78,12 @@ echo 4 div 2
 echo 4 mod 2</code></section>
   <section>
     <h1>assert, type, is, $</h1>
-    <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error.</p>
-    <p>La funcion &#x27;type&#x27; sirve para mostrar el tipo concreto de cualquier valor.</p>
-    <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico.</p>
+    <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error,
+    si &#x27;assert&#x27; es &#x27;true&#x27; no emite ningun mensaje y es silenciosa.</p>
+    <p>La funcion &#x27;type&#x27; devuelve el el tipo concreto de cualquier valor, retorna un tipo &#x27;string&#x27;.</p>
+    <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico, retorna un tipo &#x27;bool&#x27;.</p>
     <p>La funcion &#x27;$&#x27; sirve para convertir cualquier valor a un &#x27;string&#x27;, de ser posible.
-    Usualmente se llama a &#x27;$&#x27; como operador &quot;Dolar&quot; o &quot;Stringify&quot;.</p>
+    Usualmente se llama a &#x27;$&#x27; como operador &quot;Dolar&quot; o &quot;Stringify&quot;, siempre retorna un tipo &#x27;string&#x27;.</p>
     <code>assert true
 assert 42 == 42
 assert 42 is int
