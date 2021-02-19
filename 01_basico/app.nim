@@ -141,13 +141,19 @@ assert resultado == "gato" """
     p: t"""Una funcion o procedimiento es un bloque de codigo que se puede ejecutar por su nombre,
     puede tomar ninguno, uno o mas argumentos, los argumentos tambien tienen un nombre y tipo,
     usando la sintaxis 'nombre: tipo' y separados por coma,
-    y devolver un resultado, el resultado siempre tiene el nombre 'result',
+    pueden devolver un resultado, el resultado siempre tiene el nombre 'result',
     la variable 'result' es automaticamente creada dentro del bloque de codigo de la funcion,
     puedes asignar los resultados a 'result' en el cuerpo de la funcion,
     se construye con 'proc' y el nombre de la funcion,
     tambien sus argumentos con sus tipos, y el tipo del 'result' si es que retorna algo.
     Debes declarar una funcion antes de poder usarla.
     Usa nombres descriptivos para las funciones."""
+
+    p: t"""Es posible "autodetectar" el tipo de argumento o tipo de resultado de una funcion,
+    usando el tipo 'auto' como tipo de argumento o tipo de retorno,
+    pero es mejor usar un tipo de dato concreto si se lo conoce,
+    usando 'auto' el programa intentara inferir el tipo desde el codigo,
+    puede fallar en ejecutarse si no logra inferir el tipo."""
 
     code: t"""
 # Esta funcion no toma ningun argumento, y no retorna un resultado.
@@ -177,7 +183,13 @@ proc ejemplo3(num0: int, num1: int, num2: int): int =   # Los argumentos se sepa
   result = num0 + num1 + num2
 
 echo ejemplo3(1, 2, 3)
-"""
+
+
+# Esta funcion toma argumentos y retorna un 'result' pero todos usan tipo 'auto'.
+proc ejemplo4(num0: auto, num1: auto, num2: auto): auto =
+  result = num0 + num1 + num2
+
+echo ejemplo4(1, 2, 3) """
 
 
 
