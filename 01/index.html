@@ -236,4 +236,36 @@ echo fmt&quot;suma {1 + 2}, resta {4 - 2}&quot;
 styledEcho fgRed, bgBlue, &quot; Hola Mundo &quot;
 styledEcho fgYellow, bgBlack, &quot; en Colores &quot;</code>
   </section>
+  <section>
+    <h1>Tablas</h1>
+    <p>Tablas son una collecion o mapeo de &#x27;clave: valor&#x27;,
+    donde cada clave tiene un valor, el valor puede tener uno o mas items,
+    el valor tambien puede estar vacio, como un &#x27;string&#x27; vacio o un &#x27;int&#x27; que es cero,
+    puedes leer y escribir un valor con una clave en una variable.
+    Tablas es parte de la Libreria Estandard y necesita ser importado usando &#x27;import tables&#x27;.
+    Tablas tambien es llamado &quot;diccionario&quot; o &quot;mapeo&quot; o &quot;hashmap&quot;.</p>
+    <ul>
+      <li>Para convertir a Tabla se usa &#x27;toTable&#x27;.</li>
+      <li>Para obetener la longitud de una Tabla se usa &#x27;len&#x27;.</li>
+      <li>Para leer un valor por su clave se usa &#x27;[]&#x27;, es decir tabla[clave].</li>
+      <li>Para escribir un valor por su clave se usa &#x27;[]=&#x27;, es decir tabla[clave] = valor.</li>
+      <li>Para borrar una clave de una Tabla se puede usar &#x27;del&#x27;, es decir tabla.del(clave).</li>
+      <li>Para saber si una clave existe en una Tabla se puede usar &#x27;in&#x27;, es decir valor in tabla.</li>
+      <li>Para saber si una clave no existe en una Tabla se puede usar &#x27;notin&#x27;, es decir valor notin tabla.</li>
+      <li>Para crear una Tabla sin ningun valor literal se usa &#x27;initTable&#x27; con los tipos de clave y valor.</li>
+    </ul>
+    <code>import tables
+
+var tabla = {&quot;clave&quot;: &quot;valor&quot;}.toTable
+assert tabla[&quot;clave&quot;] == &quot;valor&quot;
+tabla[&quot;clave&quot;] = &quot;nuevo&quot;
+assert tabla[&quot;clave&quot;] == &quot;nuevo&quot;
+echo len(tabla)
+tabla.add(&quot;otro&quot;, &quot;valor&quot;)
+assert &quot;otro&quot; in tabla
+tabla.del(&quot;otro&quot;)
+assert &quot;otro&quot; notin tabla
+var vacia = initTable[string, int]()  # Tabla vacia con clave tipo &#x27;string&#x27; y valor tipo &#x27;int&#x27;.
+var otra = initTable[string, float]() # Tabla vacia con clave tipo &#x27;string&#x27; y valor tipo &#x27;float&#x27;.</code>
+  </section>
 </div>
