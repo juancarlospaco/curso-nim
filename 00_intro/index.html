@@ -5,7 +5,8 @@ Tambien presentamos algunos tipos de datos primitivos como los
 enteros, flotantes, booleanos, strings, funciones y variables.
 Mas adelante en el curso aprenderas lo necesario para crear programas mas avanzados.
 Comenzaremos por el tradicional programa &#x27;Hola Mundo&#x27;,
-que es un programa que muestra &#x27;Hola Mundo&#x27; al ejecutarse.<ol>
+que es un programa que muestra &#x27;Hola Mundo&#x27; al ejecutarse.
+La funcion &#x27;echo&#x27; muestra en pantalla el valor que se le pasa como argumento.<ol>
       <li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li>
       <li>Apreta el boton amarillo que dice &#x27;Next&#x27; para avanzar de nivel.</li>
       <li>Apreta el boton gris de &#x27;Share to ix&#x27; para compartir tu codigo via link.</li>
@@ -80,4 +81,38 @@ echo 4 &#x2F; 2
 echo 4 div 2
 var numero = 5
 echo numero - 10</code></section>
+  <section><h1>Comparacion booleana</h1>La comparacion booleana sirve para comparar 2 valores o variables,
+y devolver un booleano &#x27;true&#x27; o &#x27;false&#x27;, dependiendo de los valores comparados.<ul>
+      <li>Para comparar si dos valores son iguales se usa &#x27;==&#x27;.</li>
+      <li>Para comparar si un valor es mayor que otro se usa &#x27;&gt;&#x27;.</li>
+      <li>Para comparar si un valor es mayor o igual que otro se usa &#x27;&gt;=&#x27;.</li>
+      <li>Para comparar si un valor es menor que otro se usa &#x27;&lt;&#x27;.</li>
+      <li>Para comparar si un valor es menor o igual que otro se usa &#x27;=&lt;&#x27;.</li>
+    </ul><code>var numero = 5    # Puedes probar cambiar este numero entero.
+echo numero == 0
+echo numero &gt; 0
+echo numero &gt;= 0
+echo numero &lt; 0
+echo numero =&lt; 0</code></section>
+  <section>
+    <h1>Control de flujo con if, elif, else</h1>
+    <ul>
+      <li>&#x27;if&#x27; sirve para ejecutar o no un bloque de codigo dependiendo de una condicion booleana.</li>
+      <li>&#x27;elif&#x27; se usa para agrupar varios &#x27;if&#x27; juntos de manera tal que solo 1 de los &#x27;elif&#x27; se ejecute.</li>
+      <li>&#x27;else&#x27; se usa para ejecutar un bloque de codigo si ninguno de los &#x27;if&#x27; y &#x27;elif&#x27; se ejecuto.</li>
+    </ul>
+    <code>var condicion = false
+if condicion:
+echo &quot;condicion es true&quot;
+else:
+echo &quot;condicion es false&quot;
+
+var numero = 0
+if numero == 0:
+echo &quot;Numero es igual a cero&quot;
+elif numero &gt; 0:
+echo &quot;Numero es mayor que cero&quot;
+else:
+echo &quot;Numero es menor que cero&quot;</code>
+  </section>
 </div>
