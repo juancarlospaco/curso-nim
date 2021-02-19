@@ -24,35 +24,42 @@ echo not true
 echo not false</code></section>
   <section><h1>Enteros</h1>Los numeros enteros llamados &#x27;int&#x27; (integer) son numeros negativos o positivos, incluyendo el cero.
 En el caso de los numeros negativos el menos debe estar pegado al numero, es decir &#x27;- 5&#x27; debe ser &#x27;-5&#x27;.
-Cuando se crea un entero su valor por defecto es &#x27;0&#x27;.<ol><li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li></ol><code>echo 0, 1, 9
-echo -9, -5
+Cuando se crea un entero su valor por defecto es &#x27;0&#x27;.<ol><li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li></ol><code>echo 0
+echo 1
+echo 9
+echo -9
+echo -5
 echo -0  # -0 es 0</code></section>
   <section><h1>Strings</h1>El texto o cadenas de texto o cadenas de caracteres se llaman &#x27;string&#x27;,
 y puede contener cualquier texto como palabras, numeros, puntuacion, etc.
 Cuando se crea un string su valor por defecto es &#x27;&quot;&quot;&#x27;, que es un string vacio.<code>echo &quot;Hola&quot;
 echo &quot;1234&quot;
-echo &quot;true&quot;</code></section>
+echo &quot;true&quot;
+echo &quot;&quot;  # String vacio</code></section>
   <section><h1>Flotantes</h1>Los numeros de punto flotante o numeros de coma flotante se llaman &#x27;float&#x27;,
 pueden ser negativos, positivos, cero, e infinito.
 Cuando se crea un flotante su valor por defecto es &#x27;0.0&#x27;.<code>echo 2.0
 echo 3.14
 echo 99.50</code></section>
   <section><h1>Variables</h1>Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
-idealmente los nombres de las variables deberian ser descriptivos de su valor contenido.
+idealmente los nombres de las variables deberian ser descriptivos de su contenido.
 Las variables necesitan ser declaradas usando &#x27;var&#x27; y el nombre de la variable,
 luego de que son declaradas pueden utilizarse asignandole valores del mismo tipo,
 es decir si una variable tenia enteros solo puede alojar enteros,
 una variable tenia booleanos solo puede alojar booleanos, etc.
 Es posible declarar una variable usando su tipo en lugar de un valor.
-Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo.<code>var numero = 1
+Es posible asignarle una variable a una variable.
+Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo.<code>var numero = 1      # Variable declarada usando un valor.
 numero = 99
 numero = -3
 echo numero
-var texto = &quot;&quot;      # Variable declarada usando un valor.
+var texto = &quot;&quot;      # Variable declarada usando un valor vacio.
 texto = &quot;azul&quot;
 texto = &quot;rojo&quot;
 echo texto
 var booleano: bool  # Variable declarada usando un tipo.
 booleano = true
-echo booleano</code></section>
+echo booleano
+var copia = numero
+echo copia          # Variable copiada en otra variable.</code></section>
 </div>

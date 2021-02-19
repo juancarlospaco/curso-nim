@@ -56,8 +56,11 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       li: t"Apreta el boton amarillo que dice 'Run!' para ejecutar el programa."
 
     code: t"""
-      echo 0, 1, 9
-      echo -9, -5
+      echo 0
+      echo 1
+      echo 9
+      echo -9
+      echo -5
       echo -0  # -0 es 0"""
 
 
@@ -71,7 +74,8 @@ writeFile "index.html", $(block: buildHtml(tdiv):
     code: t"""
       echo "Hola"
       echo "1234"
-      echo "true" """
+      echo "true"
+      echo ""  # String vacio """
 
 
   section:
@@ -91,26 +95,29 @@ writeFile "index.html", $(block: buildHtml(tdiv):
     h1: t"Variables"
 
     t"""Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
-    idealmente los nombres de las variables deberian ser descriptivos de su valor contenido.
+    idealmente los nombres de las variables deberian ser descriptivos de su contenido.
     Las variables necesitan ser declaradas usando 'var' y el nombre de la variable,
     luego de que son declaradas pueden utilizarse asignandole valores del mismo tipo,
     es decir si una variable tenia enteros solo puede alojar enteros,
     una variable tenia booleanos solo puede alojar booleanos, etc.
     Es posible declarar una variable usando su tipo en lugar de un valor.
+    Es posible asignarle una variable a una variable.
     Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo."""
 
     code: t"""
-      var numero = 1
+      var numero = 1      # Variable declarada usando un valor.
       numero = 99
       numero = -3
       echo numero
-      var texto = ""      # Variable declarada usando un valor.
+      var texto = ""      # Variable declarada usando un valor vacio.
       texto = "azul"
       texto = "rojo"
       echo texto
       var booleano: bool  # Variable declarada usando un tipo.
       booleano = true
-      echo booleano """
+      echo booleano
+      var copia = numero
+      echo copia          # Variable copiada en otra variable."""
 
 
 
