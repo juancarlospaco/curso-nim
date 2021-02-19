@@ -76,7 +76,12 @@ echo 4 mod 2</code></section>
     No es posible declarar una variable con el mismo nombre varias veces,
     por que se perderia el valor de la variable original si se pisan mutuamente.
     Mas adelante se explicara un uso mas avanzado de las variables.
-    Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo.<code>var numero = 1      # Variable declarada usando un valor.
+    Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo.<ul>
+      <li>Tipo &#x27;bool&#x27; son valores como &#x27;true&#x27; o &#x27;false&#x27;.</li>
+      <li>Tipo &#x27;int&#x27; son valores como &#x27;0&#x27;, &#x27;9&#x27;, &#x27;-1&#x27;, &#x27;-99&#x27;, &#x27;42&#x27;.</li>
+      <li>Tipo &#x27;float&#x27; son valores como &#x27;1.0&#x27;, &#x27;3.14&#x27;, &#x27;-9.5&#x27;, &#x27;5.555&#x27;.</li>
+      <li>Tipo &#x27;string&#x27; son valores como &#x27;&quot;a&quot;&#x27;, &#x27;&quot;&quot;&#x27;, &#x27;&quot;OwO&quot;&#x27;, &#x27;&quot;palabras&quot;&#x27;.</li>
+    </ul><code>var numero = 1      # Variable declarada usando un valor.
 numero = 99
 numero = -3
 echo numero
@@ -122,21 +127,20 @@ elif numero == 3:
 else:
   echo &quot;Numero es algun otro valor&quot;</code></section>
   <section>
-    <h1>assert, repr, type, is</h1>
+    <h1>assert, type, is</h1>
     <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error.</p>
     <p>La funcion &#x27;type&#x27; sirve para mostrar el tipo concreto de cualquier valor.</p>
     <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico.</p>
-    <p>&#x27;repr&#x27; es similar a &#x27;echo&#x27; pero devuelve una representacion cruda del valor en la memoria de la PC.</p>
     <code>assert true
 assert 42 == 42
 assert 42 is int
 assert 9.9 is float
 assert &quot;x&quot; is string
+assert true is bool
 var variable = &quot;ejemplo&quot;
 echo type(variable)
 echo type(true)
-echo type(5)
-echo repr(variable)</code>
+echo type(5)</code>
   </section>
   <section><h1>Arrays</h1>Los Arrays son colleciones de valores, valores agrupados en un mismo contenedor,
     los Arrays son de capacidad y longitud fija, por lo tanto no pueden crecer,
@@ -206,32 +210,6 @@ var arra = [1, 2, 3]
 var seqArra = @arra   # &#x27;array[int]&#x27; convertido en &#x27;seq[int]&#x27; usando &#x27;@&#x27;.
 seqArra.add(4)
 echo seqArra</code>
-  </section>
-  <section>
-    <h1>For</h1>
-    <p>El bucle &#x27;for&#x27; sirve para iterar un valor iterable,
-    para aplicar algun tipo de logica a los items individualmente,
-    es posible iterar por indices o por los items directamente,
-    &#x27;for&#x27; itera de inicio a fin de algun argumento iterable.</p>
-    <p>Aqui tambien se presentan el operador &#x27;..&#x27;,
-    que sirve para para crear rangos de valores ordinales, como valores numericos.</p>
-    <code>var secuencia = @[1, 2, 3, 4, 5, 6]
-for item in secuencia:
-  if item mod 2 == 0:
-    echo &quot;item es par&quot;
-  else:
-    echo &quot;item es impar&quot;
-
-var palabra: string
-for item in [&quot;v&quot;, &quot;e&quot;, &quot;r&quot;, &quot;d&quot;, &quot;e&quot;]:
-  palabra.add(item)
-assert palabra == &quot;verde&quot;
-
-for i in 0..0:
-  echo &quot;Esto jamas se ejecuta por que el rango esta vacio&quot;
-
-for i in 5..9:
-  echo i</code>
   </section>
   <section>
     <h1>Cierre</h1>
