@@ -29,6 +29,17 @@ echo "Hola Mundo" """
 
 
   section:
+    h1: t"echo"
+
+    t"""La funcion 'echo' sirve para mostrar por pantalla cualquier valor en una representacion de 'string',
+    'echo' convertira los valores a 'string' y los imprimira en la linea de comando,
+    puede tomar cualquier cantidad de argumentos de cualquier tipo, pero debe tener por lo menos 1 argumento,
+    la representacion de 'string' es legible por humanos."""
+
+    code: t"""echo 1, true, 2.0, "OwO", false, -9, 0"""
+
+
+  section:
     h1: t"Booleanos"
 
     t"""El tipo booleano solo puede tener 2 valores, verdadero que es 'true' o falso que es 'false'.
@@ -191,7 +202,7 @@ elif numero == 2:
 elif numero == 3:
   echo "Numero es igual a tres"
 else:
-  echo "Numero es mayor que tres" """
+  echo "Numero es algun otro valor" """
 
 
 
