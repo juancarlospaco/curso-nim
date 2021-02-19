@@ -84,7 +84,9 @@ while true:
 
     p: t"""La computadora representa las letras en el texto como numeros enteros,
     por lo tanto un 'char' es compatible con un 'int', es un valor ordinal numerico,
-    'char' puede usar 'inc', 'dec', '..', '..<' que vimos anteriormente."""
+    'char' puede usar 'inc', 'dec', '..', '..<', '+', '-' que vimos anteriormente,
+    por ejemplo el valor entero del 'char' de 'a' es '97',
+    si al 'a' le sumas 1 obtienes 'b', si al 'a' le sumas 2 obtienes 'c', etc."""
 
     ul:
       li: t"'char' se puede convertir en 'int' usando 'ord'."
@@ -100,10 +102,9 @@ for letra in "ejemplo":  # Es posible iterar los 'char' de un 'string' directame
   assert ord(letra) is int
 
 for letra in 'a'..'z':  # Como es un valor ordinal se puede crear rangos de letras.
-  echo letra, '\t', ord(letra)  # '\t' es un caracter de Tabulador.
+  echo letra, '\t', ord(letra)  # '\t' es un caracter de Tabulador (Tab).
   assert letra is char
-  assert ord(letra) is int
-"""
+  assert ord(letra) is int """
 
 
 )
