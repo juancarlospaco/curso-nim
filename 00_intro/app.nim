@@ -1,6 +1,6 @@
 import strutils, karax / [karaxdsl, vdom]
 
-template t(s: static string): VNode = text(s.strip.unindent)
+template t(s: static string): VNode = text(s.strip)
 
 writeFile "index.html", $(block: buildHtml(tdiv):
 
@@ -23,9 +23,9 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       li: t"Apreta el boton gris de 'Previous' para retroceder."
 
     code: t"""
-      # Esto es un "Comentario", la linea comienza con 1 caracter "#" al principio.
-      # Toda la linea es ignorada y puede usarse para escribir observaciones.
-      echo "Hola Mundo" """
+# Esto es un "Comentario", la linea comienza con 1 caracter "#" al principio.
+# Toda la linea es ignorada y puede usarse para escribir observaciones.
+echo "Hola Mundo" """
 
 
   section:
@@ -40,10 +40,10 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       li: t"Apreta el boton amarillo que dice 'Next' para avanzar de nivel."
 
     code: t"""
-      echo true
-      echo false
-      echo not true
-      echo not false"""
+echo true
+echo false
+echo not true
+echo not false"""
 
 
   section:
@@ -57,12 +57,12 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       li: t"Apreta el boton amarillo que dice 'Run!' para ejecutar el programa."
 
     code: t"""
-      echo 0
-      echo 1
-      echo 9
-      echo -9
-      echo -5
-      echo -0  # -0 es 0"""
+echo 0
+echo 1
+echo 9
+echo -9
+echo -5
+echo -0  # -0 es 0"""
 
 
   section:
@@ -73,10 +73,10 @@ writeFile "index.html", $(block: buildHtml(tdiv):
     Cuando se crea un string su valor por defecto es '""', que es un string vacio."""
 
     code: t"""
-      echo "Hola"
-      echo "1234"
-      echo "true"
-      echo ""  # String vacio """
+echo "Hola"
+echo "1234"
+echo "true"
+echo ""  # String vacio """
 
 
   section:
@@ -87,9 +87,9 @@ writeFile "index.html", $(block: buildHtml(tdiv):
     Cuando se crea un flotante su valor por defecto es '0.0'."""
 
     code: t"""
-      echo 2.0
-      echo 3.14
-      echo 99.50 """
+echo 2.0
+echo 3.14
+echo 99.50 """
 
 
   section:
@@ -109,21 +109,21 @@ writeFile "index.html", $(block: buildHtml(tdiv):
     Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo."""
 
     code: t"""
-      var numero = 1      # Variable declarada usando un valor.
-      numero = 99
-      numero = -3
-      echo numero
-      var texto = ""      # Variable declarada usando un valor vacio.
-      texto = "azul"
-      texto = "rojo"
-      echo texto
-      var booleano: bool  # Variable declarada usando un tipo.
-      booleano = true
-      echo booleano
-      var copia = numero
-      echo copia          # Variable copiada en otra variable.
-      echo numero
-      # var copia = 5     # ERROR: La variable ya existe. """
+var numero = 1      # Variable declarada usando un valor.
+numero = 99
+numero = -3
+echo numero
+var texto = ""      # Variable declarada usando un valor vacio.
+texto = "azul"
+texto = "rojo"
+echo texto
+var booleano: bool  # Variable declarada usando un tipo.
+booleano = true
+echo booleano
+var copia = numero
+echo copia          # Variable copiada en otra variable.
+echo numero
+# var copia = 5     # ERROR: La variable ya existe. """
 
 
   section:
@@ -139,13 +139,13 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       li: t"Division flotante usa el operador '/'."
 
     code: t"""
-      echo 1 + 2
-      echo 2 - 1
-      echo 2 * 2
-      echo 4 / 2
-      echo 4 div 2
-      var numero = 5
-      echo numero - 10 """
+echo 1 + 2
+echo 2 - 1
+echo 2 * 2
+echo 4 / 2
+echo 4 div 2
+var numero = 5
+echo numero - 10 """
 
 
   section:
@@ -175,19 +175,19 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       li: t"'else' se usa para ejecutar un bloque de codigo si ninguno de los 'if' y 'elif' se ejecuto."
 
     code: t"""
-      var condicion = false
-      if condicion:
-        echo "condicion es true"
-      else:
-        echo "condicion es false"
+var condicion = false
+if condicion:
+  echo "condicion es true"
+else:
+  echo "condicion es false"
 
-      var numero = 0
-      if numero == 0:
-        echo "Numero es igual a cero"
-      elif numero > 0:
-        echo "Numero es mayor que cero"
-      else:
-        echo "Numero es menor que cero" """
+var numero = 0
+if numero == 0:
+  echo "Numero es igual a cero"
+elif numero > 0:
+  echo "Numero es mayor que cero"
+else:
+  echo "Numero es menor que cero" """
 
 
 
