@@ -162,8 +162,8 @@ echo numero - 10 """
       li: t"Para comparar si un valor es menor o igual que otro se usa '=<'."
 
     code: t"""
-      var numero = 5  # Puedes probar cambiar este numero entero.
-      echo numero == 5 """
+var numero = 5  # Puedes probar cambiar este numero entero.
+echo numero == 5 """
 
 
   section:
