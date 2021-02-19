@@ -104,6 +104,7 @@ writeFile "index.html", $(block: buildHtml(tdiv):
     Es posible asignarle una variable a una variable, copiando una variable en otra.
     No es posible declarar una variable con el mismo nombre varias veces,
     por que se perderia el valor de la variable original si se pisan mutuamente.
+    Mas adelante se explicara un uso mas avanzado de las variables.
     Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo."""
 
     code: t"""
@@ -121,11 +122,29 @@ writeFile "index.html", $(block: buildHtml(tdiv):
       var copia = numero
       echo copia          # Variable copiada en otra variable.
       echo numero
-      # var copia = 5     # ERROR: La variable ya existe.
-      """
+      # var copia = 5     # ERROR: La variable ya existe. """
 
 
+  section:
+    h1: t"Matematica"
 
+    t"""Matematica basica se puede realizar con distintos operadores, numeros y variables."""
+
+    ul:
+      li: t"Sumar usa el operador '+'."
+      li: t"Restar usa el operador '-'."
+      li: t"Multiplicar usa el operador '*'."
+      li: t"Division entera usa el operador 'div'."
+      li: t"Division flotante usa el operador '/'."
+
+    code: t"""
+      echo 1 + 2
+      echo 2 - 1
+      echo 2 * 2
+      echo 4 / 2
+      echo 4 div 2
+      var numero = 5
+      echo numero - 10 """
 
 
 
