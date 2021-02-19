@@ -93,8 +93,7 @@ echo -0  # -0 es 0"""
 echo "Hola"
 echo "1234"
 echo "true"
-echo ""     # String vacio
-echo "ab" & "cd"  # Concatenacion
+echo ""  # String vacio
 """
 
 

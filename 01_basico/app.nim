@@ -139,12 +139,15 @@ assert resultado == "gato" """
     h1: t"Funciones"
 
     p: t"""Una funcion o procedimiento es un bloque de codigo que se puede ejecutar por su nombre,
-    puede tomar ninguno, uno o mas argumentos, los argumentos tambien tienen un nombre,
+    puede tomar ninguno, uno o mas argumentos, los argumentos tambien tienen un nombre y tipo,
+    usando la sintaxis 'nombre: tipo' y separados por coma,
     y devolver un resultado, el resultado siempre tiene el nombre 'result',
     la variable 'result' es automaticamente creada dentro del bloque de codigo de la funcion,
     puedes asignar los resultados a 'result' en el cuerpo de la funcion,
     se construye con 'proc' y el nombre de la funcion,
-    tambien sus argumentos y tipos, y el tipo del 'result'."""
+    tambien sus argumentos con sus tipos, y el tipo del 'result' si es que retorna algo.
+    Debes declarar una funcion antes de poder usarla.
+    Usa nombres descriptivos para las funciones."""
 
     code: t"""
 # Esta funcion no toma ningun argumento, y no retorna un resultado.
@@ -163,9 +166,10 @@ echo ejemplo1()
 
 # Esta funcion toma un argumento, y retorna un 'result' de tipo 'string'.
 proc ejemplo2(texto: string): string =
-  result = "Hola " & texto
+  result = "Hola "
+  result.add(texto)
 
-echo ejemplo1("Mundo")
+echo ejemplo2("Mundo")
 
 
 # Esta funcion toma varios argumentos, y retorna un 'result' de tipo 'int'.
