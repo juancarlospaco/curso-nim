@@ -93,6 +93,26 @@ echo 99.50 """
 
 
   section:
+    h1: t"Matematica"
+
+    t"""Matematica basica se puede realizar con distintos operadores, numeros y variables."""
+
+    ul:
+      li: t"Sumar usa el operador '+'."
+      li: t"Restar usa el operador '-'."
+      li: t"Multiplicar usa el operador '*'."
+      li: t"Division entera usa el operador 'div'."
+      li: t"Division flotante usa el operador '/'."
+
+    code: t"""
+echo 1 + 2
+echo 2 - 1
+echo 2 * 2
+echo 4 / 2
+echo 4 div 2 """
+
+
+  section:
     h1: t"Variables"
 
     t"""Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
@@ -127,28 +147,6 @@ echo numero
 
 
   section:
-    h1: t"Matematica"
-
-    t"""Matematica basica se puede realizar con distintos operadores, numeros y variables."""
-
-    ul:
-      li: t"Sumar usa el operador '+'."
-      li: t"Restar usa el operador '-'."
-      li: t"Multiplicar usa el operador '*'."
-      li: t"Division entera usa el operador 'div'."
-      li: t"Division flotante usa el operador '/'."
-
-    code: t"""
-echo 1 + 2
-echo 2 - 1
-echo 2 * 2
-echo 4 / 2
-echo 4 div 2
-var numero = 5
-echo numero - 10 """
-
-
-  section:
     h1: t"Comparacion"
 
     t"""La comparacion booleana sirve para comparar 2 valores o variables,
@@ -161,8 +159,8 @@ echo numero - 10 """
       li: t"Para comparar si un valor es menor que otro se usa '<'."
       li: t"Para comparar si un valor es menor o igual que otro se usa '=<'."
 
-    code: t"""
-var numero = 5  # Puedes probar cambiar este numero entero.
+    code: t"""# Puedes probar cambiar este numero entero.
+var numero = 5
 echo numero == 5 """
 
 
@@ -191,7 +189,9 @@ elif numero == 1:
 elif numero == 2:
   echo "Numero es igual a dos"
 elif numero == 3:
-  echo "Numero es igual a tres" """
+  echo "Numero es igual a tres"
+else:
+  echo "Numero es mayor que tres" """
 
 
 
