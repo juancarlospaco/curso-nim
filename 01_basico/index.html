@@ -1,0 +1,26 @@
+<div><section>
+    <h1>For</h1>
+    <p>El bucle &#x27;for&#x27; sirve para iterar un valor iterable,
+    para aplicar algun tipo de logica a los items individualmente,
+    es posible iterar por indices o por los items directamente,
+    &#x27;for&#x27; itera de inicio a fin de algun argumento iterable.</p>
+    <p>Aqui tambien se presentan el operador &#x27;..&#x27;,
+    que sirve para para crear rangos de valores ordinales, como valores numericos.</p>
+    <code>var secuencia = @[1, 2, 3, 4, 5, 6]
+for item in secuencia:
+  if item mod 2 == 0:
+    echo &quot;item es par&quot;
+  else:
+    echo &quot;item es impar&quot;
+
+var palabra: string
+for item in [&quot;v&quot;, &quot;e&quot;, &quot;r&quot;, &quot;d&quot;, &quot;e&quot;]:
+  palabra.add(item)
+assert palabra == &quot;verde&quot;
+
+for i in 0..0:
+  echo &quot;Esto jamas se ejecuta por que el rango esta vacio&quot;
+
+for i in 5..9:
+  echo i</code>
+  </section></div>
