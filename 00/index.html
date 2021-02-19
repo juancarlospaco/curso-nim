@@ -41,7 +41,8 @@ echo -5
 echo -0  # -0 es 0</code></section>
   <section><h1>Strings</h1>El texto o cadenas de texto o cadenas de caracteres se llaman &#x27;string&#x27;,
     y puede contener cualquier texto como palabras, numeros, puntuacion, etc.
-    Cuando se crea un string su valor por defecto es &#x27;&quot;&quot;&#x27;, que es un string vacio.<code>echo &quot;Hola&quot;
+    Cuando se crea un string su valor por defecto es &#x27;&quot;&quot;&#x27;, que es un string vacio.
+    Se puede concatenar 2 &#x27;string&#x27; usando &#x27;&amp;&#x27;.<code>echo &quot;Hola&quot;
 echo &quot;1234&quot;
 echo &quot;true&quot;
 echo &quot;&quot;  # String vacio</code></section>
@@ -66,16 +67,25 @@ echo 4 &#x2F; 2
 echo 4 div 2
 echo 4 mod 2</code></section>
   <section>
-    <h1>assert, type, is</h1>
+    <h1>assert, type, is, $</h1>
     <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error.</p>
     <p>La funcion &#x27;type&#x27; sirve para mostrar el tipo concreto de cualquier valor.</p>
     <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico.</p>
+    <p>La funcion &#x27;$&#x27; sirve para convertir cualquier valor a un &#x27;string&#x27;, de ser posible.
+    Usualmente se llama a &#x27;$&#x27; como operador &quot;Dolar&quot; o &quot;Stringify&quot;.</p>
     <code>assert true
 assert 42 == 42
 assert 42 is int
 assert 9.9 is float
 assert &quot;x&quot; is string
 assert true is bool
+
+var entero = 42
+assert $entero is string
+assert $42 is string
+assert $9.9 is string
+assert $true is string
+
 var variable = &quot;ejemplo&quot;
 echo type(variable)
 echo type(true)
@@ -183,12 +193,15 @@ var secuancia1: seq[bool]
 var secuencia2: seq[float]
 var secuencia3 = @[true, false, true]</code></section>
   <section>
-    <h1>Secuencias en detalle</h1>
+    <h1>Operaciones con Secuencias</h1>
     <p>Los items dentro de la secuencia tienen un numero entero de indice unico,
     el indice de las secuencias comienza por &#x27;0&#x27; para el primer item, hasta el ultimo item de la secuencia.
     No existen los indices negativos.</p>
     <p>Los items de una secuencia se pueden obtener por indice usando &#x27;[]&#x27;,
-    es decir secuencia[indice], por ejemplo &#x27;secuencia[3]&#x27;, que devuelve el item en el indice &#x27;3&#x27;.</p>
+    es decir secuencia[indice], por ejemplo &#x27;secuencia[3]&#x27;, que devuelve el item en el indice &#x27;3&#x27;.
+    Para obtener un item por indice al inverso (indice invertido) es decir desde el ultimo hacia el primero,
+    se puede usar secuencia[^indice], por ejemplo &#x27;secuencia[^1]&#x27;, que devuelve el ultimo item en el ultimo indice,
+    por ejemplo &#x27;secuencia[^2]&#x27;, que devuelve el anteultimo item en el anteultimo indice, etc.</p>
     <p>Para asignar un valor a un item de una secuencia, es decir modificar un item de la secuencia,
     se pueden asignar por indice usando &#x27;[]=&#x27;, es decir secuencia[indice] = valor,
     por ejemplo &#x27;secuencia[3] = 42&#x27;, que asigna &#x27;42&#x27; al item en el indice &#x27;3&#x27;.</p>
@@ -223,7 +236,7 @@ echo seqArra</code>
     Vimos diferentes tipos de datos, como los enteros, flotantes, boleanos y demas.
     Tambien algunas funciones basicas para mostrar distinta informacion en pantalla.
     Los conceptos explicados van a ser progresivamente mas desafiantes.</p>
-    <h3>Ejercicios</h3>
+    <h3>Desafio</h3>
     <p>El codigo del ejercicio es un convertidor de temperaturas, pero el codigo esta incompleto,
     si la temperatura en &#x27;kelvin&#x27; es igual a la temperatura &#x27;celsius&#x27; mas 273 grados,
     complete el codigo para hacerlo funcionar.</p>
