@@ -66,15 +66,15 @@ while true:
     El espacio en blanco, tabulador y la nueva linea (salto de linea) tambien son caracteres.</p>
     <p>La computadora representa las letras en el texto como numeros enteros,
     por lo tanto un &#x27;char&#x27; es compatible con un &#x27;int&#x27;, es un valor ordinal numerico,
-    &#x27;char&#x27; puede usar &#x27;inc&#x27;, &#x27;dec&#x27;, &#x27;..&#x27;, &#x27;..&lt;&#x27;, &#x27;+&#x27;, &#x27;-&#x27; que vimos anteriormente,
-    es posible agregar uno o mas &#x27;char&#x27; a un &#x27;string&#x27; usando &#x27;add&#x27;,
-    es posible obtener un &#x27;char&#x27; de un &#x27;string&#x27; por su indice usando &#x27;[]&#x27;,
-    es decir &#x27;texto[3]&#x27; para el &#x27;char&#x27; en la posicion &#x27;3&#x27; del &#x27;string&#x27;,
-    por ejemplo el valor entero del &#x27;char&#x27; de &#x27;a&#x27; es &#x27;97&#x27;,
-    si al &#x27;a&#x27; le sumas 1 obtienes &#x27;b&#x27;, si al &#x27;a&#x27; le sumas 2 obtienes &#x27;c&#x27;, etc.</p>
+    &#x27;char&#x27; puede usar &#x27;inc&#x27;, &#x27;dec&#x27;, &#x27;..&#x27;, &#x27;..&lt;&#x27;, &#x27;+&#x27;, &#x27;-&#x27; que vimos anteriormente.</p>
+    <p>Los &#x27;char&#x27; son ordinales, por ejemplo el valor entero del &#x27;char&#x27; de &#x27;a&#x27; es &#x27;97&#x27;,
+    si a &#x27;a&#x27; le sumas 1 obtienes &#x27;b&#x27;, si al &#x27;a&#x27; le sumas 2 obtienes &#x27;c&#x27;, etc.</p>
     <ul>
       <li>&#x27;char&#x27; se puede convertir en &#x27;int&#x27; usando &#x27;ord&#x27;.</li>
       <li>&#x27;int&#x27; se puede convertir en &#x27;char&#x27; usando &#x27;char&#x27;.</li>
+      <li>Es posible agregar uno o mas &#x27;char&#x27; a un &#x27;string&#x27; usando &#x27;add&#x27;.</li>
+      <li>Puedes obtener un &#x27;char&#x27; de un &#x27;string&#x27; por su indice usando &#x27;[]&#x27;,
+      es decir &#x27;texto[3]&#x27; para el &#x27;char&#x27; en la posicion &#x27;3&#x27; del &#x27;string&#x27; texto.</li>
     </ul>
     <code>var caracter = &#x27;a&#x27;
 assert caracter is char
@@ -143,6 +143,9 @@ echo contenido</code>
     usando el tipo &#x27;auto&#x27; como tipo de argumento o tipo de retorno,
     usando &#x27;auto&#x27; el programa intentara inferir el tipo desde el codigo,
     puede fallar en ejecutarse si no logra inferir el tipo,
+    tambien hay que pensar que &quot;el codigo es documentacion&quot;,
+    y al ver que un argumento debe ser &#x27;int&#x27; ya sabes que tipo de dato usar,
+    pero si esta todo en &#x27;auto&#x27; es mas dificil entender que tipo de dato usar,
     es mejor usar un tipo de dato concreto si se lo conoce.</p>
     <code># Esta funcion no toma ningun argumento, y no retorna un resultado.
 proc ejemplo0() =
@@ -190,7 +193,10 @@ echo ejemplo4(1, 2, 3)</code>
     y suele incluir ejemplos de como usar las funciones,
     con sus tipos de argumentos y tipos de retorno.
     La &quot;stdlib&quot; suele incluir funcionalidades para todos los niveles,
-    asi que no te asustes si no entiendes aun alguna funcion de la Libreria Estandard.</p>
+    asi que no te asustes si no entiendes aun alguna funcion de la Libreria Estandard.
+    No es necesario que memorizes la Libreria Estandard,
+    siempre se trabaja con su documentacion web como guia.
+    Mas adelante aprenderemos cosas mas avanzadas de la Libreria Estandard.</p>
     <ul>
       <li><a href="https://nim-lang.github.io/Nim/lib.html">Documentacion de la Libreria Estandard.</a></li>
       <li><a href="https://nim-lang.github.io/Nim/manual.html">Manual para usuarios.</a></li>
@@ -304,7 +310,7 @@ jsn.delete(&quot;otro&quot;)
 var vacia = %*{}  # JSON vacio.
 assert len(vacia) == 0
 
-let ejemplo = pretty(%*{
+var ejemplo = pretty(%*{
   &quot;nombre&quot;: &quot;pepe&quot;, # El valor es &#x27;string&#x27;.
   &quot;id&quot;:     42,     # El valor es &#x27;int&#x27;.
   &quot;rank&quot;:   3.14,   # El valor es &#x27;float&#x27;.
