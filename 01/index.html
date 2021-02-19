@@ -111,7 +111,8 @@ for letra in &#x27;a&#x27;..&#x27;z&#x27;:  # Como es un valor ordinal se puede 
     son exactamente lo mismo y compilan a exactamente el mismo codigo.</p>
     <p>Tambien permite encadenar funciones de manera automatica sin necesidad de modificar dichas funciones,
     es decir &#x27;argumento.funcion.funcion.funcion.funcion()&#x27;, etc
-    y compilan a exactamente el mismo codigo que la forma no encadenada.</p>
+    y compilan exactamente al mismo codigo.
+    Es agnostico del formato de llamada a funcion usado.</p>
     <code>import strutils
 
 echo &quot;hello world&quot;
@@ -119,9 +120,10 @@ echo(&quot;hello world&quot;)
 &quot;hello world&quot;.echo()
 &quot;hello world&quot;.echo
 
+# Estas funciones encadenadas
 echo &quot; 42 666 &quot;.unindent.strip.normalize.split
-# Es exactamente lo mismo que escribir:
-echo(split(normalize(strip(unindent(&quot;  HOLA MUNDO  &quot;))))</code>
+# Es exactamente lo mismo que escribir
+echo(split(normalize(strip(unindent(&quot;  HOLA MUNDO  &quot;)))))</code>
   </section>
   <section>
     <h1>Desafio</h1>
