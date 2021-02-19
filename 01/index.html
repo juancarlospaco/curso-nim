@@ -127,6 +127,29 @@ var contenido = readFile(&quot;&#x2F;tmp&#x2F;ejemplo.txt&quot;)
 echo contenido</code>
   </section>
   <section>
+    <h1>Tuplas</h1>
+    <p>Las tuplas son colleciones de items que pueden contener items de distintos tipos,
+    existen 2 tipos de tuplas, tuplas anonimas donde los items no tienen nombre,
+    los items de la tupla anonima solo se pueden leer por su indice,
+    y tuplas nombradas donde cada item tienen un nombre,
+    los items de la tupla nombrada se pueden leer por su indice y por su nombre.</p>
+    <p>Las tuplas son de capacidad fija, es decir no pueden crecer,
+    no se puede agregar mas items a una tupla, pero se puede modificar los valores existentes.
+    Las tuplas son muy utiles en las funciones para retornar mas de un valor en el &#x27;result&#x27;.</p>
+    <code>var tuplaAnon = (9, true, &quot;UwU&quot;, 2.0, false, -5)
+assert tuplaAnon is tuple
+assert tuplaAnon[2] == &quot;UwU&quot;
+var tuplaNombrada = (clave0: 9, clave1: true, clave2: &quot;OwO&quot;)
+assert tuplaNombrada is tuple
+assert tuplaNombrada[2] == &quot;OwO&quot;
+assert tuplaNombrada.clave2 == &quot;OwO&quot;
+
+proc retornaMuchasCosas(): auto =
+  result = (clave0: 9, clave1: true, clave2: &quot;texto&quot;, clave3: 3.14)
+
+echo retornaMuchasCosas()</code>
+  </section>
+  <section>
     <h1>Funciones</h1>
     <p>Una funcion o procedimiento es un bloque de codigo que se puede ejecutar por su nombre,
     puede tomar ninguno, uno o mas argumentos, los argumentos tambien tienen un nombre y tipo,
@@ -213,29 +236,6 @@ echo(&quot;Hola Mundo&quot;)
 echo &quot;  42 666  &quot;.unindent.strip.normalize.split
 # Es exactamente lo mismo que escribir
 echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
-  </section>
-  <section>
-    <h1>Tuplas</h1>
-    <p>Las tuplas son colleciones de items que pueden contener items de distintos tipos,
-    existen 2 tipos de tuplas, tuplas anonimas donde los items no tienen nombre,
-    los items de la tupla anonima solo se pueden leer por su indice,
-    y tuplas nombradas donde cada item tienen un nombre,
-    los items de la tupla nombrada se pueden leer por su indice y por su nombre.</p>
-    <p>Las tuplas son de capacidad fija, es decir no pueden crecer,
-    no se puede agregar mas items a una tupla, pero se puede modificar los valores existentes.
-    Las tuplas son muy utiles en las funciones para retornar mas de un valor en el &#x27;result&#x27;.</p>
-    <code>var tuplaAnon = (9, true, &quot;UwU&quot;, 2.0, false, -5)
-assert tuplaAnon is tuple
-assert tuplaAnon[2] == &quot;UwU&quot;
-var tuplaNombrada = (clave0: 9, clave1: true, clave2: &quot;OwO&quot;)
-assert tuplaNombrada is tuple
-assert tuplaNombrada[2] == &quot;OwO&quot;
-assert tuplaNombrada.clave2 == &quot;OwO&quot;
-
-proc retornaMuchasCosas(): auto =
-  result = (clave0: 9, clave1: true, clave2: &quot;texto&quot;, clave3: 3.14)
-
-echo retornaMuchasCosas()</code>
   </section>
   <section>
     <h1>Libreria Estandard</h1>
