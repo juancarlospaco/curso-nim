@@ -361,16 +361,16 @@ echo seqArra """
     si la temperatura en 'kelvin' es igual a la temperatura 'celsius' mas 273 grados,
     complete el codigo para hacerlo funcionar."""
 
-  code: t"""
-var celsius = 22
-var fahrenheit = float(celsius) * 1.8 + 32.0
+    code: t"""
+  var celsius = 22
+  var fahrenheit = float(celsius) * 1.8 + 32.0
 
-var kelvin =
+  var kelvin =
 
-echo "Temperatura en Celsius: ", celsius
-echo "Temperatura en Fahrenheit: ", fahrenheit
-echo "Temperatura en Kelvin: ", kelvin
-assert kelvin == 295 """
+  echo "Temperatura en Celsius: ", celsius
+  echo "Temperatura en Fahrenheit: ", fahrenheit
+  echo "Temperatura en Kelvin: ", kelvin
+  assert kelvin == 295 """
 
 
   )
