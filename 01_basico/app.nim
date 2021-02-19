@@ -73,5 +73,28 @@ while true:
   if z == 9: break """
 
 
+  section:
+    h1: t"Char"
+
+    p: t"""Ahora que sabemos usar bucles podemos iterar el texto en los 'string',
+    descubriremos que las letras individuales tambien tienen un tipo concreto,
+    el caracter 'char' representa 1 letra, de ahi viene el nombre "cadena de caracteres",
+    el char se construye con dos comillas simples."""
+
+    p: t"""La computadora representa las letras en el texto como numeros enteros,
+    por lo tanto un 'char' es compatible con un 'int', es un valor ordinal numerico,
+    'char' se puede convertir en 'int' usando 'ord',
+    'int' se puede convertir en 'char' usando 'char'."""
+
+    code: t"""
+for letra in "ejemplo":
+  echo letra
+  echo ord(letra)
+  assert letra is char
+
+for letra in 'a'..'z':
+  echo letra
+"""
+
 
 )

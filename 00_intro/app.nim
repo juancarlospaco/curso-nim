@@ -304,7 +304,7 @@ var secuencia3 = @[true, false, true] """
 
 
   section:
-    h1: t"Secuencias en detalle"
+    h1: t"Operaciones con Secuencias"
 
     p: t"""Los items dentro de la secuencia tienen un numero entero de indice unico,
     el indice de las secuencias comienza por '0' para el primer item, hasta el ultimo item de la secuencia.
