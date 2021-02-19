@@ -116,6 +116,24 @@ elif numero == 3:
   echo &quot;Numero es igual a tres&quot;
 else:
   echo &quot;Numero es algun otro valor&quot;</code></section>
+  <section><h1>Arrays</h1>Los Arrays son colleciones de valores, valores agrupados en un mismo contenedor,
+    las secuencias son de capacidad y longitud fija, por lo tanto no pueden crecer,
+    no se puede agregar ni quitar mas valores, pero si se pueden modificar los valores existentes,
+    todos los items de un array deben ser del mismo tipo,
+    el array siempre tiene un tipo especifico que puede alojar.
+    El array es construido con &#x27;[ ]&#x27; y uno o mas valores, es decir por ejemplo &#x27;[1]&#x27;,
+    los items de una secuencia se separan con comas, es decir por ejemplo &#x27;[1, 2, 3]&#x27;,
+    tambien se puede crear usando el tipo en lugar del valor literal,
+    es decir array[longitud, tipo], por ejemplo &#x27;array[3, int]&#x27; para un array de 3 &#x27;int&#x27;,
+    basicamente &#x27;[1, 2, 3]&#x27; es el mismo tipo que &#x27;array[3, int]&#x27;,
+    si se trata de &#x27;string&#x27; es &#x27;[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]&#x27; con tipo &#x27;array[3, string]&#x27;,
+    si se trata de &#x27;float&#x27; es &#x27;[1.0, 2.0, 3.0]&#x27; con tipo &#x27;array[3, float]&#x27;, etc.<p>Array es como seq pero de capacidad estatica.</p><code>echo [1, 2, 3]
+echo [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+echo [1.0, 2.0, 3.0]
+var ejemplo: array[3, int]
+ejemplo[0] = 1
+ejemplo[0] = 42
+echo ejemplo[0]</code></section>
   <section><h1>Secuencias</h1>Las secuencias son colleciones de valores, valores agrupados en un mismo contenedor,
     las secuencias pueden hacerse mas grandes o mas chicas, agregando o quitando valores,
     todos los items de una collecion deben ser del mismo tipo,
@@ -125,7 +143,7 @@ else:
     tambien se puede crear usando el tipo en lugar del valor literal, por ejemplo &#x27;seq[int]&#x27;,
     basicamente &#x27;@[1, 2, 3]&#x27; es el mismo tipo de secuencia que &#x27;seq[int]&#x27;,
     si se trata de &#x27;string&#x27; es &#x27;@[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]&#x27; con tipo de secuencia que &#x27;seq[string]&#x27;,
-    si se trata de &#x27;float&#x27; es &#x27;@[1.0, 2.0, 3.0]&#x27; con tipo de secuencia que &#x27;seq[float]&#x27;, etc.<code>echo @[1, 2, 3]
+    si se trata de &#x27;float&#x27; es &#x27;@[1.0, 2.0, 3.0]&#x27; con tipo de secuencia que &#x27;seq[float]&#x27;, etc.<p>Seq es como Array pero de capacidad dinamica.</p><code>echo @[1, 2, 3]
 echo @[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
 echo @[1.0, 2.0, 3.0]
 var secuencia0: seq[int]
@@ -147,6 +165,7 @@ var secuencia3 = @[true, false, true]</code></section>
     <p>Para agregar items a una secuencia se usa &#x27;add&#x27;, es decir &#x27;secuencia.add(nuevoItem)&#x27;.</p>
     <p>Para borrar items de una secuencia se usa &#x27;delete&#x27;,
     de la forma &#x27;secuencia.delete(indice)&#x27;, es decir &#x27;secuencia.delete(3)&#x27; para borrar el item en el indice &#x27;3&#x27;.</p>
+    <p>El operador &#x27;@&#x27; puede convertir un Array en Seq. Array y Seq usan una interface de uso similar.</p>
     <code>var secuencia: seq[int]
 echo secuencia
 echo len(secuencia)
@@ -160,6 +179,10 @@ secuencia.delete(1)
 echo secuencia
 # secuencia.add(2.0)  # ERROR: Es una secuencia de &#x27;int&#x27; y &#x27;2.0&#x27; es &#x27;float&#x27;.
 # secuencia[9] = 5    # ERROR: No existe el indice &#x27;9&#x27; en la secuencia.
-# echo secuencia[-1]  # ERROR: No existen los indices negativos.</code>
+# echo secuencia[-1]  # ERROR: No existen los indices negativos.
+var arra = [1, 2, 3]
+var seqArra = @arra   # &#x27;array[int]&#x27; convertido en &#x27;seq[int]&#x27; usando &#x27;@&#x27;.
+seqArra.add(4)
+echo seqArra</code>
   </section>
 </div>

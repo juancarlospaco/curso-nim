@@ -210,6 +210,36 @@ else:
 
 
   section:
+    h1: t"Arrays"
+
+    t"""Los Arrays son colleciones de valores, valores agrupados en un mismo contenedor,
+    las secuencias son de capacidad y longitud fija, por lo tanto no pueden crecer,
+    no se puede agregar ni quitar mas valores, pero si se pueden modificar los valores existentes,
+    todos los items de un array deben ser del mismo tipo,
+    el array siempre tiene un tipo especifico que puede alojar.
+    El array es construido con '[ ]' y uno o mas valores, es decir por ejemplo '[1]',
+    los items de una secuencia se separan con comas, es decir por ejemplo '[1, 2, 3]',
+    tambien se puede crear usando el tipo en lugar del valor literal,
+    es decir array[longitud, tipo], por ejemplo 'array[3, int]' para un array de 3 'int',
+    basicamente '[1, 2, 3]' es el mismo tipo que 'array[3, int]',
+    si se trata de 'string' es '["a", "b", "c"]' con tipo 'array[3, string]',
+    si se trata de 'float' es '[1.0, 2.0, 3.0]' con tipo 'array[3, float]', etc.
+    """
+
+    p: t"""Array es como seq pero de capacidad estatica."""
+
+    code: t"""
+echo [1, 2, 3]
+echo ["a", "b", "c"]
+echo [1.0, 2.0, 3.0]
+var ejemplo: array[3, int]
+ejemplo[0] = 1
+ejemplo[0] = 42
+echo ejemplo[0]
+"""
+
+
+  section:
     h1: t"Secuencias"
 
     t"""Las secuencias son colleciones de valores, valores agrupados en un mismo contenedor,
@@ -223,6 +253,8 @@ else:
     si se trata de 'string' es '@["a", "b", "c"]' con tipo de secuencia que 'seq[string]',
     si se trata de 'float' es '@[1.0, 2.0, 3.0]' con tipo de secuencia que 'seq[float]', etc.
     """
+
+    p: t"""Seq es como Array pero de capacidad dinamica."""
 
     code: t"""
 echo @[1, 2, 3]
@@ -256,6 +288,8 @@ var secuencia3 = @[true, false, true] """
     p: t"""Para borrar items de una secuencia se usa 'delete',
     de la forma 'secuencia.delete(indice)', es decir 'secuencia.delete(3)' para borrar el item en el indice '3'."""
 
+    p: t"""El operador '@' puede convertir un Array en Seq. Array y Seq usan una interface de uso similar."""
+
     code: t"""
 var secuencia: seq[int]
 echo secuencia
@@ -271,7 +305,10 @@ echo secuencia
 # secuencia.add(2.0)  # ERROR: Es una secuencia de 'int' y '2.0' es 'float'.
 # secuencia[9] = 5    # ERROR: No existe el indice '9' en la secuencia.
 # echo secuencia[-1]  # ERROR: No existen los indices negativos.
-"""
+var arra = [1, 2, 3]
+var seqArra = @arra   # 'array[int]' convertido en 'seq[int]' usando '@'.
+seqArra.add(4)
+echo seqArra """
 
 
 
