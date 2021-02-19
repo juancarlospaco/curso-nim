@@ -356,4 +356,21 @@ echo seqArra """
     Tambien algunas funciones basicas para mostrar distinta informacion en pantalla.
     Los conceptos explicados van a ser progresivamente mas desafiantes."""
 
+    h3: t"""Ejercicio"""
+    p: t"""El codigo del ejercicio es un convertidor de temperaturas, pero el codigo esta incompleto,
+    si la temperatura en 'kelvin' es igual a la temperatura 'celsius' mas 273 grados,
+    complete el codigo para hacerlo funcionar."""
+
+  code: t"""
+var celsius = 22
+var fahrenheit = float(celsius) * 1.8 + 32.0
+
+var kelvin =
+
+echo "Temperatura en Celsius: ", celsius
+echo "Temperatura en Fahrenheit: ", fahrenheit
+echo "Temperatura en Kelvin: ", kelvin
+assert kelvin == 295 """
+
+
   )
