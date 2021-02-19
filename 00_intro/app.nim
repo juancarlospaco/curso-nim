@@ -186,10 +186,12 @@ else:
 var numero = 0
 if numero == 0:
   echo "Numero es igual a cero"
-elif numero > 0:
-  echo "Numero es mayor que cero"
-else:
-  echo "Numero es menor que cero" """
+elif numero == 1:
+  echo "Numero es igual a uno"
+elif numero == 2:
+  echo "Numero es igual a dos"
+elif numero == 3:
+  echo "Numero es igual a tres" """
 
 
 
