@@ -180,22 +180,6 @@ proc ejemplo4(num0: auto, num1: auto, num2: auto): auto =
 echo ejemplo4(1, 2, 3)</code>
   </section>
   <section>
-    <h1>Desafio</h1>
-    <p>Lenguaje inclusivo: Realiza un programa para convertir palabras,
-    cambiando el anteultimo caracter desde &#x27;o&#x27; hacia &#x27;e&#x27;,
-    el programa toma como argumento una secuencia de &#x27;string&#x27; y devuelve un resultado tipo &#x27;string&#x27;,
-    si y solo si el anteultimo caracter es &#x27;o&#x27;,
-    es decir si el anteultimo caracter es &#x27;o&#x27;, entonces cambiarlo por &#x27;e&#x27;,
-    parece como un &#x27;if&#x27; verdad?.</p>
-    <code>proc inclusivador(palabras: seq[string]): string =
-  for palabra in palabras:
-    var variable = palabra
-    # EDITA EL CODIGO ACA.
-
-# Debe mostrar &quot;todes les programadores&quot;.
-echo inclusivador(@[&quot;todos&quot;, &quot;los&quot;, &quot;programadores&quot;])</code>
-  </section>
-  <section>
     <h1>Libreria Estandard</h1>
     <p>Libreria Estandard (standard library), son archivos con funciones,
     las funciones se pueden usar importandolas en nuestro codigo usando &#x27;import&#x27;,
@@ -208,8 +192,8 @@ echo inclusivador(@[&quot;todos&quot;, &quot;los&quot;, &quot;programadores&quot
     La &quot;stdlib&quot; suele incluir funcionalidades para todos los niveles,
     asi que no te asustes si no entiendes aun alguna funcion de la Libreria Estandard.</p>
     <ul>
-      <li><a href="https://nim-lang.github.io/Nim/lib.html" target="_blank">Documentacion de la Libreria Estandard.</a></li>
-      <li><a href="https://nim-lang.github.io/Nim/manual.html" target="_blank">Manual para usuarios.</a></li>
+      <li><a href="https://nim-lang.github.io/Nim/lib.html">Documentacion de la Libreria Estandard.</a></li>
+      <li><a href="https://nim-lang.github.io/Nim/manual.html">Manual para usuarios.</a></li>
     </ul>
     <code>import terminal  # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;terminal.html
 import strutils  # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;strutils.html
@@ -281,13 +265,14 @@ echo {
   <section>
     <h1>JSON</h1>
     <p>JSON es un mapeo de &#x27;clave: valor&#x27;,
-    puede contener items de cualquier tipo para clave y valor, incluido tipos mixtos mezclados,
-    es decir todas las claves no deben ser del mismo tipo, las claves pueden ser de cualquier tipo,
+    puede contener items de cualquier tipo para los valores, incluido tipos mixtos mezclados,
+    todas las claves deben ser siempre de tipo &#x27;string&#x27;,
     y todos los valores no deben ser del mismo tipo, los valores pueden ser de cualquier tipo,
     donde cada clave tiene un valor, el valor puede tener uno o mas items,
     el valor tambien puede estar vacio, como un &#x27;string&#x27; vacio o un &#x27;int&#x27; que es cero,
     puedes leer y escribir un valor con una clave en una variable.
-    json es parte de la Libreria Estandard y necesita ser importado usando &#x27;import json&#x27;.</p>
+    JSON es siempre de tipo &#x27;JsonNode&#x27;.
+    JSON es parte de la Libreria Estandard y necesita ser importado usando &#x27;import json&#x27;.</p>
     <ul>
       <li>Para convertir a JSON se usa &#x27;%*&#x27;.</li>
       <li>Para convertir valores individuales a JSON se usa &#x27;%&#x27;, es decir %valor.</li>
@@ -298,6 +283,7 @@ echo {
       <li>Para saber si una clave existe en una Tabla se puede usar &#x27;in&#x27;, es decir valor in tabla.</li>
       <li>Para saber si una clave no existe en una Tabla se puede usar &#x27;notin&#x27;, es decir valor notin tabla.</li>
       <li>Para mostrar JSON con un formato amigable para humanos &#x27;pretty&#x27;.</li>
+      <li>Para convertir &#x27;string&#x27; a JSON se usa &#x27;parseJson&#x27;.</li>
     </ul>
     <code>import json
 
