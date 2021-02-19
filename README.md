@@ -1,3 +1,5 @@
+<!---
+
 # Curso
 
 - Curso aprende a programar desde cero, castellano espanol, autoguiado, autoevaluado, 2021.
@@ -18,3 +20,5 @@ Es un curso intensivo y desafiante.
 
 - Registrarse gratis en https://github.com
 - [Instalar el compilador.](https://nim-lang.org/install.html)
+
+-->
