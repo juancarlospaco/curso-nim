@@ -135,6 +135,28 @@ echo 4 mod 2 """
 
 
   section:
+    h1: t"assert, type, is"
+
+    p: t"""La funcion 'assert' sirve para chequear que una expresion es verdadera, si es falsa emite un error. """
+
+    p: t"""La funcion 'type' sirve para mostrar el tipo concreto de cualquier valor."""
+
+    p: t"""La funcion 'is' sirve para chequear si un valor es de un tipo especifico."""
+
+    code: t"""
+assert true
+assert 42 == 42
+assert 42 is int
+assert 9.9 is float
+assert "x" is string
+assert true is bool
+var variable = "ejemplo"
+echo type(variable)
+echo type(true)
+echo type(5) """
+
+
+  section:
     h1: t"Variables"
 
     p: t"""Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
@@ -221,28 +243,6 @@ elif numero == 3:
   echo "Numero es igual a tres"
 else:
   echo "Numero es algun otro valor" """
-
-
-  section:
-    h1: t"assert, type, is"
-
-    p: t"""La funcion 'assert' sirve para chequear que una expresion es verdadera, si es falsa emite un error. """
-
-    p: t"""La funcion 'type' sirve para mostrar el tipo concreto de cualquier valor."""
-
-    p: t"""La funcion 'is' sirve para chequear si un valor es de un tipo especifico."""
-
-    code: t"""
-assert true
-assert 42 == 42
-assert 42 is int
-assert 9.9 is float
-assert "x" is string
-assert true is bool
-var variable = "ejemplo"
-echo type(variable)
-echo type(true)
-echo type(5) """
 
 
   section:

@@ -66,6 +66,22 @@ echo 4 &#x2F; 2
 echo 4 div 2
 echo 4 mod 2</code></section>
   <section>
+    <h1>assert, type, is</h1>
+    <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error.</p>
+    <p>La funcion &#x27;type&#x27; sirve para mostrar el tipo concreto de cualquier valor.</p>
+    <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico.</p>
+    <code>assert true
+assert 42 == 42
+assert 42 is int
+assert 9.9 is float
+assert &quot;x&quot; is string
+assert true is bool
+var variable = &quot;ejemplo&quot;
+echo type(variable)
+echo type(true)
+echo type(5)</code>
+  </section>
+  <section>
     <h1>Variables</h1>
     <p>Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
     idealmente los nombres de las variables deberian ser descriptivos de su contenido.
@@ -131,22 +147,6 @@ elif numero == 3:
   echo &quot;Numero es igual a tres&quot;
 else:
   echo &quot;Numero es algun otro valor&quot;</code></section>
-  <section>
-    <h1>assert, type, is</h1>
-    <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error.</p>
-    <p>La funcion &#x27;type&#x27; sirve para mostrar el tipo concreto de cualquier valor.</p>
-    <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico.</p>
-    <code>assert true
-assert 42 == 42
-assert 42 is int
-assert 9.9 is float
-assert &quot;x&quot; is string
-assert true is bool
-var variable = &quot;ejemplo&quot;
-echo type(variable)
-echo type(true)
-echo type(5)</code>
-  </section>
   <section><h1>Arrays</h1>Los Arrays son colleciones de valores, valores agrupados en un mismo contenedor,
     los Arrays son de capacidad y longitud fija, por lo tanto no pueden crecer,
     no se puede agregar ni quitar mas valores, pero si se pueden modificar los valores existentes,
