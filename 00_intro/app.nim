@@ -179,9 +179,9 @@ echo numero
       li: t"Para comparar si un valor es menor que otro se usa '<'."
       li: t"Para comparar si un valor es menor o igual que otro se usa '=<'."
 
-    code: t"""# Puedes probar cambiar este numero entero.
-var numero = 5
-echo numero == 5 """
+    code: t"""
+var numero = 5    # Puedes probar cambiar este numero entero.
+echo numero == 5  # Puedes probar cambiar este operador de comparacion por otro."""
 
 
   section:
@@ -212,6 +212,27 @@ elif numero == 3:
   echo "Numero es igual a tres"
 else:
   echo "Numero es algun otro valor" """
+
+
+  section:
+    h1: t"assert, type, is"
+
+    p: t"""La funcion 'assert' sirve para chequear que una expresion es verdadera, si es falsa emite un error. """
+
+    p: t"""La funcion 'type' sirve para mostrar el tipo concreto de un valor."""
+
+    p: t"""La funcion 'is' sirve para chequear si un valor es de un tipo especifico."""
+
+    code: t"""
+assert true
+assert 42 == 42
+assert 42 is int
+assert 9.9 is float
+assert "x" is string
+var variable = "ejemplo"
+echo type(variable)
+echo type(true)
+echo type(5) """
 
 
   section:
@@ -314,6 +335,8 @@ var arra = [1, 2, 3]
 var seqArra = @arra   # 'array[int]' convertido en 'seq[int]' usando '@'.
 seqArra.add(4)
 echo seqArra """
+
+
 
 
 

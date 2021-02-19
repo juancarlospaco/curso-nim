@@ -96,9 +96,8 @@ echo numero
       <li>Para comparar si un valor es mayor o igual que otro se usa &#x27;&gt;=&#x27;.</li>
       <li>Para comparar si un valor es menor que otro se usa &#x27;&lt;&#x27;.</li>
       <li>Para comparar si un valor es menor o igual que otro se usa &#x27;=&lt;&#x27;.</li>
-    </ul><code># Puedes probar cambiar este numero entero.
-var numero = 5
-echo numero == 5</code></section>
+    </ul><code>var numero = 5    # Puedes probar cambiar este numero entero.
+echo numero == 5  # Puedes probar cambiar este operador de comparacion por otro.</code></section>
   <section><h1>if, elif, else</h1>Control de flujo con if, elif, else.<ul>
       <li>&#x27;if&#x27; sirve para ejecutar o no un bloque de codigo dependiendo de una condicion booleana.</li>
       <li>&#x27;elif&#x27; se usa para agrupar varios &#x27;if&#x27; juntos de manera tal que solo 1 de los &#x27;elif&#x27; se ejecute.</li>
@@ -120,6 +119,21 @@ elif numero == 3:
   echo &quot;Numero es igual a tres&quot;
 else:
   echo &quot;Numero es algun otro valor&quot;</code></section>
+  <section>
+    <h1>assert, type, is</h1>
+    <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error.</p>
+    <p>La funcion &#x27;type&#x27; sirve para mostrar el tipo concreto de un valor.</p>
+    <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico.</p>
+    <code>assert true
+assert 42 == 42
+assert 42 is int
+assert 9.9 is float
+assert &quot;x&quot; is string
+var variable = &quot;ejemplo&quot;
+echo type(variable)
+echo type(true)
+echo type(5)</code>
+  </section>
   <section><h1>Arrays</h1>Los Arrays son colleciones de valores, valores agrupados en un mismo contenedor,
     los Arrays son de capacidad y longitud fija, por lo tanto no pueden crecer,
     no se puede agregar ni quitar mas valores, pero si se pueden modificar los valores existentes,
