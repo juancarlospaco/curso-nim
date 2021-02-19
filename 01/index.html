@@ -109,11 +109,11 @@ assert tuplaAnon is tuple
 assert tuplaAnon[2] == &quot;UwU&quot;
 var tuplaNombrada = (clave0: 9, clave1: true, clave2: &quot;OwO&quot;)
 assert tuplaNombrada is tuple
-assert tuplaAnon[2] == &quot;OwO&quot;
-assert tuplaAnon.clave2 == &quot;OwO&quot;
+assert tuplaNombrada[2] == &quot;OwO&quot;
+assert tuplaNombrada.clave2 == &quot;OwO&quot;
 
 proc retornaMuchasCosas(): auto =
-  result = (clave0: 9, clave1: true, clave2: &quot;OwO&quot;)
+  result = (clave0: 9, clave1: true, clave2: &quot;texto&quot;, clave3: 3.14)
 
 echo retornaMuchasCosas()</code>
   </section>
