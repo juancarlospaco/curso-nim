@@ -246,7 +246,7 @@ styledEcho fgYellow, bgBlack, &quot; en Colores &quot;</code>
     Tablas tambien es llamado &quot;diccionario&quot; o &quot;mapeo&quot; o &quot;hashmap&quot;.</p>
     <ul>
       <li>Para convertir a Tabla se usa &#x27;toTable&#x27;.</li>
-      <li>Para obetener la longitud de una Tabla se usa &#x27;len&#x27;.</li>
+      <li>Para obtener la longitud de una Tabla se usa &#x27;len&#x27;.</li>
       <li>Para leer un valor por su clave se usa &#x27;[]&#x27;, es decir tabla[clave].</li>
       <li>Para escribir un valor por su clave se usa &#x27;[]=&#x27;, es decir tabla[clave] = valor.</li>
       <li>Para borrar una clave de una Tabla se puede usar &#x27;del&#x27;, es decir tabla.del(clave).</li>
@@ -263,9 +263,12 @@ assert tabla[&quot;clave&quot;] == &quot;nuevo&quot;
 echo len(tabla)
 tabla.add(&quot;otro&quot;, &quot;valor&quot;)
 assert &quot;otro&quot; in tabla
+echo tabla
 tabla.del(&quot;otro&quot;)
 assert &quot;otro&quot; notin tabla
 var vacia = initTable[string, int]()  # Tabla vacia con clave tipo &#x27;string&#x27; y valor tipo &#x27;int&#x27;.
-var otra = initTable[string, float]() # Tabla vacia con clave tipo &#x27;string&#x27; y valor tipo &#x27;float&#x27;.</code>
+assert len(vacia) == 0
+var otra = initTable[string, float]() # Tabla vacia con clave tipo &#x27;string&#x27; y valor tipo &#x27;float&#x27;.
+assert len(otra) == 0</code>
   </section>
 </div>
