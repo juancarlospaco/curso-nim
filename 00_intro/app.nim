@@ -365,7 +365,7 @@ echo seqArra """
 var celsius = 22
 var fahrenheit = float(celsius) * 1.8 + 32.0
 
-var kelvin =
+var kelvin = 0
 
 echo "Temperatura en Celsius: ", celsius
 echo "Temperatura en Fahrenheit: ", fahrenheit
