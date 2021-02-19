@@ -34,7 +34,7 @@ for i in 0..0:
 
 for i in 5..9:
   echo i
-  if i > 7: break """
+  if i == 7: break """
 
 
   section:
@@ -52,7 +52,7 @@ for i in 5..9:
 
     code: t"""
 var x = 0
-while x < 9:
+while not x == 9:
   echo x
   inc x  # x = x + 1
 
@@ -65,7 +65,7 @@ var z = 0
 while true:
   echo z
   inc z
-  if z > 9: break """
+  if z == 9: break """
 
 
 
