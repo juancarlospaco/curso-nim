@@ -167,7 +167,9 @@ echo numero - 10 """
 
 
   section:
-    h1: t"Control de flujo con if, elif, else"
+    h1: t"if, elif, else"
+
+    t"Control de flujo con if, elif, else."
 
     ul:
       li: t"'if' sirve para ejecutar o no un bloque de codigo dependiendo de una condicion booleana."
