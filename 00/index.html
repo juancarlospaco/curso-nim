@@ -237,6 +237,12 @@ var secuencia3 = @[true, false, true]</code></section>
     <p>Para borrar items de una secuencia se usa &#x27;delete&#x27;,
     de la forma &#x27;secuencia.delete(indice)&#x27;, es decir &#x27;secuencia.delete(3)&#x27; para borrar el item en el indice &#x27;3&#x27;.</p>
     <p>El operador &#x27;@&#x27; puede convertir un Array en Seq. Array y Seq usan una interface de uso similar.</p>
+    <p>Partir una secuencia en otra secuencia mas chica se llama &quot;Slicing&quot;,
+    se realiza con el operador &#x27;[]&#x27; y &#x27;..&#x27; con rango de numeros enteros,
+    es decir de la forma secuencia[inicio..fin],
+    por ejemplo &#x27;secuencia[0..3]&#x27; para una secuencia desde indice &#x27;0&#x27; hasta indice &#x27;3&#x27;,
+    tambien puede usarse indices reversos, es decir secuencia[^inicio..^fin],
+    por ejemplo &#x27;secuencia[^2..^1]&#x27; para una secuencia desde el ultimo indice hasta el anteultimo indice.</p>
     <code>var secuencia: seq[int]
 echo secuencia
 echo len(secuencia)
@@ -251,6 +257,13 @@ echo secuencia
 # secuencia.add(2.0)  # ERROR: Es una secuencia de &#x27;int&#x27; y &#x27;2.0&#x27; es &#x27;float&#x27;.
 # secuencia[9] = 5    # ERROR: No existe el indice &#x27;9&#x27; en la secuencia.
 # echo secuencia[-1]  # ERROR: No existen los indices negativos.
+
+var variable = [1, 2, 3, 4]
+assert variable[0 .. 0] == @[1]
+assert variable[0 .. 1] == @[1, 2]
+assert variable[0 .. 3] == @[1, 2, 3, 4]
+assert variable[^2 .. ^1] == @[3, 4]
+
 var arra = [1, 2, 3]
 var seqArra = @arra   # &#x27;array[int]&#x27; convertido en &#x27;seq[int]&#x27; usando &#x27;@&#x27;.
 seqArra.add(4)
