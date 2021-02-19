@@ -95,37 +95,6 @@ for letra in &#x27;a&#x27;..&#x27;z&#x27;:  # Como es un valor ordinal se puede 
   assert ord(letra) is int</code>
   </section>
   <section>
-    <h1>UFCS: llamadas a funcion</h1>
-    <p>Puedes llamar una funcion de la manera que sea mas comoda y
-    mas adecuada al contexto que estes trabajando en el codigo.
-    Antiguamente algunas funciones se llamaban de la manera &#x27;funcion(argumento)&#x27;,
-    otras funciones se llamaban de la manera &#x27;funcion argumento&#x27;,
-    e inclusive se llamaban de la manera &#x27;argumento.funcion&#x27;,
-    a veces la forma cambiaba y el codigo se rompia,
-    o se usaba la manera incorrecta y el codigo fallaba,
-    para solucionar estos problemas (Bugs),
-    se penso una nueva manera de hacer las llamadas a funcion,
-    haciendo que el compilador trabaje por nosotros.</p>
-    <p>Todas las formas se interpretan como si fueran exactamente iguales,
-    es decir &#x27;funcion(argumento)&#x27;, &#x27;funcion argumento&#x27;, &#x27;argumento.funcion&#x27;, etc
-    son exactamente lo mismo y compilan a exactamente el mismo codigo.</p>
-    <p>Tambien permite encadenar funciones de manera automatica sin necesidad de modificar dichas funciones,
-    es decir &#x27;argumento.funcion.funcion.funcion.funcion()&#x27;, etc
-    y compilan exactamente al mismo codigo.
-    Es agnostico del formato de llamada a funcion usado.</p>
-    <code>import strutils
-
-echo &quot;Hola Mundo&quot;
-echo(&quot;Hola Mundo&quot;)
-&quot;Hola Mundo&quot;.echo()
-&quot;Hola Mundo&quot;.echo
-
-# Estas funciones encadenadas
-echo &quot;  42 666  &quot;.unindent.strip.normalize.split
-# Es exactamente lo mismo que escribir
-echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
-  </section>
-  <section>
     <h1>Desafio</h1>
     <p>El &#x27;char&#x27; es un valor numerico ordinal, si a un &#x27;A&#x27; le sumas &#x27;32&#x27; da un &#x27;a&#x27;,
     usando este simple hecho desarrolla un programa para convertir un &#x27;string&#x27; desde MAYUSCULAS hacia minusculas.</p>
@@ -212,6 +181,38 @@ proc ejemplo4(num0: auto, num1: auto, num2: auto): auto =
   result = num0 + num1 + num2
 
 echo ejemplo4(1, 2, 3)</code>
+  </section>
+  <section>
+    <h1>UFCS: llamadas a funcion</h1>
+    <p>Puedes llamar una funcion de la manera que sea mas comoda y
+    mas adecuada al contexto que estes trabajando en el codigo.
+    Antiguamente algunas funciones se llamaban de la manera &#x27;funcion(argumento)&#x27;,
+    otras funciones se llamaban de la manera &#x27;funcion argumento&#x27;,
+    e inclusive se llamaban de la manera &#x27;argumento.funcion&#x27;,
+    a veces la forma cambiaba y el codigo se rompia,
+    o se usaba la manera incorrecta y el codigo fallaba,
+    para solucionar estos problemas (Bugs),
+    se penso una nueva manera de hacer las llamadas a funcion,
+    haciendo que el compilador trabaje por nosotros.</p>
+    <p>Todas las formas se interpretan como si fueran exactamente iguales,
+    es decir &#x27;funcion(argumento)&#x27;, &#x27;funcion argumento&#x27;, &#x27;argumento.funcion&#x27;, etc
+    son exactamente lo mismo y compilan a exactamente el mismo codigo.</p>
+    <p>Tambien permite encadenar funciones de manera automatica,
+    sin necesidad de modificar dichas funciones o crear operadores nuevos,
+    es decir &#x27;argumento.funcion.funcion.funcion.funcion()&#x27;, etc
+    y compilan exactamente al mismo codigo.
+    Es agnostico del formato de llamada a funcion usado.</p>
+    <code>import strutils
+
+echo &quot;Hola Mundo&quot;
+echo(&quot;Hola Mundo&quot;)
+&quot;Hola Mundo&quot;.echo()
+&quot;Hola Mundo&quot;.echo
+
+# Estas funciones encadenadas
+echo &quot;  42 666  &quot;.unindent.strip.normalize.split
+# Es exactamente lo mismo que escribir
+echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
   </section>
   <section>
     <h1>Tuplas</h1>
@@ -359,12 +360,12 @@ var jsn = %*{&quot;clave&quot;: &quot;valor&quot;}
 assert jsn[&quot;clave&quot;] == %&quot;valor&quot;
 jsn[&quot;clave&quot;] = %&quot;nuevo&quot;
 assert jsn[&quot;clave&quot;] == %&quot;nuevo&quot;
-echo len(jsn)
+echo jsn.len
 assert &quot;clave&quot; in jsn
 assert &quot;inexistente&quot; notin jsn
 jsn.add(&quot;otro&quot;, %&quot;valor&quot;)
 echo jsn
-echo pretty(jsn)
+echo jsn.pretty
 jsn.delete(&quot;otro&quot;)
 
 var vacia = %*{}  # JSON vacio.
