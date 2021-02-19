@@ -8,6 +8,10 @@
     El bucle &#x27;for&#x27; puede ser interrumpido usando &#x27;break&#x27;.</p>
     <p>Aqui se presenta el operador &#x27;..&#x27;,
     que sirve para para crear rangos de valores ordinales, como valores numericos.</p>
+    <p>Tambien existe el operador &#x27;..&lt;&#x27;, que es similar al &#x27;..&#x27; pero es no-inclusivo,
+    quiere decir que el ultimo numero mas alto no esta incluido en el rango generado,
+    es decir que &#x27;a..&lt;b&#x27; es igual a &#x27;a..(b - 1)&#x27; pero nos ahorra codigo,
+    algunas implementaciones de codigo necesitaran el &#x27;..&#x27; y otras el &#x27;..&lt;&#x27;.</p>
     <code>var secuencia = @[1, 2, 3, 4, 5, 6]
 for item in secuencia:
   if item mod 2 == 0:
@@ -21,6 +25,9 @@ for item in [&quot;v&quot;, &quot;e&quot;, &quot;r&quot;, &quot;d&quot;, &quot;e
 assert palabra == &quot;verde&quot;
 
 for i in 0..0:
+  echo &quot;Esto se ejecuta 1 sola vez por que el rango tiene 1 item&quot;
+
+for i in 0..&lt;0:
   echo &quot;Esto jamas se ejecuta por que el rango esta vacio&quot;
 
 for i in 5..9:
@@ -35,15 +42,15 @@ for i in 5..9:
     <p>Aqui se usa por primera vez los operadores &#x27;inc&#x27; y &#x27;dec&#x27;,
     &#x27;inc&#x27; es para incrementar valores ordinales, como valores numericos,
     permite poder escribir &#x27;inc i&#x27; en lugar de &#x27;i = i + 1&#x27;,
-    &#x27;dec&#x27; es para decrementar valores ordinales, como valores numericos,
-    permite poder escribir &#x27;dec i&#x27; en lugar de &#x27;i = i - 1&#x27;.</p>
+    &#x27;dec&#x27; es para decrementar valores, como valores numericos,
+    permite poder escribir &#x27;dec i&#x27; en lugar de &#x27;i = i - 1&#x27; y nos ahorra codigo.</p>
     <code>var x = 0
-while not x == 9:
+while not(x == 9):
   echo x
   inc x  # x = x + 1
 
 var y = 9
-while not y == 0:
+while not(y == 0):
   echo y
   dec y  # y = y - 1
 

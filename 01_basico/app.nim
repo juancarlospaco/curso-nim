@@ -16,6 +16,11 @@ writeFile "index.html", $(block: buildHtml(tdiv):
     p: t"""Aqui se presenta el operador '..',
     que sirve para para crear rangos de valores ordinales, como valores numericos."""
 
+    p: t"""Tambien existe el operador '..<', que es similar al '..' pero es no-inclusivo,
+    quiere decir que el ultimo numero mas alto no esta incluido en el rango generado,
+    es decir que 'a..<b' es igual a 'a..(b - 1)' pero nos ahorra codigo,
+    algunas implementaciones de codigo necesitaran el '..' y otras el '..<'."""
+
     code: t"""
 var secuencia = @[1, 2, 3, 4, 5, 6]
 for item in secuencia:
@@ -30,6 +35,9 @@ for item in ["v", "e", "r", "d", "e"]:
 assert palabra == "verde"
 
 for i in 0..0:
+  echo "Esto se ejecuta 1 sola vez por que el rango tiene 1 item"
+
+for i in 0..<0:
   echo "Esto jamas se ejecuta por que el rango esta vacio"
 
 for i in 5..9:
@@ -47,17 +55,17 @@ for i in 5..9:
     p: t"""Aqui se usa por primera vez los operadores 'inc' y 'dec',
     'inc' es para incrementar valores ordinales, como valores numericos,
     permite poder escribir 'inc i' en lugar de 'i = i + 1',
-    'dec' es para decrementar valores ordinales, como valores numericos,
-    permite poder escribir 'dec i' en lugar de 'i = i - 1'."""
+    'dec' es para decrementar valores, como valores numericos,
+    permite poder escribir 'dec i' en lugar de 'i = i - 1' y nos ahorra codigo."""
 
     code: t"""
 var x = 0
-while not x == 9:
+while not(x == 9):
   echo x
   inc x  # x = x + 1
 
 var y = 9
-while not y == 0:
+while not(y == 0):
   echo y
   dec y  # y = y - 1
 
