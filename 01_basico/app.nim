@@ -140,12 +140,15 @@ assert resultado == "gato" """
 
     p: t"""Para leer archivos se usa 'readFile',
     la funcion 'readFile' toma un argumento de tipo 'string' que es la ruta al archivo en el disco de la PC,
-    y devuelve un resultado de tipo 'string' que es el contenido del archivo."""
+    y devuelve un resultado de tipo 'string' que es el contenido del archivo.
+    La ruta al archivo debe existir en el disco de la PC.
+    El programa debe poder leer el archivo."""
 
     p: t"""Para escribir archivos se usa 'writeFile',
     la funcion 'writeFile' toma dos argumentos de tipo 'string',
     uno es la ruta al archivo en el disco de la PC y el otro es el contenido del archivo,
-    esta funcion no retorna ningun resultado."""
+    esta funcion no retorna ningun resultado.
+    El programa debe poder escribir el archivo."""
 
     code: t"""
 writeFile("/tmp/ejemplo.txt", "contenidos")

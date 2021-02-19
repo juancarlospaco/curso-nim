@@ -7,3 +7,6 @@ htmldocs/
 *.h
 *.cpp
 *.hpp
+*.cfg
+*.nims
+*.nim
