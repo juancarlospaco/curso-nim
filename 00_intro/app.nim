@@ -216,7 +216,7 @@ else:
     las secuencias pueden hacerse mas grandes o mas chicas, agregando o quitando valores,
     todos los items de una collecion deben ser del mismo tipo,
     la secuencia siempre tiene un tipo especifico que puede alojar, pero puede estar vacia tambien.
-    La secuencia es construida con '@[]' y uno o mas valores, es decir por ejemplo '@[1]',
+    La secuencia es construida con '@[ ]' y uno o mas valores, es decir por ejemplo '@[1]',
     los items de una secuencia se separan con comas, es decir por ejemplo '@[1, 2, 3]',
     tambien se puede crear usando el tipo en lugar del valor literal, por ejemplo 'seq[int]',
     basicamente '@[1, 2, 3]' es el mismo tipo de secuencia que 'seq[int]',
@@ -265,7 +265,7 @@ secuencia.add(2)
 echo len(secuencia)
 echo secuencia[1]
 secuencia.add(3)
-echo secuencia[1] = 9
+secuencia[1] = 9
 secuencia.delete(1)
 echo secuencia
 # secuencia.add(2.0)  ERROR: Es una secuencia de 'int' y '2.0' es 'float'.
