@@ -268,9 +268,9 @@ secuencia.add(3)
 secuencia[1] = 9
 secuencia.delete(1)
 echo secuencia
-# secuencia.add(2.0)  ERROR: Es una secuencia de 'int' y '2.0' es 'float'.
-# secuencia.delete(9) ERROR: No existe el indice '9' en la secuencia.
-# secuencia[9] = 5    ERROR: No existe el indice '9' en la secuencia.
+# secuencia.add(2.0)  # ERROR: Es una secuencia de 'int' y '2.0' es 'float'.
+# secuencia[9] = 5    # ERROR: No existe el indice '9' en la secuencia.
+# echo secuencia[-1]  # ERROR: No existen los indices negativos.
 """
 
 
