@@ -97,7 +97,7 @@ for letra in &#x27;a&#x27;..&#x27;z&#x27;:  # Como es un valor ordinal se puede 
   <section>
     <h1>Desafio</h1>
     <p>El &#x27;char&#x27; es un valor numerico ordinal, si a un &#x27;A&#x27; le sumas &#x27;32&#x27; da un &#x27;a&#x27;,
-    usando este simple hecho desarrolla un programa para convertir un &#x27;string&#x27; en MAYUSCULAS a minusculas.</p>
+    usando este simple hecho desarrolla un programa para convertir un &#x27;string&#x27; desde MAYUSCULAS hacia minusculas.</p>
     <code>var mayuscula = &#x27;A&#x27;                       # Letra &#x27;A&#x27; (mayuscula).
 var minuscula = char(ord(mayuscula) + 32) # Letra &#x27;a&#x27; (minuscula).
 assert minuscula == &#x27;a&#x27;                   # Minuscula es &#x27;a&#x27;
@@ -109,6 +109,19 @@ for letra in &quot;GATO&quot;:
 
   resultado.add(minuscula)
 assert resultado == &quot;gato&quot;</code>
+  </section>
+  <section>
+    <h1>Leer y Escribir Archivos</h1>
+    <p>Para leer archivos se usa &#x27;readFile&#x27;,
+    la funcion &#x27;readFile&#x27; toma un argumento de tipo &#x27;string&#x27; que es la ruta al archivo en el disco de la PC,
+    y devuelve un resultado de tipo &#x27;string&#x27; que es el contenido del archivo.</p>
+    <p>Para escribir archivos se usa &#x27;writeFile&#x27;,
+    la funcion &#x27;writeFile&#x27; toma dos argumentos de tipo &#x27;string&#x27;,
+    uno es la ruta al archivo en el disco de la PC y el otro es el contenido del archivo,
+    esta funcion no retorna ningun resultado.</p>
+    <code>writeFile(&quot;ejemplo.txt&quot;, &quot;contenidos&quot;)
+var contenido = readFile(&quot;ejemplo.txt&quot;)
+echo contenido</code>
   </section>
   <section>
     <h1>Funciones</h1>
@@ -144,8 +157,8 @@ echo ejemplo1()
 
 # Esta funcion toma un argumento, y retorna un &#x27;result&#x27; de tipo &#x27;string&#x27;.
 proc ejemplo2(texto: string): string =
-  result = &quot;Hola &quot;
-  result.add(texto)
+  result = &quot;Hola &quot;   # Asigna un &#x27;string&#x27; a &#x27;result&#x27;.
+  result.add(texto)  # Usa &#x27;add&#x27; para agregar un &#x27;string&#x27; a otro &#x27;string&#x27;.
 
 echo ejemplo2(&quot;Mundo&quot;)
 

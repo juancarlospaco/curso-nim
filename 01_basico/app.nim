@@ -119,7 +119,7 @@ for letra in 'a'..'z':  # Como es un valor ordinal se puede crear rangos de letr
     h1: t"Desafio"
 
     p: t"""El 'char' es un valor numerico ordinal, si a un 'A' le sumas '32' da un 'a',
-    usando este simple hecho desarrolla un programa para convertir un 'string' en MAYUSCULAS a minusculas."""
+    usando este simple hecho desarrolla un programa para convertir un 'string' desde MAYUSCULAS hacia minusculas."""
 
     code: t"""
 var mayuscula = 'A'                       # Letra 'A' (mayuscula).
@@ -133,6 +133,24 @@ for letra in "GATO":
 
   resultado.add(minuscula)
 assert resultado == "gato" """
+
+
+  section:
+    h1: t"Leer y Escribir Archivos"
+
+    p: t"""Para leer archivos se usa 'readFile',
+    la funcion 'readFile' toma un argumento de tipo 'string' que es la ruta al archivo en el disco de la PC,
+    y devuelve un resultado de tipo 'string' que es el contenido del archivo."""
+
+    p: t"""Para escribir archivos se usa 'writeFile',
+    la funcion 'writeFile' toma dos argumentos de tipo 'string',
+    uno es la ruta al archivo en el disco de la PC y el otro es el contenido del archivo,
+    esta funcion no retorna ningun resultado."""
+
+    code: t"""
+writeFile("ejemplo.txt", "contenidos")
+var contenido = readFile("ejemplo.txt")
+echo contenido """
 
 
   section:
@@ -174,8 +192,8 @@ echo ejemplo1()
 
 # Esta funcion toma un argumento, y retorna un 'result' de tipo 'string'.
 proc ejemplo2(texto: string): string =
-  result = "Hola "
-  result.add(texto)
+  result = "Hola "   # Asigna un 'string' a 'result'.
+  result.add(texto)  # Usa 'add' para agregar un 'string' a otro 'string'.
 
 echo ejemplo2("Mundo")
 
@@ -192,7 +210,6 @@ proc ejemplo4(num0: auto, num1: auto, num2: auto): auto =
   result = num0 + num1 + num2
 
 echo ejemplo4(1, 2, 3) """
-
 
 
 
