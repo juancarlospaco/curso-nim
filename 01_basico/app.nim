@@ -10,9 +10,10 @@ writeFile "index.html", $(block: buildHtml(tdiv):
     p: t"""El bucle 'for' sirve para iterar un valor iterable,
     para aplicar algun tipo de logica a los items individualmente,
     es posible iterar por indices o por los items directamente,
-    'for' itera de inicio a fin de algun argumento iterable."""
+    'for' itera de inicio a fin de algun argumento iterable.
+    El bucle 'for' puede ser interrumpido usando 'break'."""
 
-    p: t"""Aqui tambien se presentan el operador '..',
+    p: t"""Aqui se presenta el operador '..',
     que sirve para para crear rangos de valores ordinales, como valores numericos."""
 
     code: t"""
@@ -32,6 +33,40 @@ for i in 0..0:
   echo "Esto jamas se ejecuta por que el rango esta vacio"
 
 for i in 5..9:
-  echo i """
+  echo i
+  if i > 7: break """
+
+
+  section:
+    h1: t"While"
+
+    p: t"""El bucle 'while' sirve para repetir un bloque de codigo siempre y
+    cuando un argumento de condicion booleana sea verdadera.
+    El bucle 'while' puede ser interrumpido usando 'break'."""
+
+    p: t"""Aqui se usa por primera vez los operadores 'inc' y 'dec',
+    'inc' es para incrementar valores ordinales, como valores numericos,
+    permite poder escribir 'inc i' en lugar de 'i = i + 1',
+    'dec' es para decrementar valores ordinales, como valores numericos,
+    permite poder escribir 'dec i' en lugar de 'i = i - 1'."""
+
+    code: t"""
+var x = 0
+while x < 9:
+  echo x
+  inc x  # x = x + 1
+
+var y = 9
+while not y == 0:
+  echo y
+  dec y  # y = y - 1
+
+var z = 0
+while true:
+  echo z
+  inc z
+  if z > 9: break """
+
+
 
 )

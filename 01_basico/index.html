@@ -1,10 +1,12 @@
-<div><section>
+<div>
+  <section>
     <h1>For</h1>
     <p>El bucle &#x27;for&#x27; sirve para iterar un valor iterable,
     para aplicar algun tipo de logica a los items individualmente,
     es posible iterar por indices o por los items directamente,
-    &#x27;for&#x27; itera de inicio a fin de algun argumento iterable.</p>
-    <p>Aqui tambien se presentan el operador &#x27;..&#x27;,
+    &#x27;for&#x27; itera de inicio a fin de algun argumento iterable.
+    El bucle &#x27;for&#x27; puede ser interrumpido usando &#x27;break&#x27;.</p>
+    <p>Aqui se presenta el operador &#x27;..&#x27;,
     que sirve para para crear rangos de valores ordinales, como valores numericos.</p>
     <code>var secuencia = @[1, 2, 3, 4, 5, 6]
 for item in secuencia:
@@ -22,5 +24,33 @@ for i in 0..0:
   echo &quot;Esto jamas se ejecuta por que el rango esta vacio&quot;
 
 for i in 5..9:
-  echo i</code>
-  </section></div>
+  echo i
+  if i &gt; 7: break</code>
+  </section>
+  <section>
+    <h1>While</h1>
+    <p>El bucle &#x27;while&#x27; sirve para repetir un bloque de codigo siempre y
+    cuando un argumento de condicion booleana sea verdadera.
+    El bucle &#x27;while&#x27; puede ser interrumpido usando &#x27;break&#x27;.</p>
+    <p>Aqui se usa por primera vez los operadores &#x27;inc&#x27; y &#x27;dec&#x27;,
+    &#x27;inc&#x27; es para incrementar valores ordinales, como valores numericos,
+    permite poder escribir &#x27;inc i&#x27; en lugar de &#x27;i = i + 1&#x27;,
+    &#x27;dec&#x27; es para decrementar valores ordinales, como valores numericos,
+    permite poder escribir &#x27;dec i&#x27; en lugar de &#x27;i = i - 1&#x27;.</p>
+    <code>var x = 0
+while x &lt; 9:
+  echo x
+  inc x  # x = x + 1
+
+var y = 9
+while not y == 0:
+  echo y
+  dec y  # y = y - 1
+
+var z = 0
+while true:
+  echo z
+  inc z
+  if z &gt; 9: break</code>
+  </section>
+</div>
