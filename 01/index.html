@@ -302,7 +302,7 @@ styledEcho fgYellow, bgGreen, &quot; en Colores &quot;</code>
       <li>Para saber si una clave no existe en una Tabla se puede usar &#x27;notin&#x27;, es decir valor notin tabla.</li>
       <li>Para crear una Tabla sin ningun valor literal se usa &#x27;initTable&#x27; con los tipos de clave y valor.</li>
     </ul>
-    <code>import tables
+    <code>import tables  # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;tables.html
 
 var tabla = {&quot;clave&quot;: &quot;valor&quot;}.toTable
 assert tabla[&quot;clave&quot;] == &quot;valor&quot;
@@ -354,7 +354,7 @@ echo {
       <li>Para mostrar JSON con un formato amigable para humanos &#x27;pretty&#x27;.</li>
       <li>Para convertir &#x27;string&#x27; a JSON se usa &#x27;parseJson&#x27;.</li>
     </ul>
-    <code>import json
+    <code>import json  # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;json.html
 
 var jsn = %*{&quot;clave&quot;: &quot;valor&quot;}
 assert jsn[&quot;clave&quot;] == %&quot;valor&quot;
