@@ -353,10 +353,6 @@ echo seqArra """
     p: t"""En esta sesion aprendimos a editar y ejecutar distintos programas sencillos.
     Vimos diferentes tipos de datos, como los enteros, flotantes, boleanos y demas.
     Tambien algunas funciones basicas para mostrar distinta informacion en pantalla.
-    Los conceptos explicados van a ser progresivamente mas desafiantes, no te distraigas y practica!."""
-
-
-    code: t"""
- """
+    Los conceptos explicados van a ser progresivamente mas desafiantes."""
 
   )
