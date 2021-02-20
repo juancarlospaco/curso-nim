@@ -8,10 +8,6 @@
     El bucle &#x27;for&#x27; puede ser interrumpido usando &#x27;break&#x27;.</p>
     <p>Aqui se presenta el operador &#x27;..&#x27;,
     que sirve para para crear rangos de valores ordinales, como valores numericos.</p>
-    <p>Tambien existe el operador &#x27;..&lt;&#x27;, que es similar al &#x27;..&#x27; pero es no-inclusivo,
-    quiere decir que el ultimo numero mas alto no esta incluido en el rango generado,
-    es decir que &#x27;a..&lt;b&#x27; es igual a &#x27;a..(b - 1)&#x27; pero nos ahorra codigo,
-    algunas implementaciones de codigo necesitaran el &#x27;..&#x27; y otras el &#x27;..&lt;&#x27;.</p>
     <code>var secuencia = @[1, 2, 3, 4, 5, 6]
 for item in secuencia:
   if item mod 2 == 0:
@@ -66,7 +62,7 @@ while true:
     El espacio en blanco, tabulador y la nueva linea (salto de linea) tambien son caracteres.</p>
     <p>La computadora representa las letras en el texto como numeros enteros,
     por lo tanto un &#x27;char&#x27; es compatible con un &#x27;int&#x27;, es un valor ordinal numerico,
-    &#x27;char&#x27; puede usar &#x27;inc&#x27;, &#x27;dec&#x27;, &#x27;..&#x27;, &#x27;..&lt;&#x27;, &#x27;+&#x27;, &#x27;-&#x27; que vimos anteriormente.</p>
+    &#x27;char&#x27; puede usar &#x27;inc&#x27;, &#x27;dec&#x27;, &#x27;..&#x27;, &#x27;+&#x27;, &#x27;-&#x27; que vimos anteriormente.</p>
     <p>Los &#x27;char&#x27; son ordinales, por ejemplo el valor entero del &#x27;char&#x27; de &#x27;a&#x27; es &#x27;97&#x27;,
     si a &#x27;a&#x27; le sumas 1 obtienes &#x27;b&#x27;, si al &#x27;a&#x27; le sumas 2 obtienes &#x27;c&#x27;, etc.</p>
     <ul>
@@ -136,9 +132,6 @@ echo contenido</code>
     <p>Las tuplas son de capacidad fija, es decir no pueden crecer,
     no se puede agregar mas items a una tupla, pero se puede modificar los valores existentes.
     Las tuplas son muy utiles en las funciones para retornar mas de un valor en el &#x27;result&#x27;.</p>
-    <p>Las tuplas se pueden desempaquetar, es decir separar sus valores en variables individuales,
-    usando variables &#x27;var&#x27;, si se desea ignorar alguno de los valores de la tupla,
-    se puede usar el nombre de variable &#x27;_&#x27; y el valor sera ignorado.</p>
     <code>var tuplaAnon = (9, true, &quot;UwU&quot;, 2.0, false, -5)
 assert tuplaAnon is tuple
 assert tuplaAnon[2] == &quot;UwU&quot;
@@ -150,8 +143,8 @@ assert tuplaNombrada.clave2 == &quot;OwO&quot;
 proc retornaMuchasCosas(): auto =
   result = (clave0: 9, clave1: true, clave2: &quot;texto&quot;, clave3: 3.14)
 
-var (x, y, _, z) = retornaMuchasCosas()  # Desempaquetado de una Tupla.
-assert x == 9 and y == true and z == 3.14
+var (a, b, c, d) = retornaMuchasCosas()  # Desempaquetado de una Tupla.
+assert a == 9 and b == true and c == &quot;texto and d == &quot;3.14
 echo retornaMuchasCosas()</code>
   </section>
   <section>
@@ -506,4 +499,7 @@ assert gato.durmiendo
 gato.despertar()
 assert not gato.durmiendo</code>
   </section>
+  <a class="button other" href="#" title="Chat">Chat</a>
+  <a class="button other" href="https://nim-lang.org/install.html" title="Descarga">Descarga</a>
+  <a class="button other" href="https://nim-lang.org/documentation.html" title="Documentacion">Documentacion</a>
 </div>
