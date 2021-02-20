@@ -424,4 +424,32 @@ assert ejemplo is string
 # Obtener JSON desde un &#x27;string&#x27;.
 assert parseJson(ejemplo) is JsonNode</code>
   </section>
+  <section>
+    <h1>Tipos</h1>
+    <p>Ademas de los tipos que trae el lenguaje, puedes crear tus propios tipos,
+    para eso se utiliza la declaracion de tipos usando &#x27;type&#x27; y &#x27;object&#x27;.</p>
+    <ul>
+      <li>Los tipos pueden tener ninguno, uno o mas atributos de cualquier tipo.</li>
+      <li>Los tipos pueden tener de atributo otros tipos.</li>
+      <li>Los tipos pueden tener funciones especificas.</li>
+    </ul>
+    <code># Declaracion del Tipo.
+type Gatito = object  # Nombre del tipo, la primer letra debe ser Mayuscula.
+  edad: int           # Atributo de tipo &#x27;int&#x27;.
+  nombre: string      # Atributo de tipo &#x27;string&#x27;.
+
+# Funciones del Tipo.
+proc maullar(self: Gatito) =  # Una funcionalidad del Gatito.
+  echo &quot;Miau Miau&quot;
+
+proc crecer(self: Gatito) =  # Otra funcionalidad del Gatito.
+  inc self.edad
+
+# Uso del Tipo.
+var gato = Gatito(edad: 1, nombre: &quot;Zoe&quot;) # Instanciacion de Objeto.
+assert gato is Gatito  # &#x27;gato&#x27; es un &#x27;Gatito&#x27;.
+gato.miau()            # Usando las funciones del Gatito.
+gato.crecer()
+echo gato.edad</code>
+  </section>
 </div>
