@@ -94,11 +94,12 @@ echo 4 &#x2F; 2
 echo 4 div 2
 echo 4 mod 2</code></section>
   <section>
-    <h1>assert, type, is, $</h1>
+    <h1>assert, type, is, astToStr, $</h1>
     <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error,
     si &#x27;assert&#x27; es &#x27;true&#x27; no emite ningun mensaje y es silenciosa.</p>
     <p>La funcion &#x27;type&#x27; devuelve el el tipo concreto de cualquier valor, retorna un tipo &#x27;string&#x27;.</p>
     <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico, retorna un tipo &#x27;bool&#x27;.</p>
+    <p>La funcion &#x27;astToStr&#x27; sirve para convertir cualquier porcion de codigo a un &#x27;string&#x27;, retorna un &#x27;string&#x27;.</p>
     <p>La funcion &#x27;$&#x27; sirve para convertir cualquier valor a un &#x27;string&#x27;, de ser posible.
     Usualmente se llama a &#x27;$&#x27; como operador &quot;Dolar&quot; o &quot;Stringify&quot;, siempre retorna un tipo &#x27;string&#x27;.</p>
     <code>assert true
@@ -117,7 +118,10 @@ assert $true is string
 var variable = &quot;ejemplo&quot;
 echo type(variable)
 echo type(true)
-echo type(5)</code>
+echo type(5)
+
+echo astToStr(1 + 2 * 4 - 1)
+echo 1 + 2 * 4 - 1</code>
   </section>
   <section>
     <h1>Variables</h1>
