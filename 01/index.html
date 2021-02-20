@@ -243,7 +243,7 @@ echo &quot;  42 666  &quot;.unindent.strip.normalize.split
 echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
   </section>
   <section>
-    <h1>openArray y varargs</h1>
+    <h1>openArray, varargs</h1>
     <p>Para crear una funcion que pueda tomar 1 Array o 1 Secuencia de cualquier longitud
     existe un tipo de argumento de funcion especial llamado &#x27;openArray&#x27;,
     el &#x27;openArray&#x27; permite a una funcion aceptar un Array o Secuencia de longitud desconocida.</p>
@@ -271,7 +271,6 @@ proc ejemplo2(argumentos: varargs[int]) =
   for item in argumentos:
     echo item
 
-ejemplo2()              # 0 Argumentos.
 ejemplo2(1)             # 1 Argumentos.
 ejemplo2(1, 2, 3)       # 3 Argumentos.
 ejemplo2(1, 2, 3, 4, 5) # 5 Argumentos.</code>
