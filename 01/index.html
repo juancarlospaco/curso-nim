@@ -250,20 +250,21 @@ echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
     <p>Para crear una funcion que pueda tomar cualquier cantidad de argumentos
     existe un tipo de argumento de funcion especial llamado &#x27;varargs&#x27;,
     &#x27;varargs&#x27; permite a una funcion aceptar una cantidad de argumentos desconocida.
-    El compilador convertira todos los argumentos en 1 Array implicitamente automaticamente.
-    Notar que no es lo mismo cualquier cantidad de argumentos,
-    que un argumento de cualquier longitud.</p>
+    El compilador convertira todos los argumentos en 1 Array implicitamente automaticamente.</p>
+    <p>La diferencia entre &#x27;openArray&#x27; y &#x27;varargs&#x27;,
+    es que no es lo mismo cualquier cantidad de argumentos,
+    que un argumento de cualquier cantidad de items.</p>
     <code>proc ejemplo(item: openArray[int]) =
   echo item
 
-ejemplo([])               # Array, longitud 0.
-ejemplo(@[])              # Seq, longitud 0.
-ejemplo([1])              # Array, longitud 1.
-ejemplo(@[1])             # Seq, longitud 1.
-ejemplo([1, 2, 3])        # Array, longitud 3.
-ejemplo(@[1, 2, 3])       # Seq, longitud 3.
-ejemplo([1, 2, 3, 4, 5])  # Array, longitud 5.
-ejemplo(@[1, 2, 3, 4, 5]) # Seq, longitud 5.
+ejemplo([])               # Longitud 0.
+ejemplo(@[])              # Longitud 0.
+ejemplo([1])              # Longitud 1.
+ejemplo(@[1])             # Longitud 1.
+ejemplo([1, 2, 3])        # Longitud 3.
+ejemplo(@[1, 2, 3])       # Longitud 3.
+ejemplo([1, 2, 3, 4, 5])  # Longitud 5.
+ejemplo(@[1, 2, 3, 4, 5]) # Longitud 5.
 
 
 proc ejemplo2(argumentos: varargs[int]) =
