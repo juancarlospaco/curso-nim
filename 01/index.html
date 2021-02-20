@@ -243,7 +243,7 @@ echo &quot;  42 666  &quot;.unindent.strip.normalize.split
 echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
   </section>
   <section>
-    <h1>openArray, varargs</h1>
+    <h1>openArray, varargs, argumentos mutables</h1>
     <p>Para crear una funcion que pueda tomar 1 Array o 1 Secuencia de cualquier longitud
     existe un tipo de argumento de funcion especial llamado &#x27;openArray&#x27;,
     el &#x27;openArray&#x27; permite a una funcion aceptar un Array o Secuencia de longitud desconocida.</p>
@@ -255,6 +255,11 @@ echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
     es que no es lo mismo cualquier cantidad de argumentos,
     que un argumento de cualquier cantidad de items.
     &#x27;openArray&#x27; es para &#x27;array&#x27; y &#x27;seq&#x27;, &#x27;varargs&#x27; puede tomar cualquier tipo.</p>
+    <p>Por defecto los argumentos de la funcion son de solo-lectura (inmutables),
+    desde dentro del bloque de codigo de la funcion,
+    para poder modificar el valor de un argumento (mutable),
+    se debe agregar &#x27;var&#x27; al tipo del argumento,
+    es decir cambiar &#x27;argumento: tipo&#x27; por &#x27;argumento: var tipo&#x27;.</p>
     <code>proc ejemplo(item: openArray[int]) =
   echo item
 
@@ -275,7 +280,16 @@ proc ejemplo2(argumentos: varargs[int]) =
 
 ejemplo2(1)             # 1 Argumentos.
 ejemplo2(1, 2, 3)       # 3 Argumentos.
-ejemplo2(1, 2, 3, 4, 5) # 5 Argumentos.</code>
+ejemplo2(1, 2, 3, 4, 5) # 5 Argumentos.
+
+
+proc ejemplo3(argumento: var int): int =  # &#x27;argumento&#x27; se puede escribir por que es &#x27;var int&#x27;.
+  inc argumento                           # Incrementa el &#x27;argumento&#x27; mutable.
+  result = argumento
+
+assert ejemplo3(1) == 2
+assert ejemplo3(2) == 3
+assert ejemplo3(3) == 4</code>
   </section>
   <section>
     <h1>Libreria Estandard</h1>
@@ -439,10 +453,10 @@ type Gatito = object  # Nombre del tipo, la primer letra debe ser Mayuscula.
   nombre: string      # Atributo de tipo &#x27;string&#x27;.
 
 # Funciones del Tipo.
-proc maullar(self: Gatito) =  # Una funcionalidad del Gatito.
+proc maullar(self: Gatito) =     # Una funcionalidad del Gatito.
   echo &quot;Miau Miau&quot;
 
-proc crecer(self: Gatito) =  # Otra funcionalidad del Gatito.
+proc crecer(self: var Gatito) =  # Se usa &#x27;var Gatito&#x27; para poder escribir en &#x27;Gatito&#x27;.
   inc self.edad
 
 # Uso del Tipo.
@@ -450,6 +464,6 @@ var gato = Gatito(edad: 1, nombre: &quot;Zoe&quot;) # Instanciacion de Objeto.
 assert gato is Gatito  # &#x27;gato&#x27; es un &#x27;Gatito&#x27;.
 gato.miau()            # Usando las funciones del Gatito.
 gato.crecer()
-echo gato.edad</code>
+assert gato.edad == 2</code>
   </section>
 </div>
