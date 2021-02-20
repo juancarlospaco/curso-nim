@@ -243,7 +243,26 @@ echo &quot;  42 666  &quot;.unindent.strip.normalize.split
 echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
   </section>
   <section>
-    <h1>openArray, varargs, argumentos mutables</h1>
+    <h1>Argumentos de funcion mutables</h1>
+    <p>Por defecto los argumentos de la funcion son de solo-lectura (inmutables),
+    desde dentro del bloque de codigo de la funcion,
+    para poder modificar el valor de un argumento (mutable),
+    se debe agregar &#x27;var&#x27; al tipo del argumento,
+    es decir cambiar &#x27;argumento: tipo&#x27; por &#x27;argumento: var tipo&#x27;,
+    cuando se usa un argumento &#x27;var&#x27; mutable, no se puede usar el valor literal escrito,
+    los valores deben estar contenidos en una variable.</p>
+    <code>proc ejemplo(argumento: var int): int =  # &#x27;argumento&#x27; se puede escribir por que es &#x27;var int&#x27;.
+  inc argumento                           # Incrementa el &#x27;argumento&#x27; mutable.
+  result = argumento
+
+var numero = 1
+assert ejemplo(numero) == 2
+numero = 3
+assert ejemplo(numero) == 4
+# echo ejemplo(5)  # ERROR: Por que es un numero literal que no se puede cambiar.</code>
+  </section>
+  <section>
+    <h1>openArray, varargs</h1>
     <p>Para crear una funcion que pueda tomar 1 Array o 1 Secuencia de cualquier longitud
     existe un tipo de argumento de funcion especial llamado &#x27;openArray&#x27;,
     el &#x27;openArray&#x27; permite a una funcion aceptar un Array o Secuencia de longitud desconocida.</p>
@@ -255,13 +274,6 @@ echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
     es que no es lo mismo cualquier cantidad de argumentos,
     que un argumento de cualquier cantidad de items.
     &#x27;openArray&#x27; es para &#x27;array&#x27; y &#x27;seq&#x27;, &#x27;varargs&#x27; puede tomar cualquier tipo.</p>
-    <p>Por defecto los argumentos de la funcion son de solo-lectura (inmutables),
-    desde dentro del bloque de codigo de la funcion,
-    para poder modificar el valor de un argumento (mutable),
-    se debe agregar &#x27;var&#x27; al tipo del argumento,
-    es decir cambiar &#x27;argumento: tipo&#x27; por &#x27;argumento: var tipo&#x27;,
-    cuando se usa un argumento &#x27;var&#x27; mutable, no se puede usar el valor literal escrito,
-    los valores deben estar contenidos en una variable.</p>
     <code>proc ejemplo(item: openArray[int]) =
   echo item
 
@@ -282,17 +294,7 @@ proc ejemplo2(argumentos: varargs[int]) =
 
 ejemplo2(1)             # 1 Argumentos.
 ejemplo2(1, 2, 3)       # 3 Argumentos.
-ejemplo2(1, 2, 3, 4, 5) # 5 Argumentos.
-
-
-proc ejemplo3(argumento: var int): int =  # &#x27;argumento&#x27; se puede escribir por que es &#x27;var int&#x27;.
-  inc argumento                           # Incrementa el &#x27;argumento&#x27; mutable.
-  result = argumento
-
-var numero = 1
-assert ejemplo3(numero) == 2
-numero = 3
-assert ejemplo3(numero) == 4</code>
+ejemplo2(1, 2, 3, 4, 5) # 5 Argumentos.</code>
   </section>
   <section>
     <h1>Libreria Estandard</h1>
