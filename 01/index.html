@@ -136,6 +136,9 @@ echo contenido</code>
     <p>Las tuplas son de capacidad fija, es decir no pueden crecer,
     no se puede agregar mas items a una tupla, pero se puede modificar los valores existentes.
     Las tuplas son muy utiles en las funciones para retornar mas de un valor en el &#x27;result&#x27;.</p>
+    <p>Las tuplas se pueden desempaquetar, es decir separar sus valores en variables individuales,
+    usando variables &#x27;var&#x27;, si se desea ignorar alguno de los valores de la tupla,
+    se puede usar el nombre de variable &#x27;_&#x27; y el valor sera ignorado.</p>
     <code>var tuplaAnon = (9, true, &quot;UwU&quot;, 2.0, false, -5)
 assert tuplaAnon is tuple
 assert tuplaAnon[2] == &quot;UwU&quot;
@@ -147,6 +150,8 @@ assert tuplaNombrada.clave2 == &quot;OwO&quot;
 proc retornaMuchasCosas(): auto =
   result = (clave0: 9, clave1: true, clave2: &quot;texto&quot;, clave3: 3.14)
 
+var (x, y, _, z) = retornaMuchasCosas()  # Desempaquetado de una Tupla.
+assert x == 9 and y == true and z == 3.14
 echo retornaMuchasCosas()</code>
   </section>
   <section>
@@ -236,6 +241,39 @@ echo(&quot;Hola Mundo&quot;)
 echo &quot;  42 666  &quot;.unindent.strip.normalize.split
 # Es exactamente lo mismo que escribir
 echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
+  </section>
+  <section>
+    <h1>openArray y varargs</h1>
+    <p>Para crear una funcion que pueda tomar 1 Array o 1 Secuencia de cualquier longitud
+    existe un tipo de argumento de funcion especial llamado &#x27;openArray&#x27;,
+    el &#x27;openArray&#x27; permite a una funcion aceptar un Array o Secuencia de longitud desconocida.</p>
+    <p>Para crear una funcion que pueda tomar cualquier cantidad de argumentos
+    existe un tipo de argumento de funcion especial llamado &#x27;varargs&#x27;,
+    &#x27;varargs&#x27; permite a una funcion aceptar una cantidad de argumentos desconocida.
+    El compilador convertira todos los argumentos en 1 Array implicitamente automaticamente.
+    Notar que no es lo mismo cualquier cantidad de argumentos,
+    que un argumento de cualquier longitud.</p>
+    <code>proc ejemplo(item: openArray[int]) =
+  echo item
+
+ejemplo([])               # Array, longitud 0.
+ejemplo(@[])              # Seq, longitud 0.
+ejemplo([1])              # Array, longitud 1.
+ejemplo(@[1])             # Seq, longitud 1.
+ejemplo([1, 2, 3])        # Array, longitud 3.
+ejemplo(@[1, 2, 3])       # Seq, longitud 3.
+ejemplo([1, 2, 3, 4, 5])  # Array, longitud 5.
+ejemplo(@[1, 2, 3, 4, 5]) # Seq, longitud 5.
+
+
+proc ejemplo2(argumentos: varargs[int]) =
+  for item in argumentos:
+    echo item
+
+ejemplo2()              # 0 Argumentos.
+ejemplo2(1)             # 1 Argumentos.
+ejemplo2(1, 2, 3)       # 3 Argumentos.
+ejemplo2(1, 2, 3, 4, 5) # 5 Argumentos.</code>
   </section>
   <section>
     <h1>Libreria Estandard</h1>
