@@ -234,7 +234,6 @@ echo ejemplo4(1, 2, 3)</code>
 
 echo &quot;Hola Mundo&quot;
 echo(&quot;Hola Mundo&quot;)
-&quot;Hola Mundo&quot;.echo()
 &quot;Hola Mundo&quot;.echo
 
 # Estas funciones encadenadas
@@ -243,7 +242,7 @@ echo &quot;  42 666  &quot;.unindent.strip.normalize.split
 echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
   </section>
   <section>
-    <h1>Argumentos de funcion mutables</h1>
+    <h1>Argumentos mutables, argumentos por defecto</h1>
     <p>Por defecto los argumentos de la funcion son de solo-lectura (inmutables),
     desde dentro del bloque de codigo de la funcion,
     para poder modificar el valor de un argumento (mutable),
@@ -251,6 +250,11 @@ echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
     es decir cambiar &#x27;argumento: tipo&#x27; por &#x27;argumento: var tipo&#x27;,
     cuando se usa un argumento &#x27;var&#x27; mutable, no se puede usar el valor literal escrito,
     los valores deben estar contenidos en una variable.</p>
+    <p>Es posible usar un argumentos por defecto para una funcion,
+    es decir cuando se llame a esa funcion sin ese argumento,
+    se usara el valor por defecto automaticamente en su lugar,
+    para hacer eso se cambia argumento: tipo por argumento = valor,
+    es decir &#x27;argumento: int&#x27; por &#x27;argumento = 9&#x27; y el argumento por defecto es &#x27;9&#x27;.</p>
     <code>proc ejemplo(argumento: var int): int =  # &#x27;argumento&#x27; se puede escribir por que es &#x27;var int&#x27;.
   inc argumento                           # Incrementa el &#x27;argumento&#x27; mutable.
   result = argumento
@@ -259,7 +263,15 @@ var numero = 1
 assert ejemplo(numero) == 2
 numero = 3
 assert ejemplo(numero) == 4
-# echo ejemplo(5)  # ERROR: Por que es un numero literal que no se puede cambiar.</code>
+echo ejemplo(numero)
+# echo ejemplo(5)  # ERROR: Por que es un numero literal que no se puede cambiar.
+
+proc ejemplo2(argumento = 5): int =  # &#x27;argumento&#x27; tiene un valor por defecto de &#x27;5&#x27;.
+  result = argumento + 4
+
+assert ejemplo2() == 9  # &#x27;ejemplo2()&#x27; no tiene el argumento,
+                        # pero funciona igualmente con el valor por defecto.
+echo ejemplo2()</code>
   </section>
   <section>
     <h1>openArray, varargs</h1>
@@ -467,8 +479,8 @@ proc crecer(self: var Gatito) =  # Se usa &#x27;var Gatito&#x27; para poder escr
 # Uso del Tipo.
 var gato = Gatito(edad: 1, nombre: &quot;Zoe&quot;) # Instanciacion de Objeto.
 assert gato is Gatito  # &#x27;gato&#x27; es un &#x27;Gatito&#x27;.
-gato.miau()            # Usando las funciones del Gatito.
+gato.maullar()         # Usando las funciones del Gatito.
 gato.crecer()
-assert gato.edad == 2</code>
+assert gato.edad == 2  # &#x27;Gatito&#x27; incremento la &#x27;edad&#x27;.</code>
   </section>
 </div>
