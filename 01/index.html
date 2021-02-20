@@ -253,7 +253,7 @@ echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
     <p>Es posible usar un argumentos por defecto para una funcion,
     es decir cuando se llame a esa funcion sin ese argumento,
     se usara el valor por defecto automaticamente en su lugar,
-    para hacer eso se cambia argumento: tipo por argumento = valor,
+    para hacer eso se cambia &#x27;argumento: tipo&#x27; por &#x27;argumento = valor&#x27;,
     es decir &#x27;argumento: int&#x27; por &#x27;argumento = 9&#x27; y el argumento por defecto es &#x27;9&#x27;.</p>
     <code>proc ejemplo(argumento: var int): int =  # &#x27;argumento&#x27; se puede escribir por que es &#x27;var int&#x27;.
   inc argumento                           # Incrementa el &#x27;argumento&#x27; mutable.
@@ -482,5 +482,28 @@ assert gato is Gatito  # &#x27;gato&#x27; es un &#x27;Gatito&#x27;.
 gato.maullar()         # Usando las funciones del Gatito.
 gato.crecer()
 assert gato.edad == 2  # &#x27;Gatito&#x27; incremento la &#x27;edad&#x27;.</code>
+  </section>
+  <section>
+    <h1>Desafio</h1>
+    <p>Agregarle al tipo &#x27;Gatito&#x27; la funciones de &#x27;dormir&#x27; y &#x27;despertar&#x27;,
+    que deben modificar un nuevo atributo &#x27;durmiendo&#x27; de tipo &#x27;bool&#x27;,
+    en resumen agregar &#x27;durmiendo: bool&#x27; y 2 funciones nuevas &#x27;dormir()&#x27; y &#x27;despertar()&#x27;.
+    Esta vez con un poco menos de ayuda...</p>
+    <code>type Gatito = object
+  edad: int
+  nombre: string
+
+proc maullar(self: Gatito) = echo &quot;Miau Miau&quot;
+
+proc crecer(self: var Gatito) = inc self.edad
+
+var gato = Gatito(edad: 1, nombre: &quot;Zoe&quot;, durmiendo: false)
+gato.maullar()
+gato.crecer()
+assert not gato.durmiendo
+gato.dormir()
+assert gato.durmiendo
+gato.despertar()
+assert not gato.durmiendo</code>
   </section>
 </div>
