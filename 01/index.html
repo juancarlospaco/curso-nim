@@ -259,7 +259,9 @@ echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
     desde dentro del bloque de codigo de la funcion,
     para poder modificar el valor de un argumento (mutable),
     se debe agregar &#x27;var&#x27; al tipo del argumento,
-    es decir cambiar &#x27;argumento: tipo&#x27; por &#x27;argumento: var tipo&#x27;.</p>
+    es decir cambiar &#x27;argumento: tipo&#x27; por &#x27;argumento: var tipo&#x27;,
+    cuando se usa un argumento &#x27;var&#x27; mutable, no se puede usar el valor literal escrito,
+    los valores deben estar contenidos en una variable.</p>
     <code>proc ejemplo(item: openArray[int]) =
   echo item
 
@@ -287,9 +289,10 @@ proc ejemplo3(argumento: var int): int =  # &#x27;argumento&#x27; se puede escri
   inc argumento                           # Incrementa el &#x27;argumento&#x27; mutable.
   result = argumento
 
-assert ejemplo3(1) == 2
-assert ejemplo3(2) == 3
-assert ejemplo3(3) == 4</code>
+var numero = 1
+assert ejemplo3(numero) == 2
+numero = 3
+assert ejemplo3(numero) == 4</code>
   </section>
   <section>
     <h1>Libreria Estandard</h1>
