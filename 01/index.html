@@ -258,12 +258,13 @@ echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
   echo item
 
 ejemplo([])               # Longitud 0.
-ejemplo(@[])              # Longitud 0.
 ejemplo([1])              # Longitud 1.
-ejemplo(@[1])             # Longitud 1.
 ejemplo([1, 2, 3])        # Longitud 3.
-ejemplo(@[1, 2, 3])       # Longitud 3.
 ejemplo([1, 2, 3, 4, 5])  # Longitud 5.
+
+ejemplo(@[])              # Longitud 0.
+ejemplo(@[1])             # Longitud 1.
+ejemplo(@[1, 2, 3])       # Longitud 3.
 ejemplo(@[1, 2, 3, 4, 5]) # Longitud 5.
 
 
