@@ -14,25 +14,22 @@
 type Gatito = ref object of Animal   # Gatito hereda de Animal.
   durmiendo: bool
 
-type Perrito = ref object of Animal   # Perrito hereda de Animal.
-
-proc renombrar(self: var Animal, nombre: string) = self.nombre = nombre
-proc maullar(self: Gatito) = echo &quot;Miau Miau&quot;
-proc crecer(self: var Gatito) = inc self.edad
-proc dormir(self: var Gatito) = self.durmiendo = true
-proc despertar(self: var Gatito) = self.durmiendo = false
+proc renombrar(self: var Animal, nombre: string) =
+  self.nombre = nombre
+proc maullar(self: Gatito) =
+  echo &quot;Miau Miau&quot;
+proc crecer(self: var Gatito) =
+  inc self.edad
+proc dormir(self: var Gatito) =
+  self.durmiendo = true
+proc despertar(self: var Gatito) =
+  self.durmiendo = false
 
 var gato = Gatito(edad: 1, nombre: &quot;zoe&quot;, durmiendo: false)
 gato.maullar()
 gato.crecer()
 gato.dormir()
-gato.despertar()
-
-var perro = Perrito(edad: 2, nombre: &quot;Doge&quot;, durmiendo: true)
-perro.maullar()
-perro.crecer()
-perro.dormir()
-perro.despertar()</code>
+gato.despertar()</code>
   </section>
   <a class="button other" href="#">Chat</a>
   <a class="button other" href="https://nim-lang.org/install.html">Descarga</a>
