@@ -1,320 +1,38 @@
 <div>
-  <section><h1>Bienvenida</h1>Te damos la bienvenida al curso!.
-      En la primera clase se introduce algunos conceptos basicos.
-      Comenzando desde cero vas a aprender a crear y ejecutar programas basicos.
-      Tambien presentamos algunos tipos de datos primitivos como los
-      enteros, flotantes, booleanos, strings, funciones y variables.
-      Mas adelante en el curso aprenderas lo necesario para crear programas mas avanzados.
-      Comenzaremos por el tradicional programa &#x27;Hola Mundo&#x27;,
-      que es un programa que muestra &#x27;Hola Mundo&#x27; al ejecutarse.
-      La funcion &#x27;echo&#x27; muestra en pantalla el valor que se le pasa como argumento.<ol>
-      <li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li>
-      <li>Apreta el boton amarillo que dice &#x27;Next&#x27; para avanzar de nivel.</li>
-      <li>Apreta el boton gris de &#x27;Share to ix&#x27; para compartir tu codigo via link.</li>
-      <li>Apreta el boton gris de &#x27;Previous&#x27; para retroceder.</li>
-    </ol><code># Esto es un &quot;Comentario&quot;, la linea comienza con 1 caracter &quot;#&quot; al principio.
-# Toda la linea es ignorada y puede usarse para escribir observaciones.
-echo &quot;Hola Mundo&quot;</code></section>
   <section>
-    <h1>echo</h1>
-    <p>La funcion &#x27;echo&#x27; sirve para mostrar por pantalla cualquier valor en una representacion de &#x27;string&#x27;,
-    &#x27;echo&#x27; convertira los valores a &#x27;string&#x27; y los imprimira en la linea de comando,
-    puede tomar cualquier cantidad de argumentos de cualquier tipo, pero debe tener por lo menos 1 argumento,
-    la representacion de &#x27;string&#x27; es legible por humanos.</p>
-    <p>Se observa que existen distintos &quot;Tipos de Datos&quot;,
-    esto es por que una computadora no puede distinguir los datos,
-    no puede distinguir cuando te refieres a un tres de la palabra &quot;Tres&quot;,
-    o cuando te refieres a un tres del numero &quot;3&quot;,
-    o cuando te refieres a un tres del numero con coma flotante &quot;3.0&quot;.</p>
-    <ol>
-      <li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li>
-      <li>Apreta el boton amarillo que dice &#x27;Next&#x27; para avanzar de nivel.</li>
-      <li>Apreta el boton gris de &#x27;Previous&#x27; para retroceder.</li>
-    </ol>
-    <code>echo 1, true, 2.0, &quot;OwO&quot;, false, -9, 0</code>
-  </section>
-  <section>
-    <h1>Booleanos</h1>
-    <p>El tipo booleano solo puede tener 2 valores, verdadero que es &#x27;true&#x27; o falso que es &#x27;false&#x27;.
-    Se puede invertir el valor usando &#x27;not&#x27;, por ejemplo &#x27;not true&#x27; es &#x27;false&#x27; y &#x27;not false&#x27; es &#x27;true&#x27;.
-    Cuando se crea un booleano su valor por defecto es &#x27;false&#x27;.</p>
-    <p>Tambien existe el operador &#x27;and&#x27; que cumple la funcion de &quot;Y&quot;,
-    es decir para juntar dos expresiones booleanas en una sola,
-    ejemplo &#x27;true and true&#x27; es &#x27;true&#x27;, &#x27;true and false&#x27; es &#x27;false&#x27;.</p>
-    <p>Asi mismo el operador &#x27;or&#x27; que cumple la funcion de &quot;O&quot;,
-    es decir para juntar dos expresiones booleanas en una sola,
-    ejemplo &#x27;true or true&#x27; es &#x27;true&#x27;, &#x27;true or false&#x27; es &#x27;true&#x27;.</p>
-    <ol>
-      <li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li>
-      <li>Apreta el boton amarillo que dice &#x27;Next&#x27; para avanzar de nivel.</li>
-    </ol>
-    <code>echo true
-echo false
-echo not true
-echo not false
-echo true and true
-echo true and false
-echo true or true
-echo true or false</code>
-  </section>
-  <section><h1>Enteros</h1>Los numeros enteros llamados &#x27;int&#x27; (integer) son numeros negativos o positivos, incluyendo el cero.
-    En el caso de los numeros negativos el menos debe estar pegado al numero, es decir &#x27;- 5&#x27; debe ser &#x27;-5&#x27;.
-    Cuando se crea un entero su valor por defecto es &#x27;0&#x27;.<ol><li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li></ol><code>echo 0
-echo 1
-echo 9
-echo -9
-echo -5
-echo -0  # -0 es 0</code></section>
-  <section><h1>Strings</h1>El texto o cadenas de texto o cadenas de caracteres se llaman &#x27;string&#x27;,
-    y puede contener cualquier texto como palabras, numeros, puntuacion, etc.
-    Cuando se crea un string su valor por defecto es &#x27;&quot;&quot;&#x27;, que es un string vacio.
-    Se puede concatenar dos o mas &#x27;string&#x27; usando &#x27;&amp;&#x27;.
-    &#x27;string&#x27; de multiples lineas o multilinea se crean usando triple comillas.<code>echo &quot;Hola&quot;
-echo &quot;1234&quot;
-echo &quot;true&quot;
-echo &quot;&quot;    # String vacio.
-echo &quot; &quot;   # Espacio.
-echo &quot;\t&quot;  # Tabulador (Tab).
-echo &quot;\n&quot;  # Nueva Linea (Salto de linea).</code></section>
-  <section><h1>Flotantes</h1>Los numeros de punto flotante o numeros de coma flotante se llaman &#x27;float&#x27;,
-    pueden ser negativos, positivos, cero, e infinito.
-    Cuando se crea un flotante su valor por defecto es &#x27;0.0&#x27;.<p>&#x27;float&#x27; de acuerdo con el estandard de numeros de punto flotante tiene unos valores &quot;especiales&quot;,
-    que indican infinito negativo e infinito positivo, que son numeros tan grandes que la PC no los puede interpretar,
-    tambien una forma de No-Numero (Not A Number), estos &quot;valores especiales&quot; no se trataran en detalle en este curso.</p><code>echo 0.0
-echo 0.5
-echo 2.0
-echo -9.0
-echo 3.14
-echo 99.50</code></section>
-  <section><h1>Matematica</h1>Matematica basica se puede realizar con distintos operadores y valores numericos.<ul>
-      <li>Sumar usa el operador &#x27;+&#x27;.</li>
-      <li>Restar usa el operador &#x27;-&#x27;.</li>
-      <li>Multiplicar usa el operador &#x27;*&#x27;.</li>
-      <li>Division flotante usa el operador &#x27;&#x2F;&#x27;.</li>
-      <li>Division entera usa el operador &#x27;div&#x27;.</li>
-      <li>Modulo usa el operador &#x27;mod&#x27;.</li>
-    </ul><code>echo 1 + 2
-echo 2 - 1
-echo 2 * 2
-echo 4 &#x2F; 2
-echo 4 div 2
-echo 4 mod 2</code></section>
-  <section><h1>Comparacion</h1>La comparacion booleana sirve para comparar 2 valores o variables,
-    y devolver un booleano &#x27;true&#x27; o &#x27;false&#x27;, dependiendo de los valores comparados.
-    La diferencia entre &#x27;==&#x27; y &#x27;is&#x27;, es que &#x27;is&#x27; compara el tipo de dato, &#x27;==&#x27; compara el valor del dato.<ul>
-      <li>Para comparar si dos valores son iguales se usa &#x27;==&#x27;.</li>
-      <li>Para comparar si un valor es mayor que otro se usa &#x27;&gt;&#x27;.</li>
-      <li>Para comparar si un valor es mayor o igual que otro se usa &#x27;&gt;=&#x27;.</li>
-      <li>Para comparar si un valor es menor que otro se usa &#x27;&lt;&#x27;.</li>
-      <li>Para comparar si un valor es menor o igual que otro se usa &#x27;=&lt;&#x27;.</li>
-    </ul><code>var numero = 5    # Puedes probar cambiar este numero entero.
-echo numero == 5  # Puedes probar cambiar este operador de comparacion por otro.</code></section>
-  <section>
-    <h1>assert, type, is, astToStr, $</h1>
-    <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error,
-    si &#x27;assert&#x27; es &#x27;true&#x27; no emite ningun mensaje y es silenciosa.</p>
-    <p>La funcion &#x27;type&#x27; devuelve el el tipo concreto de cualquier valor, retorna un tipo &#x27;string&#x27;.</p>
-    <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico, retorna un tipo &#x27;bool&#x27;.</p>
-    <p>La funcion &#x27;astToStr&#x27; sirve para convertir cualquier porcion de codigo a un &#x27;string&#x27;, retorna un &#x27;string&#x27;.</p>
-    <p>La funcion &#x27;$&#x27; sirve para convertir cualquier valor a un &#x27;string&#x27;, de ser posible.
-    Usualmente se llama a &#x27;$&#x27; como operador &quot;Dolar&quot; o &quot;Stringify&quot;, siempre retorna un tipo &#x27;string&#x27;.</p>
-    <code>assert true
-assert 42 == 42
-assert 42 is int
-assert 9.9 is float
-assert &quot;x&quot; is string
-assert true is bool
+    <h1>Orientado a Objetos</h1>
+    <p>Se puede extender el codigo del ejemplo del &#x27;Gatito&#x27;,
+    para implementar Orientacion a Objetos.</p>
+    <p>Para heredar se usa el operador &#x27;of&#x27;, con la sintaxis &quot;A of B&quot;,
+    es decir &#x27;ref object of RootObj&#x27;, &#x27;RootObj&#x27; es madre de todos los objetos,
+    &#x27;Gatito&#x27; hereda de &#x27;Animal&#x27;, usando el operador &#x27;of&#x27;, con la sintaxis &#x27;ref object of Animal&#x27;.
+    Gatito tiene atributos y funciones de &#x27;Animal&#x27;.</p>
+    <code>type Animal = ref object of RootObj  # Animal es el objeto base.
+  edad: int
+  nombre: string
 
-var entero = 42
-assert $entero is string
-assert $42 is string
-assert $9.9 is string
-assert $true is string
+type Gatito = ref object of Animal   # Gatito hereda de Animal.
+  durmiendo: bool
 
-var variable = &quot;ejemplo&quot;
-echo type(variable)
-echo type(true)
-echo type(5)
+type Perrito = ref object of Animal   # Perrito hereda de Animal.
 
-echo astToStr(1 + 2 * 4 - 1)
-echo 1 + 2 * 4 - 1</code>
-  </section>
-  <section>
-    <h1>Variables</h1>
-    <p>Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
-    idealmente los nombres de las variables deberian ser descriptivos de su contenido.
-    Las variables necesitan ser declaradas usando &#x27;var&#x27; y el nombre de la variable,
-    luego de que son declaradas pueden utilizarse asignandole valores del mismo tipo,
-    es decir si una variable tenia enteros solo puede alojar enteros,
-    una variable tenia booleanos solo puede alojar booleanos, etc.</p>
-    <p>Es posible declarar una variable usando su tipo en lugar de un valor.
-    Es posible asignarle una variable a una variable, copiando una variable en otra.
-    No es posible declarar una variable con el mismo nombre varias veces,
-    por que se perderia el valor de la variable original si se pisan mutuamente.
-    Mas adelante se explicara un uso mas avanzado de las variables.
-    Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo.</p>
-    <ul>
-      <li>Tipo &#x27;bool&#x27; son valores como &#x27;true&#x27; o &#x27;false&#x27;.</li>
-      <li>Tipo &#x27;int&#x27; son valores como &#x27;0&#x27;, &#x27;9&#x27;, &#x27;-1&#x27;, &#x27;-99&#x27;, &#x27;42&#x27;.</li>
-      <li>Tipo &#x27;float&#x27; son valores como &#x27;1.0&#x27;, &#x27;3.14&#x27;, &#x27;-9.5&#x27;, &#x27;5.555&#x27;.</li>
-      <li>Tipo &#x27;string&#x27; son valores como &#x27;&quot;a&quot;&#x27;, &#x27;&quot;&quot;&#x27;, &#x27;&quot;OwO&quot;&#x27;, &#x27;&quot;palabras&quot;&#x27;.</li>
-    </ul>
-    <code>var numero = 1      # Variable declarada usando un valor.
-numero = 99
-numero = -3
-echo numero
-var texto = &quot;&quot;      # Variable declarada usando un valor vacio.
-texto = &quot;azul&quot;
-texto = &quot;rojo&quot;
-echo texto
-var booleano: bool  # Variable declarada usando un tipo.
-booleano = true
-echo booleano
-var copia = numero
-echo copia          # Variable copiada en otra variable.
-echo numero
-# var copia = 5     # ERROR: La variable ya existe.</code>
-  </section>
-  <section><h1>if, elif, else</h1>Control de flujo con if, elif, else.
-    La indentacion con 2 espacios se usa para marcar grupos de comandos que van juntos, delimita un bloque de codigo.<ul>
-      <li>&#x27;if&#x27; sirve para ejecutar o no un bloque de codigo dependiendo de una condicion booleana.</li>
-      <li>&#x27;elif&#x27; se usa para agrupar varios &#x27;if&#x27; juntos de manera tal que solo 1 de los &#x27;elif&#x27; se ejecute.</li>
-      <li>&#x27;else&#x27; se usa para ejecutar un bloque de codigo si ninguno de los &#x27;if&#x27; y &#x27;elif&#x27; se ejecuto.</li>
-    </ul><code>var condicion = false
-if condicion:
-  echo &quot;condicion es true&quot;
-else:
-  echo &quot;condicion es false&quot;
+proc renombrar(self: var Animal, nombre: string) = self.nombre = nombre
+proc maullar(self: Gatito) = echo &quot;Miau Miau&quot;
+proc crecer(self: var Gatito) = inc self.edad
+proc dormir(self: var Gatito) = self.durmiendo = true
+proc despertar(self: var Gatito) = self.durmiendo = false
 
-var numero = 0
-if numero == 0:
-  echo &quot;Numero es igual a cero&quot;
-elif numero == 1:
-  echo &quot;Numero es igual a uno&quot;
-elif numero == 2:
-  echo &quot;Numero es igual a dos&quot;
-elif numero == 3:
-  echo &quot;Numero es igual a tres&quot;
-else:
-  echo &quot;Numero es algun otro valor&quot;</code></section>
-  <section><h1>Arrays</h1>Los Arrays son colleciones de valores, valores agrupados en un mismo contenedor,
-    los Arrays son de capacidad y longitud fija, por lo tanto no pueden crecer,
-    no se puede agregar ni quitar mas valores, pero si se pueden modificar los valores existentes,
-    todos los items de un array deben ser del mismo tipo,
-    el array siempre tiene un tipo especifico que puede alojar.
-    El array es construido con &#x27;[ ]&#x27; y uno o mas valores, es decir por ejemplo &#x27;[1]&#x27;,
-    los items de un Array se separan con comas, es decir por ejemplo &#x27;[1, 2, 3]&#x27;,
-    tambien se puede crear usando el tipo en lugar del valor literal,
-    es decir array[longitud, tipo], por ejemplo &#x27;array[3, int]&#x27; para un array de 3 &#x27;int&#x27;,
-    basicamente &#x27;[1, 2, 3]&#x27; es el mismo tipo que &#x27;array[3, int]&#x27;,
-    si se trata de &#x27;string&#x27; es &#x27;[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]&#x27; con tipo &#x27;array[3, string]&#x27;,
-    si se trata de &#x27;float&#x27; es &#x27;[1.0, 2.0, 3.0]&#x27; con tipo &#x27;array[3, float]&#x27;, etc.<p>Array es como seq pero de capacidad estatica.</p><code>echo [1, 2, 3]            # array[3, int]
-echo [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]      # array[3, string]
-echo [1.0, 2.0, 3.0]      # array[3, float]
-echo [true, false, true]  # array[3, bool]
+var gato = Gatito(edad: 1, nombre: &quot;zoe&quot;, durmiendo: false)
+gato.maullar()
+gato.crecer()
+gato.dormir()
+gato.despertar()
 
-var ejemplo: array[3, int]
-ejemplo[0] = 1
-ejemplo[0] = 42
-echo ejemplo</code></section>
-  <section><h1>Secuencias</h1>Las secuencias son colleciones de valores, valores agrupados en un mismo contenedor,
-    las secuencias pueden hacerse mas grandes o mas chicas, agregando o quitando valores,
-    todos los items de una collecion deben ser del mismo tipo,
-    la secuencia siempre tiene un tipo especifico que puede alojar, pero puede estar vacia tambien.
-    La secuencia es construida con &#x27;@[ ]&#x27; y uno o mas valores, es decir por ejemplo &#x27;@[1]&#x27;,
-    los items de una secuencia se separan con comas, es decir por ejemplo &#x27;@[1, 2, 3]&#x27;,
-    tambien se puede crear usando el tipo en lugar del valor literal, por ejemplo &#x27;seq[int]&#x27;,
-    basicamente &#x27;@[1, 2, 3]&#x27; es el mismo tipo de secuencia que &#x27;seq[int]&#x27;,
-    si se trata de &#x27;string&#x27; es &#x27;@[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]&#x27; con tipo de secuencia que &#x27;seq[string]&#x27;,
-    si se trata de &#x27;float&#x27; es &#x27;@[1.0, 2.0, 3.0]&#x27; con tipo de secuencia que &#x27;seq[float]&#x27;, etc.<p>Seq es como Array pero de capacidad dinamica.</p><code>echo @[1, 2, 3]            # seq[int]
-echo @[true, false, true]  # seq[bool]
-echo @[1.0, 2.0, 3.0]      # seq[float]
-echo @[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]      # seq[string]
-
-var secuencia0: seq[int]
-var secuancia1: seq[bool]
-var secuencia2: seq[float]
-var secuencia3: seq[string]
-
-var ejemplo0 = @[1, 2, 3]                  # seq[int]
-var ejemplo1 = @[true, false, true]        # seq[bool]
-var ejemplo2 = @[1.0, 2.0, 3.0, 4.0]       # seq[float]
-var ejemplo3 = @[&quot;rojo&quot;, &quot;azul&quot;, &quot;verde&quot;]  # seq[string]</code></section>
-  <section>
-    <h1>Operaciones con Secuencias</h1>
-    <p>Los items dentro de la secuencia tienen un numero entero de indice unico,
-    el indice de las secuencias comienza por &#x27;0&#x27; para el primer item, hasta el ultimo item de la secuencia.
-    No existen los indices negativos.</p>
-    <p>Los items de una secuencia se pueden obtener por indice usando &#x27;[]&#x27;,
-    es decir secuencia[indice], por ejemplo &#x27;secuencia[3]&#x27;, que devuelve el item en el indice &#x27;3&#x27;.
-    Para obtener un item por indice al inverso (indice invertido) es decir desde el ultimo hacia el primero,
-    se puede usar secuencia[^indice], por ejemplo &#x27;secuencia[^1]&#x27;, que devuelve el ultimo item en el ultimo indice,
-    por ejemplo &#x27;secuencia[^2]&#x27;, que devuelve el anteultimo item en el anteultimo indice, etc.</p>
-    <p>Para asignar un valor a un item de una secuencia, es decir modificar un item de la secuencia,
-    se pueden asignar por indice usando &#x27;[]=&#x27;, es decir secuencia[indice] = valor,
-    por ejemplo &#x27;secuencia[3] = 42&#x27;, que asigna &#x27;42&#x27; al item en el indice &#x27;3&#x27;.</p>
-    <p>Para saber la longitud total de una secuencia se puede usar &#x27;len&#x27;,
-    es decir &#x27;len(secuencia)&#x27; que devuelve un numero entero que es la longitud.</p>
-    <p>Para agregar items a una secuencia se usa &#x27;add&#x27;, es decir &#x27;secuencia.add(nuevoItem)&#x27;.</p>
-    <p>Para borrar items de una secuencia se usa &#x27;delete&#x27;,
-    de la forma &#x27;secuencia.delete(indice)&#x27;, es decir &#x27;secuencia.delete(3)&#x27; para borrar el item en el indice &#x27;3&#x27;.</p>
-    <code>var secuencia: seq[int]  # Crear una secuencia de &#x27;int&#x27;.
-echo secuencia
-echo len(secuencia)      # Longitud de la secuencia.
-secuencia.add(1)
-secuencia.add(2)         # Agregar items a la secuencia.
-echo len(secuencia)
-echo secuencia[1]        # Obtener un item de la secuencia por indice.
-secuencia.add(3)
-secuencia[1] = 9         # Asignar un item a la secuencia por indice.
-echo secuencia
-secuencia.delete(1)      # Borrar un item de la secuencia.
-
-# secuencia.add(2.0)  # ERROR: Es una secuencia de &#x27;int&#x27; y &#x27;2.0&#x27; es &#x27;float&#x27;.
-# secuencia[9] = 5    # ERROR: No existe el indice &#x27;9&#x27; en la secuencia.
-# echo secuencia[-1]  # ERROR: No existen los indices negativos.</code>
-  </section>
-  <section>
-    <h1>Operaciones con Secuencias 2</h1>
-    <p>El operador &#x27;@&#x27; puede convertir un Array en Seq. Array y Seq usan una interface de uso similar.</p>
-    <h3>Slicing</h3>
-    <p>Partir una secuencia en otra secuencia mas chica se llama &quot;Slicing&quot;,
-    se realiza con el operador &#x27;[]&#x27; y &#x27;..&#x27; con rango de numeros enteros,
-    es decir de la forma secuencia[inicio..fin],
-    por ejemplo &#x27;secuencia[0..3]&#x27; para una secuencia desde indice &#x27;0&#x27; hasta indice &#x27;3&#x27;.</p>
-    <p>Indices Reversos se usan con el operador &#x27;^&#x27; y el numero pegado, es decir secuencia[^inicio .. ^fin],
-    por ejemplo &#x27;secuencia[^2 .. ^1]&#x27; para una secuencia desde el ultimo indice hasta el anteultimo indice.</p>
-    <code>var variable = [1, 2, 3, 4]
-assert variable[0 .. 0] == @[1]
-assert variable[0 .. 1] == @[1, 2]
-assert variable[0 .. 3] == @[1, 2, 3, 4]
-assert variable[^2 .. ^1] == @[3, 4]
-assert ^1 is BackwardsIndex   # ^1 es un Indice en Reverso.
-
-var arra = [1, 2, 3]
-var seqArra = @arra   # &#x27;array[int]&#x27; convertido en &#x27;seq[int]&#x27; usando &#x27;@&#x27;.
-seqArra.add(4)
-echo seqArra</code>
-  </section>
-  <section>
-    <h1>Cierre</h1>
-    <p>En esta sesion aprendimos a editar y ejecutar distintos programas sencillos.
-    Vimos diferentes tipos de datos, como los enteros, flotantes, boleanos y demas.
-    Tambien algunas funciones basicas para mostrar distinta informacion en pantalla.
-    Los conceptos explicados van a ser progresivamente mas desafiantes.</p>
-    <h3>Desafio</h3>
-    <p>El codigo del ejercicio es un convertidor de temperaturas, pero el codigo esta incompleto,
-    si la temperatura en &#x27;kelvin&#x27; es igual a la temperatura &#x27;celsius&#x27; mas 273 grados,
-    complete el codigo para hacerlo funcionar.</p>
-    <code>var celsius = 22
-var fahrenheit = float(celsius) * 1.8 + 32.0
-
-var kelvin = 0
-
-echo &quot;Temperatura en Celsius: &quot;, celsius
-echo &quot;Temperatura en Fahrenheit: &quot;, fahrenheit
-echo &quot;Temperatura en Kelvin: &quot;, kelvin
-assert kelvin == 295</code>
+var perro = Perrito(edad: 2, nombre: &quot;Doge&quot;, durmiendo: true)
+perro.maullar()
+perro.crecer()
+perro.dormir()
+perro.despertar()</code>
   </section>
   <a class="button other" href="#">Chat</a>
   <a class="button other" href="https://nim-lang.org/install.html">Descarga</a>

@@ -1,320 +1,503 @@
 <div>
-  <section><h1>Bienvenida</h1>Te damos la bienvenida al curso!.
-      En la primera clase se introduce algunos conceptos basicos.
-      Comenzando desde cero vas a aprender a crear y ejecutar programas basicos.
-      Tambien presentamos algunos tipos de datos primitivos como los
-      enteros, flotantes, booleanos, strings, funciones y variables.
-      Mas adelante en el curso aprenderas lo necesario para crear programas mas avanzados.
-      Comenzaremos por el tradicional programa &#x27;Hola Mundo&#x27;,
-      que es un programa que muestra &#x27;Hola Mundo&#x27; al ejecutarse.
-      La funcion &#x27;echo&#x27; muestra en pantalla el valor que se le pasa como argumento.<ol>
-      <li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li>
-      <li>Apreta el boton amarillo que dice &#x27;Next&#x27; para avanzar de nivel.</li>
-      <li>Apreta el boton gris de &#x27;Share to ix&#x27; para compartir tu codigo via link.</li>
-      <li>Apreta el boton gris de &#x27;Previous&#x27; para retroceder.</li>
-    </ol><code># Esto es un &quot;Comentario&quot;, la linea comienza con 1 caracter &quot;#&quot; al principio.
-# Toda la linea es ignorada y puede usarse para escribir observaciones.
-echo &quot;Hola Mundo&quot;</code></section>
   <section>
-    <h1>echo</h1>
-    <p>La funcion &#x27;echo&#x27; sirve para mostrar por pantalla cualquier valor en una representacion de &#x27;string&#x27;,
-    &#x27;echo&#x27; convertira los valores a &#x27;string&#x27; y los imprimira en la linea de comando,
-    puede tomar cualquier cantidad de argumentos de cualquier tipo, pero debe tener por lo menos 1 argumento,
-    la representacion de &#x27;string&#x27; es legible por humanos.</p>
-    <p>Se observa que existen distintos &quot;Tipos de Datos&quot;,
-    esto es por que una computadora no puede distinguir los datos,
-    no puede distinguir cuando te refieres a un tres de la palabra &quot;Tres&quot;,
-    o cuando te refieres a un tres del numero &quot;3&quot;,
-    o cuando te refieres a un tres del numero con coma flotante &quot;3.0&quot;.</p>
-    <ol>
-      <li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li>
-      <li>Apreta el boton amarillo que dice &#x27;Next&#x27; para avanzar de nivel.</li>
-      <li>Apreta el boton gris de &#x27;Previous&#x27; para retroceder.</li>
-    </ol>
-    <code>echo 1, true, 2.0, &quot;OwO&quot;, false, -9, 0</code>
+    <h1>For</h1>
+    <p>El bucle &#x27;for&#x27; sirve para iterar un valor iterable,
+    para aplicar algun tipo de logica a los items individualmente,
+    es posible iterar por indices o por los items directamente,
+    &#x27;for&#x27; itera de inicio a fin de algun argumento iterable.
+    El bucle &#x27;for&#x27; puede ser interrumpido usando &#x27;break&#x27;.</p>
+    <p>Aqui se presenta el operador &#x27;..&#x27;,
+    que sirve para para crear rangos de valores ordinales, como valores numericos.</p>
+    <code>var secuencia = @[1, 2, 3, 4, 5, 6]
+for item in secuencia:
+  if item mod 2 == 0:
+    echo &quot;item es par&quot;
+  else:
+    echo &quot;item es impar&quot;
+
+var palabra: string
+for item in [&quot;v&quot;, &quot;e&quot;, &quot;r&quot;, &quot;d&quot;, &quot;e&quot;]:
+  palabra.add(item)
+assert palabra == &quot;verde&quot;
+
+for i in 0..0:
+  echo &quot;Esto se ejecuta 1 sola vez por que el rango tiene 1 item&quot;
+
+for i in 5..9:
+  echo i
+  if i == 7: break</code>
   </section>
   <section>
-    <h1>Booleanos</h1>
-    <p>El tipo booleano solo puede tener 2 valores, verdadero que es &#x27;true&#x27; o falso que es &#x27;false&#x27;.
-    Se puede invertir el valor usando &#x27;not&#x27;, por ejemplo &#x27;not true&#x27; es &#x27;false&#x27; y &#x27;not false&#x27; es &#x27;true&#x27;.
-    Cuando se crea un booleano su valor por defecto es &#x27;false&#x27;.</p>
-    <p>Tambien existe el operador &#x27;and&#x27; que cumple la funcion de &quot;Y&quot;,
-    es decir para juntar dos expresiones booleanas en una sola,
-    ejemplo &#x27;true and true&#x27; es &#x27;true&#x27;, &#x27;true and false&#x27; es &#x27;false&#x27;.</p>
-    <p>Asi mismo el operador &#x27;or&#x27; que cumple la funcion de &quot;O&quot;,
-    es decir para juntar dos expresiones booleanas en una sola,
-    ejemplo &#x27;true or true&#x27; es &#x27;true&#x27;, &#x27;true or false&#x27; es &#x27;true&#x27;.</p>
-    <ol>
-      <li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li>
-      <li>Apreta el boton amarillo que dice &#x27;Next&#x27; para avanzar de nivel.</li>
-    </ol>
-    <code>echo true
-echo false
-echo not true
-echo not false
-echo true and true
-echo true and false
-echo true or true
-echo true or false</code>
-  </section>
-  <section><h1>Enteros</h1>Los numeros enteros llamados &#x27;int&#x27; (integer) son numeros negativos o positivos, incluyendo el cero.
-    En el caso de los numeros negativos el menos debe estar pegado al numero, es decir &#x27;- 5&#x27; debe ser &#x27;-5&#x27;.
-    Cuando se crea un entero su valor por defecto es &#x27;0&#x27;.<ol><li>Apreta el boton amarillo que dice &#x27;Run!&#x27; para ejecutar el programa.</li></ol><code>echo 0
-echo 1
-echo 9
-echo -9
-echo -5
-echo -0  # -0 es 0</code></section>
-  <section><h1>Strings</h1>El texto o cadenas de texto o cadenas de caracteres se llaman &#x27;string&#x27;,
-    y puede contener cualquier texto como palabras, numeros, puntuacion, etc.
-    Cuando se crea un string su valor por defecto es &#x27;&quot;&quot;&#x27;, que es un string vacio.
-    Se puede concatenar dos o mas &#x27;string&#x27; usando &#x27;&amp;&#x27;.
-    &#x27;string&#x27; de multiples lineas o multilinea se crean usando triple comillas.<code>echo &quot;Hola&quot;
-echo &quot;1234&quot;
-echo &quot;true&quot;
-echo &quot;&quot;    # String vacio.
-echo &quot; &quot;   # Espacio.
-echo &quot;\t&quot;  # Tabulador (Tab).
-echo &quot;\n&quot;  # Nueva Linea (Salto de linea).</code></section>
-  <section><h1>Flotantes</h1>Los numeros de punto flotante o numeros de coma flotante se llaman &#x27;float&#x27;,
-    pueden ser negativos, positivos, cero, e infinito.
-    Cuando se crea un flotante su valor por defecto es &#x27;0.0&#x27;.<p>&#x27;float&#x27; de acuerdo con el estandard de numeros de punto flotante tiene unos valores &quot;especiales&quot;,
-    que indican infinito negativo e infinito positivo, que son numeros tan grandes que la PC no los puede interpretar,
-    tambien una forma de No-Numero (Not A Number), estos &quot;valores especiales&quot; no se trataran en detalle en este curso.</p><code>echo 0.0
-echo 0.5
-echo 2.0
-echo -9.0
-echo 3.14
-echo 99.50</code></section>
-  <section><h1>Matematica</h1>Matematica basica se puede realizar con distintos operadores y valores numericos.<ul>
-      <li>Sumar usa el operador &#x27;+&#x27;.</li>
-      <li>Restar usa el operador &#x27;-&#x27;.</li>
-      <li>Multiplicar usa el operador &#x27;*&#x27;.</li>
-      <li>Division flotante usa el operador &#x27;&#x2F;&#x27;.</li>
-      <li>Division entera usa el operador &#x27;div&#x27;.</li>
-      <li>Modulo usa el operador &#x27;mod&#x27;.</li>
-    </ul><code>echo 1 + 2
-echo 2 - 1
-echo 2 * 2
-echo 4 &#x2F; 2
-echo 4 div 2
-echo 4 mod 2</code></section>
-  <section><h1>Comparacion</h1>La comparacion booleana sirve para comparar 2 valores o variables,
-    y devolver un booleano &#x27;true&#x27; o &#x27;false&#x27;, dependiendo de los valores comparados.
-    La diferencia entre &#x27;==&#x27; y &#x27;is&#x27;, es que &#x27;is&#x27; compara el tipo de dato, &#x27;==&#x27; compara el valor del dato.<ul>
-      <li>Para comparar si dos valores son iguales se usa &#x27;==&#x27;.</li>
-      <li>Para comparar si un valor es mayor que otro se usa &#x27;&gt;&#x27;.</li>
-      <li>Para comparar si un valor es mayor o igual que otro se usa &#x27;&gt;=&#x27;.</li>
-      <li>Para comparar si un valor es menor que otro se usa &#x27;&lt;&#x27;.</li>
-      <li>Para comparar si un valor es menor o igual que otro se usa &#x27;=&lt;&#x27;.</li>
-    </ul><code>var numero = 5    # Puedes probar cambiar este numero entero.
-echo numero == 5  # Puedes probar cambiar este operador de comparacion por otro.</code></section>
-  <section>
-    <h1>assert, type, is, astToStr, $</h1>
-    <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error,
-    si &#x27;assert&#x27; es &#x27;true&#x27; no emite ningun mensaje y es silenciosa.</p>
-    <p>La funcion &#x27;type&#x27; devuelve el el tipo concreto de cualquier valor, retorna un tipo &#x27;string&#x27;.</p>
-    <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico, retorna un tipo &#x27;bool&#x27;.</p>
-    <p>La funcion &#x27;astToStr&#x27; sirve para convertir cualquier porcion de codigo a un &#x27;string&#x27;, retorna un &#x27;string&#x27;.</p>
-    <p>La funcion &#x27;$&#x27; sirve para convertir cualquier valor a un &#x27;string&#x27;, de ser posible.
-    Usualmente se llama a &#x27;$&#x27; como operador &quot;Dolar&quot; o &quot;Stringify&quot;, siempre retorna un tipo &#x27;string&#x27;.</p>
-    <code>assert true
-assert 42 == 42
-assert 42 is int
-assert 9.9 is float
-assert &quot;x&quot; is string
-assert true is bool
+    <h1>While</h1>
+    <p>El bucle &#x27;while&#x27; sirve para repetir un bloque de codigo siempre y
+    cuando un argumento de condicion booleana sea verdadera.
+    El bucle &#x27;while&#x27; puede ser interrumpido usando &#x27;break&#x27;.</p>
+    <p>Aqui se usa por primera vez los operadores &#x27;inc&#x27; y &#x27;dec&#x27;,
+    &#x27;inc&#x27; es para incrementar valores ordinales, como valores numericos,
+    permite poder escribir &#x27;inc i&#x27; en lugar de &#x27;i = i + 1&#x27;,
+    &#x27;dec&#x27; es para decrementar valores, como valores numericos,
+    permite poder escribir &#x27;dec i&#x27; en lugar de &#x27;i = i - 1&#x27; y nos ahorra codigo.</p>
+    <code>var x = 0
+while not(x == 9):
+  echo x
+  inc x  # x = x + 1
 
-var entero = 42
-assert $entero is string
-assert $42 is string
-assert $9.9 is string
-assert $true is string
+var y = 9
+while not(y == 0):
+  echo y
+  dec y  # y = y - 1
 
-var variable = &quot;ejemplo&quot;
-echo type(variable)
-echo type(true)
-echo type(5)
-
-echo astToStr(1 + 2 * 4 - 1)
-echo 1 + 2 * 4 - 1</code>
+var z = 0
+while true:
+  echo z
+  inc z
+  if z == 9: break</code>
   </section>
   <section>
-    <h1>Variables</h1>
-    <p>Las variables pueden contener distintos valores de cualquier tipo bajo un nombre,
-    idealmente los nombres de las variables deberian ser descriptivos de su contenido.
-    Las variables necesitan ser declaradas usando &#x27;var&#x27; y el nombre de la variable,
-    luego de que son declaradas pueden utilizarse asignandole valores del mismo tipo,
-    es decir si una variable tenia enteros solo puede alojar enteros,
-    una variable tenia booleanos solo puede alojar booleanos, etc.</p>
-    <p>Es posible declarar una variable usando su tipo en lugar de un valor.
-    Es posible asignarle una variable a una variable, copiando una variable en otra.
-    No es posible declarar una variable con el mismo nombre varias veces,
-    por que se perderia el valor de la variable original si se pisan mutuamente.
-    Mas adelante se explicara un uso mas avanzado de las variables.
-    Cuando se crea una variable su valor por defecto es el valor por defecto de su tipo.</p>
+    <h1>Char</h1>
+    <p>Ahora que sabemos usar bucles podemos iterar el texto en los &#x27;string&#x27;,
+    descubriremos que las letras individuales tambien tienen un tipo concreto,
+    el caracter &#x27;char&#x27; representa 1 letra, de ahi viene el nombre &quot;cadena de caracteres&quot;,
+    el char se construye con dos comillas simples y solo puede contener 1 caracter.
+    El espacio en blanco, tabulador y la nueva linea (salto de linea) tambien son caracteres.</p>
+    <p>La computadora representa las letras en el texto como numeros enteros,
+    por lo tanto un &#x27;char&#x27; es compatible con un &#x27;int&#x27;, es un valor ordinal numerico,
+    &#x27;char&#x27; puede usar &#x27;inc&#x27;, &#x27;dec&#x27;, &#x27;..&#x27;, &#x27;+&#x27;, &#x27;-&#x27; que vimos anteriormente.</p>
+    <p>Los &#x27;char&#x27; son ordinales, por ejemplo el valor entero del &#x27;char&#x27; de &#x27;a&#x27; es &#x27;97&#x27;,
+    si a &#x27;a&#x27; le sumas 1 obtienes &#x27;b&#x27;, si al &#x27;a&#x27; le sumas 2 obtienes &#x27;c&#x27;, etc.</p>
     <ul>
-      <li>Tipo &#x27;bool&#x27; son valores como &#x27;true&#x27; o &#x27;false&#x27;.</li>
-      <li>Tipo &#x27;int&#x27; son valores como &#x27;0&#x27;, &#x27;9&#x27;, &#x27;-1&#x27;, &#x27;-99&#x27;, &#x27;42&#x27;.</li>
-      <li>Tipo &#x27;float&#x27; son valores como &#x27;1.0&#x27;, &#x27;3.14&#x27;, &#x27;-9.5&#x27;, &#x27;5.555&#x27;.</li>
-      <li>Tipo &#x27;string&#x27; son valores como &#x27;&quot;a&quot;&#x27;, &#x27;&quot;&quot;&#x27;, &#x27;&quot;OwO&quot;&#x27;, &#x27;&quot;palabras&quot;&#x27;.</li>
+      <li>&#x27;char&#x27; se puede convertir en &#x27;int&#x27; usando &#x27;ord&#x27;.</li>
+      <li>&#x27;int&#x27; se puede convertir en &#x27;char&#x27; usando &#x27;char&#x27;.</li>
+      <li>Es posible agregar uno o mas &#x27;char&#x27; a un &#x27;string&#x27; usando &#x27;add&#x27;.</li>
+      <li>Puedes obtener un &#x27;char&#x27; de un &#x27;string&#x27; por su indice usando &#x27;[]&#x27;,
+      es decir &#x27;texto[3]&#x27; para el &#x27;char&#x27; en la posicion &#x27;3&#x27; del &#x27;string&#x27; texto.</li>
     </ul>
-    <code>var numero = 1      # Variable declarada usando un valor.
-numero = 99
-numero = -3
-echo numero
-var texto = &quot;&quot;      # Variable declarada usando un valor vacio.
-texto = &quot;azul&quot;
-texto = &quot;rojo&quot;
-echo texto
-var booleano: bool  # Variable declarada usando un tipo.
-booleano = true
-echo booleano
-var copia = numero
-echo copia          # Variable copiada en otra variable.
-echo numero
-# var copia = 5     # ERROR: La variable ya existe.</code>
-  </section>
-  <section><h1>if, elif, else</h1>Control de flujo con if, elif, else.
-    La indentacion con 2 espacios se usa para marcar grupos de comandos que van juntos, delimita un bloque de codigo.<ul>
-      <li>&#x27;if&#x27; sirve para ejecutar o no un bloque de codigo dependiendo de una condicion booleana.</li>
-      <li>&#x27;elif&#x27; se usa para agrupar varios &#x27;if&#x27; juntos de manera tal que solo 1 de los &#x27;elif&#x27; se ejecute.</li>
-      <li>&#x27;else&#x27; se usa para ejecutar un bloque de codigo si ninguno de los &#x27;if&#x27; y &#x27;elif&#x27; se ejecuto.</li>
-    </ul><code>var condicion = false
-if condicion:
-  echo &quot;condicion es true&quot;
-else:
-  echo &quot;condicion es false&quot;
+    <code>var caracter = &#x27;a&#x27;
+assert caracter is char
 
-var numero = 0
-if numero == 0:
-  echo &quot;Numero es igual a cero&quot;
-elif numero == 1:
-  echo &quot;Numero es igual a uno&quot;
-elif numero == 2:
-  echo &quot;Numero es igual a dos&quot;
-elif numero == 3:
-  echo &quot;Numero es igual a tres&quot;
-else:
-  echo &quot;Numero es algun otro valor&quot;</code></section>
-  <section><h1>Arrays</h1>Los Arrays son colleciones de valores, valores agrupados en un mismo contenedor,
-    los Arrays son de capacidad y longitud fija, por lo tanto no pueden crecer,
-    no se puede agregar ni quitar mas valores, pero si se pueden modificar los valores existentes,
-    todos los items de un array deben ser del mismo tipo,
-    el array siempre tiene un tipo especifico que puede alojar.
-    El array es construido con &#x27;[ ]&#x27; y uno o mas valores, es decir por ejemplo &#x27;[1]&#x27;,
-    los items de un Array se separan con comas, es decir por ejemplo &#x27;[1, 2, 3]&#x27;,
-    tambien se puede crear usando el tipo en lugar del valor literal,
-    es decir array[longitud, tipo], por ejemplo &#x27;array[3, int]&#x27; para un array de 3 &#x27;int&#x27;,
-    basicamente &#x27;[1, 2, 3]&#x27; es el mismo tipo que &#x27;array[3, int]&#x27;,
-    si se trata de &#x27;string&#x27; es &#x27;[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]&#x27; con tipo &#x27;array[3, string]&#x27;,
-    si se trata de &#x27;float&#x27; es &#x27;[1.0, 2.0, 3.0]&#x27; con tipo &#x27;array[3, float]&#x27;, etc.<p>Array es como seq pero de capacidad estatica.</p><code>echo [1, 2, 3]            # array[3, int]
-echo [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]      # array[3, string]
-echo [1.0, 2.0, 3.0]      # array[3, float]
-echo [true, false, true]  # array[3, bool]
+var texto = &quot;ave&quot;
+assert texto[1] == &#x27;v&#x27;
+texto.add(&#x27;s&#x27;)
+assert texto == &quot;aves&quot;
 
-var ejemplo: array[3, int]
-ejemplo[0] = 1
-ejemplo[0] = 42
-echo ejemplo</code></section>
-  <section><h1>Secuencias</h1>Las secuencias son colleciones de valores, valores agrupados en un mismo contenedor,
-    las secuencias pueden hacerse mas grandes o mas chicas, agregando o quitando valores,
-    todos los items de una collecion deben ser del mismo tipo,
-    la secuencia siempre tiene un tipo especifico que puede alojar, pero puede estar vacia tambien.
-    La secuencia es construida con &#x27;@[ ]&#x27; y uno o mas valores, es decir por ejemplo &#x27;@[1]&#x27;,
-    los items de una secuencia se separan con comas, es decir por ejemplo &#x27;@[1, 2, 3]&#x27;,
-    tambien se puede crear usando el tipo en lugar del valor literal, por ejemplo &#x27;seq[int]&#x27;,
-    basicamente &#x27;@[1, 2, 3]&#x27; es el mismo tipo de secuencia que &#x27;seq[int]&#x27;,
-    si se trata de &#x27;string&#x27; es &#x27;@[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]&#x27; con tipo de secuencia que &#x27;seq[string]&#x27;,
-    si se trata de &#x27;float&#x27; es &#x27;@[1.0, 2.0, 3.0]&#x27; con tipo de secuencia que &#x27;seq[float]&#x27;, etc.<p>Seq es como Array pero de capacidad dinamica.</p><code>echo @[1, 2, 3]            # seq[int]
-echo @[true, false, true]  # seq[bool]
-echo @[1.0, 2.0, 3.0]      # seq[float]
-echo @[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]      # seq[string]
+for letra in &quot;ejemplo&quot;:  # Es posible iterar los &#x27;char&#x27; de un &#x27;string&#x27; directamente.
+  echo letra, &#x27; &#x27;, ord(letra)   # &#x27; &#x27; es un char de Espacio.
+  assert letra is char
+  assert ord(letra) is int
 
-var secuencia0: seq[int]
-var secuancia1: seq[bool]
-var secuencia2: seq[float]
-var secuencia3: seq[string]
-
-var ejemplo0 = @[1, 2, 3]                  # seq[int]
-var ejemplo1 = @[true, false, true]        # seq[bool]
-var ejemplo2 = @[1.0, 2.0, 3.0, 4.0]       # seq[float]
-var ejemplo3 = @[&quot;rojo&quot;, &quot;azul&quot;, &quot;verde&quot;]  # seq[string]</code></section>
-  <section>
-    <h1>Operaciones con Secuencias</h1>
-    <p>Los items dentro de la secuencia tienen un numero entero de indice unico,
-    el indice de las secuencias comienza por &#x27;0&#x27; para el primer item, hasta el ultimo item de la secuencia.
-    No existen los indices negativos.</p>
-    <p>Los items de una secuencia se pueden obtener por indice usando &#x27;[]&#x27;,
-    es decir secuencia[indice], por ejemplo &#x27;secuencia[3]&#x27;, que devuelve el item en el indice &#x27;3&#x27;.
-    Para obtener un item por indice al inverso (indice invertido) es decir desde el ultimo hacia el primero,
-    se puede usar secuencia[^indice], por ejemplo &#x27;secuencia[^1]&#x27;, que devuelve el ultimo item en el ultimo indice,
-    por ejemplo &#x27;secuencia[^2]&#x27;, que devuelve el anteultimo item en el anteultimo indice, etc.</p>
-    <p>Para asignar un valor a un item de una secuencia, es decir modificar un item de la secuencia,
-    se pueden asignar por indice usando &#x27;[]=&#x27;, es decir secuencia[indice] = valor,
-    por ejemplo &#x27;secuencia[3] = 42&#x27;, que asigna &#x27;42&#x27; al item en el indice &#x27;3&#x27;.</p>
-    <p>Para saber la longitud total de una secuencia se puede usar &#x27;len&#x27;,
-    es decir &#x27;len(secuencia)&#x27; que devuelve un numero entero que es la longitud.</p>
-    <p>Para agregar items a una secuencia se usa &#x27;add&#x27;, es decir &#x27;secuencia.add(nuevoItem)&#x27;.</p>
-    <p>Para borrar items de una secuencia se usa &#x27;delete&#x27;,
-    de la forma &#x27;secuencia.delete(indice)&#x27;, es decir &#x27;secuencia.delete(3)&#x27; para borrar el item en el indice &#x27;3&#x27;.</p>
-    <code>var secuencia: seq[int]  # Crear una secuencia de &#x27;int&#x27;.
-echo secuencia
-echo len(secuencia)      # Longitud de la secuencia.
-secuencia.add(1)
-secuencia.add(2)         # Agregar items a la secuencia.
-echo len(secuencia)
-echo secuencia[1]        # Obtener un item de la secuencia por indice.
-secuencia.add(3)
-secuencia[1] = 9         # Asignar un item a la secuencia por indice.
-echo secuencia
-secuencia.delete(1)      # Borrar un item de la secuencia.
-
-# secuencia.add(2.0)  # ERROR: Es una secuencia de &#x27;int&#x27; y &#x27;2.0&#x27; es &#x27;float&#x27;.
-# secuencia[9] = 5    # ERROR: No existe el indice &#x27;9&#x27; en la secuencia.
-# echo secuencia[-1]  # ERROR: No existen los indices negativos.</code>
+for letra in &#x27;a&#x27;..&#x27;z&#x27;:  # Como es un valor ordinal se puede crear rangos de letras.
+  echo letra, &#x27;\t&#x27;, ord(letra)  # &#x27;\t&#x27; es un caracter de Tabulador (Tab).
+  assert letra is char
+  assert ord(letra) is int</code>
   </section>
   <section>
-    <h1>Operaciones con Secuencias 2</h1>
-    <p>El operador &#x27;@&#x27; puede convertir un Array en Seq. Array y Seq usan una interface de uso similar.</p>
-    <h3>Slicing</h3>
-    <p>Partir una secuencia en otra secuencia mas chica se llama &quot;Slicing&quot;,
-    se realiza con el operador &#x27;[]&#x27; y &#x27;..&#x27; con rango de numeros enteros,
-    es decir de la forma secuencia[inicio..fin],
-    por ejemplo &#x27;secuencia[0..3]&#x27; para una secuencia desde indice &#x27;0&#x27; hasta indice &#x27;3&#x27;.</p>
-    <p>Indices Reversos se usan con el operador &#x27;^&#x27; y el numero pegado, es decir secuencia[^inicio .. ^fin],
-    por ejemplo &#x27;secuencia[^2 .. ^1]&#x27; para una secuencia desde el ultimo indice hasta el anteultimo indice.</p>
-    <code>var variable = [1, 2, 3, 4]
-assert variable[0 .. 0] == @[1]
-assert variable[0 .. 1] == @[1, 2]
-assert variable[0 .. 3] == @[1, 2, 3, 4]
-assert variable[^2 .. ^1] == @[3, 4]
-assert ^1 is BackwardsIndex   # ^1 es un Indice en Reverso.
+    <h1>Desafio</h1>
+    <p>El &#x27;char&#x27; es un valor numerico ordinal, si a un &#x27;A&#x27; le sumas &#x27;32&#x27; da un &#x27;a&#x27;,
+    usando este simple hecho desarrolla un programa para convertir un &#x27;string&#x27; desde MAYUSCULAS hacia minusculas.</p>
+    <code>var mayuscula = &#x27;A&#x27;                       # Letra &#x27;A&#x27; (mayuscula).
+var minuscula = char(ord(mayuscula) + 32) # Letra &#x27;a&#x27; (minuscula).
+assert minuscula == &#x27;a&#x27;                   # Minuscula es &#x27;a&#x27;
 
-var arra = [1, 2, 3]
-var seqArra = @arra   # &#x27;array[int]&#x27; convertido en &#x27;seq[int]&#x27; usando &#x27;@&#x27;.
-seqArra.add(4)
-echo seqArra</code>
+var resultado = &quot;&quot;
+for letra in &quot;GATO&quot;:
+
+  # Edita tu codigo aca.
+
+  resultado.add(minuscula)
+assert resultado == &quot;gato&quot;</code>
   </section>
   <section>
-    <h1>Cierre</h1>
-    <p>En esta sesion aprendimos a editar y ejecutar distintos programas sencillos.
-    Vimos diferentes tipos de datos, como los enteros, flotantes, boleanos y demas.
-    Tambien algunas funciones basicas para mostrar distinta informacion en pantalla.
-    Los conceptos explicados van a ser progresivamente mas desafiantes.</p>
-    <h3>Desafio</h3>
-    <p>El codigo del ejercicio es un convertidor de temperaturas, pero el codigo esta incompleto,
-    si la temperatura en &#x27;kelvin&#x27; es igual a la temperatura &#x27;celsius&#x27; mas 273 grados,
-    complete el codigo para hacerlo funcionar.</p>
-    <code>var celsius = 22
-var fahrenheit = float(celsius) * 1.8 + 32.0
+    <h1>Leer y Escribir Archivos</h1>
+    <p>Para leer archivos se usa &#x27;readFile&#x27;,
+    la funcion &#x27;readFile&#x27; toma un argumento de tipo &#x27;string&#x27; que es la ruta al archivo en el disco de la PC,
+    y devuelve un resultado de tipo &#x27;string&#x27; que es el contenido del archivo.
+    La ruta al archivo debe existir en el disco de la PC.
+    El programa debe poder leer el archivo.</p>
+    <p>Para escribir archivos se usa &#x27;writeFile&#x27;,
+    la funcion &#x27;writeFile&#x27; toma dos argumentos de tipo &#x27;string&#x27;,
+    uno es la ruta al archivo en el disco de la PC y el otro es el contenido del archivo,
+    esta funcion no retorna ningun resultado.
+    El programa debe poder escribir el archivo.</p>
+    <code>writeFile(&quot;&#x2F;tmp&#x2F;ejemplo.txt&quot;, &quot;contenidos&quot;)   # La ruta al archivo debe existir en la PC.
+var contenido = readFile(&quot;&#x2F;tmp&#x2F;ejemplo.txt&quot;)
+echo contenido</code>
+  </section>
+  <section>
+    <h1>Tuplas</h1>
+    <p>Las tuplas son colleciones de items que pueden contener items de distintos tipos,
+    existen 2 tipos de tuplas, tuplas anonimas donde los items no tienen nombre,
+    los items de la tupla anonima solo se pueden leer por su indice,
+    y tuplas nombradas donde cada item tienen un nombre,
+    los items de la tupla nombrada se pueden leer por su indice y por su nombre.</p>
+    <p>Las tuplas son de capacidad fija, es decir no pueden crecer,
+    no se puede agregar mas items a una tupla, pero se puede modificar los valores existentes.
+    Las tuplas son muy utiles en las funciones para retornar mas de un valor en el &#x27;result&#x27;.</p>
+    <code>var tuplaAnon = (9, true, &quot;UwU&quot;, 2.0, false, -5)
+assert tuplaAnon is tuple
+assert tuplaAnon[2] == &quot;UwU&quot;
+var tuplaNombrada = (clave0: 9, clave1: true, clave2: &quot;OwO&quot;)
+assert tuplaNombrada is tuple
+assert tuplaNombrada[2] == &quot;OwO&quot;
+assert tuplaNombrada.clave2 == &quot;OwO&quot;
 
-var kelvin = 0
+proc retornaMuchasCosas(): auto =
+  result = (clave0: 9, clave1: true, clave2: &quot;texto&quot;, clave3: 3.14)
 
-echo &quot;Temperatura en Celsius: &quot;, celsius
-echo &quot;Temperatura en Fahrenheit: &quot;, fahrenheit
-echo &quot;Temperatura en Kelvin: &quot;, kelvin
-assert kelvin == 295</code>
+var (a, b, c, d) = retornaMuchasCosas()  # Desempaquetado de una Tupla.
+assert a == 9 and b == true and c == &quot;texto and d == &quot;3.14
+echo retornaMuchasCosas()</code>
+  </section>
+  <section>
+    <h1>Funciones</h1>
+    <p>Una funcion o procedimiento es un bloque de codigo que se puede ejecutar por su nombre,
+    puede tomar ninguno, uno o mas argumentos, los argumentos tambien tienen un nombre y tipo,
+    usando la sintaxis &#x27;nombre: tipo&#x27; y separados por coma,
+    pueden devolver un resultado, el resultado siempre tiene el nombre &#x27;result&#x27;,
+    la variable &#x27;result&#x27; es automaticamente creada dentro del bloque de codigo de la funcion,
+    puedes asignar los resultados a &#x27;result&#x27; en el cuerpo de la funcion,
+    se construye con &#x27;proc&#x27; y el nombre de la funcion,
+    tambien sus argumentos con sus tipos, y el tipo del &#x27;result&#x27; si es que retorna algo.</p>
+    <p>Debes declarar una funcion antes de poder usarla.
+    Usa nombres descriptivos para las funciones,
+    piensa que el codigo debe ser facil de entender para otras personas.</p>
+    <p>Es posible &quot;autodetectar&quot; el tipo de argumento o tipo de resultado de una funcion,
+    usando el tipo &#x27;auto&#x27; como tipo de argumento o tipo de retorno,
+    usando &#x27;auto&#x27; el programa intentara inferir el tipo desde el codigo,
+    puede fallar en ejecutarse si no logra inferir el tipo,
+    tambien hay que pensar que &quot;el codigo es documentacion&quot;,
+    y al ver que un argumento debe ser &#x27;int&#x27; ya sabes que tipo de dato usar,
+    pero si esta todo en &#x27;auto&#x27; es mas dificil entender que tipo de dato usar,
+    es mejor usar un tipo de dato concreto si se lo conoce.</p>
+    <code># Esta funcion no toma ningun argumento, y no retorna un resultado.
+proc ejemplo0() =
+  echo &quot;Hola mundo&quot;
+
+ejemplo0()
+
+
+# Esta funcion no toma ningun argumento, y retorna un &#x27;result&#x27; de tipo &#x27;string&#x27;.
+proc ejemplo1(): string =    # El tipo de &#x27;result&#x27; va aqui.
+  result = &quot;resultado&quot;     # Se asigna a la variable &#x27;result&#x27;.
+
+echo ejemplo1()
+
+
+# Esta funcion toma un argumento, y retorna un &#x27;result&#x27; de tipo &#x27;string&#x27;.
+proc ejemplo2(texto: string): string =
+  result = &quot;Hola &quot;   # Asigna un &#x27;string&#x27; a &#x27;result&#x27;.
+  result.add(texto)  # Usa &#x27;add&#x27; para agregar un &#x27;string&#x27; a otro &#x27;string&#x27;.
+
+echo ejemplo2(&quot;Mundo&quot;)
+
+
+# Esta funcion toma varios argumentos, y retorna un &#x27;result&#x27; de tipo &#x27;int&#x27;.
+proc ejemplo3(num0: int, num1: int, num2: int): int =   # Los argumentos se separan con coma.
+  result = num0 + num1 + num2
+
+echo ejemplo3(1, 2, 3)
+
+
+# Esta funcion toma argumentos y retorna un &#x27;result&#x27; pero todos usan tipo &#x27;auto&#x27;.
+proc ejemplo4(num0: auto, num1: auto, num2: auto): auto =
+  result = num0 + num1 + num2
+
+echo ejemplo4(1, 2, 3)</code>
+  </section>
+  <section>
+    <h1>UFCS: llamadas a funcion</h1>
+    <p>Puedes llamar una funcion de la manera que sea mas comoda y
+    mas adecuada al contexto que estes trabajando en el codigo.
+    Antiguamente algunas funciones se llamaban de la manera &#x27;funcion(argumento)&#x27;,
+    otras funciones se llamaban de la manera &#x27;funcion argumento&#x27;,
+    e inclusive se llamaban de la manera &#x27;argumento.funcion&#x27;,
+    a veces la forma cambiaba y el codigo se rompia,
+    o se usaba la manera incorrecta y el codigo fallaba,
+    para solucionar estos problemas (Bugs),
+    se penso una nueva manera de hacer las llamadas a funcion,
+    haciendo que el compilador trabaje por nosotros.</p>
+    <p>Todas las formas se interpretan como si fueran exactamente iguales,
+    es decir &#x27;funcion(argumento)&#x27;, &#x27;funcion argumento&#x27;, &#x27;argumento.funcion&#x27;, etc
+    son exactamente lo mismo y compilan a exactamente el mismo codigo.</p>
+    <p>Tambien permite encadenar funciones de manera automatica,
+    sin necesidad de modificar dichas funciones o crear operadores nuevos,
+    es decir &#x27;argumento.funcion.funcion.funcion.funcion()&#x27;, etc
+    y compilan exactamente al mismo codigo.
+    Es agnostico del formato de llamada a funcion usado.</p>
+    <code>import strutils
+
+echo &quot;Hola Mundo&quot;
+echo(&quot;Hola Mundo&quot;)
+&quot;Hola Mundo&quot;.echo
+
+# Estas funciones encadenadas
+echo &quot;  42 666  &quot;.unindent.strip.normalize.split
+# Es exactamente lo mismo que escribir
+echo(split(normalize(strip(unindent(&quot;  42 666  &quot;)))))</code>
+  </section>
+  <section>
+    <h1>Argumentos mutables, argumentos por defecto</h1>
+    <p>Por defecto los argumentos de la funcion son de solo-lectura (inmutables),
+    desde dentro del bloque de codigo de la funcion,
+    para poder modificar el valor de un argumento (mutable),
+    se debe agregar &#x27;var&#x27; al tipo del argumento,
+    es decir cambiar &#x27;argumento: tipo&#x27; por &#x27;argumento: var tipo&#x27;,
+    cuando se usa un argumento &#x27;var&#x27; mutable, no se puede usar el valor literal escrito,
+    los valores deben estar contenidos en una variable.</p>
+    <p>Es posible usar un argumentos por defecto para una funcion,
+    es decir cuando se llame a esa funcion sin ese argumento,
+    se usara el valor por defecto automaticamente en su lugar,
+    para hacer eso se cambia &#x27;argumento: tipo&#x27; por &#x27;argumento = valor&#x27;,
+    es decir &#x27;argumento: int&#x27; por &#x27;argumento = 9&#x27; y el argumento por defecto es &#x27;9&#x27;.</p>
+    <code>proc ejemplo(argumento: var int): int =  # &#x27;argumento&#x27; se puede escribir por que es &#x27;var int&#x27;.
+  inc argumento                           # Incrementa el &#x27;argumento&#x27; mutable.
+  result = argumento
+
+var numero = 1
+assert ejemplo(numero) == 2
+numero = 3
+assert ejemplo(numero) == 4
+echo ejemplo(numero)
+# echo ejemplo(5)  # ERROR: Por que es un numero literal que no se puede cambiar.
+
+proc ejemplo2(argumento = 5): int =  # &#x27;argumento&#x27; tiene un valor por defecto de &#x27;5&#x27;.
+  result = argumento + 4
+
+assert ejemplo2() == 9  # &#x27;ejemplo2()&#x27; no tiene el argumento,
+                        # pero funciona igualmente con el valor por defecto.
+echo ejemplo2()</code>
+  </section>
+  <section>
+    <h1>openArray, varargs</h1>
+    <p>Para crear una funcion que pueda tomar 1 Array o 1 Secuencia de cualquier longitud
+    existe un tipo de argumento de funcion especial llamado &#x27;openArray&#x27;,
+    el &#x27;openArray&#x27; permite a una funcion aceptar un Array o Secuencia de longitud desconocida.</p>
+    <p>Para crear una funcion que pueda tomar cualquier cantidad de argumentos
+    existe un tipo de argumento de funcion especial llamado &#x27;varargs&#x27;,
+    &#x27;varargs&#x27; permite a una funcion aceptar una cantidad de argumentos desconocida.
+    El compilador convertira todos los argumentos en 1 Array implicitamente automaticamente.</p>
+    <p>La diferencia entre &#x27;openArray&#x27; y &#x27;varargs&#x27;,
+    es que no es lo mismo cualquier cantidad de argumentos,
+    que un argumento de cualquier cantidad de items.
+    &#x27;openArray&#x27; es para &#x27;array&#x27; y &#x27;seq&#x27;, &#x27;varargs&#x27; puede tomar cualquier tipo.</p>
+    <code>proc ejemplo(item: openArray[int]) =
+  echo item
+
+ejemplo([])               # Longitud 0.
+ejemplo([1])              # Longitud 1.
+ejemplo([1, 2, 3])        # Longitud 3.
+ejemplo([1, 2, 3, 4, 5])  # Longitud 5.
+
+ejemplo(@[])              # Longitud 0.
+ejemplo(@[1])             # Longitud 1.
+ejemplo(@[1, 2, 3])       # Longitud 3.
+ejemplo(@[1, 2, 3, 4, 5]) # Longitud 5.
+
+
+proc ejemplo2(argumentos: varargs[int]) =
+  for item in argumentos:
+    echo item
+
+ejemplo2(1)             # 1 Argumentos.
+ejemplo2(1, 2, 3)       # 3 Argumentos.
+ejemplo2(1, 2, 3, 4, 5) # 5 Argumentos.</code>
+  </section>
+  <section>
+    <h1>Libreria Estandard</h1>
+    <p>Libreria Estandard (standard library), son archivos con funciones,
+    las funciones se pueden usar importandolas en nuestro codigo usando &#x27;import&#x27;,
+    y agregan funcionalidades utiles &quot;listas para usar&quot;,
+    de una manera mas facil que implementando todo manualmente.
+    A veces se abrevia &quot;Libreria Estandard&quot; como &quot;stdlib&quot;.
+    La documentacion de la Libreria Estandard usualmente se encuentra disponible via web,
+    y suele incluir ejemplos de como usar las funciones,
+    con sus tipos de argumentos y tipos de retorno.
+    La &quot;stdlib&quot; suele incluir funcionalidades para todos los niveles,
+    asi que no te asustes si no entiendes aun alguna funcion de la Libreria Estandard.
+    No es necesario que memorizes la Libreria Estandard,
+    siempre se trabaja con su documentacion web como guia.
+    Mas adelante aprenderemos cosas mas avanzadas de la Libreria Estandard.</p>
+    <ul>
+      <li><a href="https://nim-lang.github.io/Nim/lib.html">Documentacion de la Libreria Estandard.</a></li>
+      <li><a href="https://nim-lang.github.io/Nim/manual.html">Manual para usuarios.</a></li>
+    </ul>
+    <code>import terminal   # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;terminal.html
+import strutils   # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;strutils.html
+import strformat  # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;strformat.html
+import lenientops # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;lenientops.html
+
+# &#x27;strutils.parseInt&#x27; puede obtener un &#x27;int&#x27; dentro de un &#x27;string&#x27;.
+var a = parseInt(&quot;42&quot;)
+assert a is int
+# &#x27;strutils.parseFloat&#x27; puede parsear un &#x27;float&#x27; dentro de un &#x27;string&#x27;.
+var b = parseFloat(&quot;3.14&quot;)
+assert b is float
+# &#x27;strutils.parseBool&#x27; puede parsear un &#x27;bool&#x27; dentro de un &#x27;string&#x27;.
+var c = parseBool(&quot;true&quot;)
+assert c is bool
+
+# &#x27;strformat.fmt&#x27; permite crear &#x27;string&#x27; formateadas con valores literales o variables.
+echo fmt&quot;a es {a}, b es {b}, c es {c}&quot;
+echo fmt&quot;suma {1 + 2}, resta {4 - 2}&quot;
+
+# &#x27;lenientops&#x27; permite matematica con tipos &#x27;int&#x27; y &#x27;float&#x27; mezclados.
+echo 1 + 2.0  # &#x27;1&#x27; es &#x27;int&#x27;, &#x27;2.0&#x27; es &#x27;float&#x27;.
+echo 4 &#x2F; 2.0  # &#x27;4&#x27; es &#x27;int&#x27;, &#x27;2.0&#x27; es &#x27;float&#x27;.
+
+# &#x27;terminal.styledEcho&#x27; es similar a &#x27;echo&#x27; pero con colores.
+styledEcho fgRed, bgBlue, &quot; Hola Mundo &quot;
+styledEcho fgYellow, bgGreen, &quot; en Colores &quot;</code>
+  </section>
+  <section>
+    <h1>Tablas</h1>
+    <p>Tablas son una collecion o mapeo de &#x27;clave: valor&#x27;,
+    solo puede contener items de un mismo tipo para clave o valor,
+    es decir todas las claves deben ser del mismo tipo,
+    y todos los valores deben ser del mismo tipo,
+    donde cada clave tiene un valor, el valor puede tener uno o mas items,
+    el valor tambien puede estar vacio, como un &#x27;string&#x27; vacio o un &#x27;int&#x27; que es cero,
+    puedes leer y escribir un valor con una clave en una variable.
+    Tablas es parte de la Libreria Estandard y necesita ser importado usando &#x27;import tables&#x27;.
+    Tablas tambien es llamado &quot;diccionario&quot; o &quot;mapeo&quot; o &quot;hashmap&quot;.</p>
+    <ul>
+      <li>Para convertir a Tabla se usa &#x27;toTable&#x27;.</li>
+      <li>Para obtener la longitud de una Tabla se usa &#x27;len&#x27;.</li>
+      <li>Para leer un valor por su clave se usa &#x27;[]&#x27;, es decir tabla[clave].</li>
+      <li>Para escribir un valor por su clave se usa &#x27;[]=&#x27;, es decir tabla[clave] = valor.</li>
+      <li>Para borrar una clave de una Tabla se puede usar &#x27;del&#x27;, es decir tabla.del(clave).</li>
+      <li>Para saber si una clave existe en una Tabla se puede usar &#x27;in&#x27;, es decir valor in tabla.</li>
+      <li>Para saber si una clave no existe en una Tabla se puede usar &#x27;notin&#x27;, es decir valor notin tabla.</li>
+      <li>Para crear una Tabla sin ningun valor literal se usa &#x27;initTable&#x27; con los tipos de clave y valor.</li>
+    </ul>
+    <code>import tables  # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;tables.html
+
+var tabla = {&quot;clave&quot;: &quot;valor&quot;}.toTable
+assert tabla[&quot;clave&quot;] == &quot;valor&quot;
+tabla[&quot;clave&quot;] = &quot;nuevo&quot;
+assert tabla[&quot;clave&quot;] == &quot;nuevo&quot;
+echo len(tabla)
+tabla.add(&quot;otro&quot;, &quot;valor&quot;)
+assert &quot;otro&quot; in tabla
+echo tabla
+
+for key, value in tabla:
+  echo key, &#x27; &#x27;, value
+
+tabla.del(&quot;otro&quot;)
+assert &quot;otro&quot; notin tabla
+
+var vacia = initTable[string, int]()  # Tabla vacia con clave tipo &#x27;string&#x27; y valor tipo &#x27;int&#x27;.
+assert len(vacia) == 0
+var otra = initTable[string, float]() # Tabla vacia con clave tipo &#x27;string&#x27; y valor tipo &#x27;float&#x27;.
+assert len(otra) == 0
+
+echo {
+  &quot;nombre&quot;: &quot;pepe&quot;,
+  &quot;id&quot;:     &quot;abc123&quot;,
+}.toTable</code>
+  </section>
+  <section>
+    <h1>JSON</h1>
+    <p>JSON es un mapeo de &#x27;clave: valor&#x27;,
+    puede contener items de cualquier tipo para los valores, incluido tipos mixtos mezclados,
+    todas las claves deben ser siempre de tipo &#x27;string&#x27;,
+    y todos los valores no deben ser del mismo tipo, los valores pueden ser de cualquier tipo,
+    donde cada clave tiene un valor, el valor puede tener uno o mas items,
+    el valor tambien puede estar vacio, como un &#x27;string&#x27; vacio o un &#x27;int&#x27; que es cero,
+    puedes leer y escribir un valor con una clave en una variable.
+    JSON es de capacidad dinamica, es decir puede crecer,
+    se pueden agregar mas items a un JSON y se puede modificar los valores existentes tambien.
+    JSON es siempre de tipo &#x27;JsonNode&#x27;.
+    JSON es parte de la Libreria Estandard y necesita ser importado usando &#x27;import json&#x27;.</p>
+    <ul>
+      <li>Para convertir a JSON se usa &#x27;%*&#x27;.</li>
+      <li>Para convertir valores individuales a JSON se usa &#x27;%&#x27;, es decir %valor.</li>
+      <li>Para obtener la longitud de un JSON se usa &#x27;len&#x27;.</li>
+      <li>Para leer un valor por su clave se usa &#x27;[]&#x27;, es decir jsn[clave].</li>
+      <li>Para escribir un valor por su clave se usa &#x27;[]=&#x27;, es decir jsn[clave] = valor.</li>
+      <li>Para borrar una clave de una Tabla se puede usar &#x27;del&#x27;, es decir tabla.del(clave).</li>
+      <li>Para saber si una clave existe en una Tabla se puede usar &#x27;in&#x27;, es decir valor in tabla.</li>
+      <li>Para saber si una clave no existe en una Tabla se puede usar &#x27;notin&#x27;, es decir valor notin tabla.</li>
+      <li>Para mostrar JSON con un formato amigable para humanos &#x27;pretty&#x27;.</li>
+      <li>Para convertir &#x27;string&#x27; a JSON se usa &#x27;parseJson&#x27;.</li>
+    </ul>
+    <code>import json  # https:&#x2F;&#x2F;nim-lang.github.io&#x2F;Nim&#x2F;json.html
+
+var jsn = %*{&quot;clave&quot;: &quot;valor&quot;}
+assert jsn[&quot;clave&quot;] == %&quot;valor&quot;
+jsn[&quot;clave&quot;] = %&quot;nuevo&quot;
+assert jsn[&quot;clave&quot;] == %&quot;nuevo&quot;
+echo jsn.len
+assert &quot;clave&quot; in jsn
+assert &quot;inexistente&quot; notin jsn
+jsn.add(&quot;otro&quot;, %&quot;valor&quot;)
+echo jsn
+echo jsn.pretty
+jsn.delete(&quot;otro&quot;)
+
+var vacia = %*{}  # JSON vacio.
+assert len(vacia) == 0
+
+var ejemplo = pretty(%*{
+  &quot;nombre&quot;: &quot;pepe&quot;, # El valor es &#x27;string&#x27;.
+  &quot;id&quot;:     42,     # El valor es &#x27;int&#x27;.
+  &quot;rank&quot;:   3.14,   # El valor es &#x27;float&#x27;.
+  &quot;online&quot;: true,   # El valor es &#x27;bool&#x27;.
+})
+echo ejemplo
+assert ejemplo is string
+# Obtener JSON desde un &#x27;string&#x27;.
+assert parseJson(ejemplo) is JsonNode</code>
+  </section>
+  <section>
+    <h1>Tipos</h1>
+    <p>Ademas de los tipos que trae el lenguaje, puedes crear tus propios tipos,
+    para eso se utiliza la declaracion de tipos usando &#x27;type&#x27; y &#x27;object&#x27;.</p>
+    <ul>
+      <li>Los tipos pueden tener ninguno, uno o mas atributos de cualquier tipo.</li>
+      <li>Los tipos pueden tener de atributo otros tipos.</li>
+      <li>Los tipos pueden tener funciones especificas.</li>
+    </ul>
+    <code># Declaracion del Tipo.
+type Gatito = object  # Nombre del tipo, la primer letra debe ser Mayuscula.
+  edad: int           # Atributo de tipo &#x27;int&#x27;.
+  nombre: string      # Atributo de tipo &#x27;string&#x27;.
+
+# Funciones del Tipo.
+proc maullar(self: Gatito) =     # Una funcionalidad del Gatito.
+  echo &quot;Miau Miau&quot;
+
+proc crecer(self: var Gatito) =  # Se usa &#x27;var Gatito&#x27; para poder escribir en &#x27;Gatito&#x27;.
+  inc self.edad
+
+# Uso del Tipo.
+var gato = Gatito(edad: 1, nombre: &quot;Zoe&quot;) # Instanciacion de Objeto.
+assert gato is Gatito  # &#x27;gato&#x27; es un &#x27;Gatito&#x27;.
+gato.maullar()         # Usando las funciones del Gatito.
+gato.crecer()
+assert gato.edad == 2  # &#x27;Gatito&#x27; incremento la &#x27;edad&#x27;.</code>
+  </section>
+  <section>
+    <h1>Desafio</h1>
+    <p>Agregarle al tipo &#x27;Gatito&#x27; la funciones de &#x27;dormir&#x27; y &#x27;despertar&#x27;,
+    que deben modificar un nuevo atributo &#x27;durmiendo&#x27; de tipo &#x27;bool&#x27;,
+    en resumen agregar &#x27;durmiendo: bool&#x27; y 2 funciones nuevas &#x27;dormir()&#x27; y &#x27;despertar()&#x27;.
+    Esta vez con un poco menos de ayuda...</p>
+    <code>type Gatito = object
+  edad: int
+  nombre: string
+
+proc maullar(self: Gatito) = echo &quot;Miau Miau&quot;
+
+proc crecer(self: var Gatito) = inc self.edad
+
+var gato = Gatito(edad: 1, nombre: &quot;Zoe&quot;, durmiendo: false)
+gato.maullar()
+gato.crecer()
+assert not gato.durmiendo
+gato.dormir()
+assert gato.durmiendo
+gato.despertar()
+assert not gato.durmiendo</code>
   </section>
   <a class="button other" href="#">Chat</a>
   <a class="button other" href="https://nim-lang.org/install.html">Descarga</a>
