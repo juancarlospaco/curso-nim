@@ -72,12 +72,18 @@ echo -0  # -0 es 0</code></section>
     &#x27;string&#x27; de multiples lineas o multilinea se crean usando triple comillas.<code>echo &quot;Hola&quot;
 echo &quot;1234&quot;
 echo &quot;true&quot;
-echo &quot;&quot;  # String vacio</code></section>
+echo &quot;&quot;    # String vacio.
+echo &quot; &quot;   # Espacio.
+echo &quot;\t&quot;  # Tabulador (Tab).
+echo &quot;\n&quot;  # Nueva Linea (Salto de linea).</code></section>
   <section><h1>Flotantes</h1>Los numeros de punto flotante o numeros de coma flotante se llaman &#x27;float&#x27;,
     pueden ser negativos, positivos, cero, e infinito.
-    Cuando se crea un flotante su valor por defecto es &#x27;0.0&#x27;.<p>&#x27;float&#x27; de acuerdo con el estandard de numeros de punto flotante tiene unos valores especiales,
+    Cuando se crea un flotante su valor por defecto es &#x27;0.0&#x27;.<p>&#x27;float&#x27; de acuerdo con el estandard de numeros de punto flotante tiene unos valores &quot;especiales&quot;,
     que indican infinito negativo e infinito positivo, que son numeros tan grandes que la PC no los puede interpretar,
-    tambien una forma de No-Numero (Not A Number), estos &quot;valores especiales&quot; no se trataran en detalle en este curso.</p><code>echo 2.0
+    tambien una forma de No-Numero (Not A Number), estos &quot;valores especiales&quot; no se trataran en detalle en este curso.</p><code>echo 0.0
+echo 0.5
+echo 2.0
+echo -9.0
 echo 3.14
 echo 99.50</code></section>
   <section><h1>Matematica</h1>Matematica basica se puede realizar con distintos operadores y valores numericos.<ul>
@@ -93,12 +99,23 @@ echo 2 * 2
 echo 4 &#x2F; 2
 echo 4 div 2
 echo 4 mod 2</code></section>
+  <section><h1>Comparacion</h1>La comparacion booleana sirve para comparar 2 valores o variables,
+    y devolver un booleano &#x27;true&#x27; o &#x27;false&#x27;, dependiendo de los valores comparados.
+    La diferencia entre &#x27;==&#x27; y &#x27;is&#x27;, es que &#x27;is&#x27; compara el tipo de dato, &#x27;==&#x27; compara el valor del dato.<ul>
+      <li>Para comparar si dos valores son iguales se usa &#x27;==&#x27;.</li>
+      <li>Para comparar si un valor es mayor que otro se usa &#x27;&gt;&#x27;.</li>
+      <li>Para comparar si un valor es mayor o igual que otro se usa &#x27;&gt;=&#x27;.</li>
+      <li>Para comparar si un valor es menor que otro se usa &#x27;&lt;&#x27;.</li>
+      <li>Para comparar si un valor es menor o igual que otro se usa &#x27;=&lt;&#x27;.</li>
+    </ul><code>var numero = 5    # Puedes probar cambiar este numero entero.
+echo numero == 5  # Puedes probar cambiar este operador de comparacion por otro.</code></section>
   <section>
-    <h1>assert, type, is, $</h1>
+    <h1>assert, type, is, astToStr, $</h1>
     <p>La funcion &#x27;assert&#x27; sirve para chequear que una expresion es verdadera, si es falsa emite un error,
     si &#x27;assert&#x27; es &#x27;true&#x27; no emite ningun mensaje y es silenciosa.</p>
     <p>La funcion &#x27;type&#x27; devuelve el el tipo concreto de cualquier valor, retorna un tipo &#x27;string&#x27;.</p>
     <p>La funcion &#x27;is&#x27; sirve para chequear si un valor es de un tipo especifico, retorna un tipo &#x27;bool&#x27;.</p>
+    <p>La funcion &#x27;astToStr&#x27; sirve para convertir cualquier porcion de codigo a un &#x27;string&#x27;, retorna un &#x27;string&#x27;.</p>
     <p>La funcion &#x27;$&#x27; sirve para convertir cualquier valor a un &#x27;string&#x27;, de ser posible.
     Usualmente se llama a &#x27;$&#x27; como operador &quot;Dolar&quot; o &quot;Stringify&quot;, siempre retorna un tipo &#x27;string&#x27;.</p>
     <code>assert true
@@ -117,7 +134,10 @@ assert $true is string
 var variable = &quot;ejemplo&quot;
 echo type(variable)
 echo type(true)
-echo type(5)</code>
+echo type(5)
+
+echo astToStr(1 + 2 * 4 - 1)
+echo 1 + 2 * 4 - 1</code>
   </section>
   <section>
     <h1>Variables</h1>
@@ -155,15 +175,6 @@ echo copia          # Variable copiada en otra variable.
 echo numero
 # var copia = 5     # ERROR: La variable ya existe.</code>
   </section>
-  <section><h1>Comparacion</h1>La comparacion booleana sirve para comparar 2 valores o variables,
-    y devolver un booleano &#x27;true&#x27; o &#x27;false&#x27;, dependiendo de los valores comparados.<ul>
-      <li>Para comparar si dos valores son iguales se usa &#x27;==&#x27;.</li>
-      <li>Para comparar si un valor es mayor que otro se usa &#x27;&gt;&#x27;.</li>
-      <li>Para comparar si un valor es mayor o igual que otro se usa &#x27;&gt;=&#x27;.</li>
-      <li>Para comparar si un valor es menor que otro se usa &#x27;&lt;&#x27;.</li>
-      <li>Para comparar si un valor es menor o igual que otro se usa &#x27;=&lt;&#x27;.</li>
-    </ul><code>var numero = 5    # Puedes probar cambiar este numero entero.
-echo numero == 5  # Puedes probar cambiar este operador de comparacion por otro.</code></section>
   <section><h1>if, elif, else</h1>Control de flujo con if, elif, else.
     La indentacion con 2 espacios se usa para marcar grupos de comandos que van juntos, delimita un bloque de codigo.<ul>
       <li>&#x27;if&#x27; sirve para ejecutar o no un bloque de codigo dependiendo de una condicion booleana.</li>
@@ -197,13 +208,15 @@ else:
     es decir array[longitud, tipo], por ejemplo &#x27;array[3, int]&#x27; para un array de 3 &#x27;int&#x27;,
     basicamente &#x27;[1, 2, 3]&#x27; es el mismo tipo que &#x27;array[3, int]&#x27;,
     si se trata de &#x27;string&#x27; es &#x27;[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]&#x27; con tipo &#x27;array[3, string]&#x27;,
-    si se trata de &#x27;float&#x27; es &#x27;[1.0, 2.0, 3.0]&#x27; con tipo &#x27;array[3, float]&#x27;, etc.<p>Array es como seq pero de capacidad estatica.</p><code>echo [1, 2, 3]
-echo [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
-echo [1.0, 2.0, 3.0]
+    si se trata de &#x27;float&#x27; es &#x27;[1.0, 2.0, 3.0]&#x27; con tipo &#x27;array[3, float]&#x27;, etc.<p>Array es como seq pero de capacidad estatica.</p><code>echo [1, 2, 3]            # array[3, int]
+echo [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]      # array[3, string]
+echo [1.0, 2.0, 3.0]      # array[3, float]
+echo [true, false, true]  # array[3, bool]
+
 var ejemplo: array[3, int]
 ejemplo[0] = 1
 ejemplo[0] = 42
-echo ejemplo[0]</code></section>
+echo ejemplo</code></section>
   <section><h1>Secuencias</h1>Las secuencias son colleciones de valores, valores agrupados en un mismo contenedor,
     las secuencias pueden hacerse mas grandes o mas chicas, agregando o quitando valores,
     todos los items de una collecion deben ser del mismo tipo,
@@ -213,13 +226,20 @@ echo ejemplo[0]</code></section>
     tambien se puede crear usando el tipo en lugar del valor literal, por ejemplo &#x27;seq[int]&#x27;,
     basicamente &#x27;@[1, 2, 3]&#x27; es el mismo tipo de secuencia que &#x27;seq[int]&#x27;,
     si se trata de &#x27;string&#x27; es &#x27;@[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]&#x27; con tipo de secuencia que &#x27;seq[string]&#x27;,
-    si se trata de &#x27;float&#x27; es &#x27;@[1.0, 2.0, 3.0]&#x27; con tipo de secuencia que &#x27;seq[float]&#x27;, etc.<p>Seq es como Array pero de capacidad dinamica.</p><code>echo @[1, 2, 3]
-echo @[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
-echo @[1.0, 2.0, 3.0]
+    si se trata de &#x27;float&#x27; es &#x27;@[1.0, 2.0, 3.0]&#x27; con tipo de secuencia que &#x27;seq[float]&#x27;, etc.<p>Seq es como Array pero de capacidad dinamica.</p><code>echo @[1, 2, 3]            # seq[int]
+echo @[true, false, true]  # seq[bool]
+echo @[1.0, 2.0, 3.0]      # seq[float]
+echo @[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]      # seq[string]
+
 var secuencia0: seq[int]
 var secuancia1: seq[bool]
 var secuencia2: seq[float]
-var secuencia3 = @[true, false, true]</code></section>
+var secuencia3: seq[string]
+
+var ejemplo0 = @[1, 2, 3]                  # seq[int]
+var ejemplo1 = @[true, false, true]        # seq[bool]
+var ejemplo2 = @[1.0, 2.0, 3.0, 4.0]       # seq[float]
+var ejemplo3 = @[&quot;rojo&quot;, &quot;azul&quot;, &quot;verde&quot;]  # seq[string]</code></section>
   <section>
     <h1>Operaciones con Secuencias</h1>
     <p>Los items dentro de la secuencia tienen un numero entero de indice unico,
@@ -238,17 +258,18 @@ var secuencia3 = @[true, false, true]</code></section>
     <p>Para agregar items a una secuencia se usa &#x27;add&#x27;, es decir &#x27;secuencia.add(nuevoItem)&#x27;.</p>
     <p>Para borrar items de una secuencia se usa &#x27;delete&#x27;,
     de la forma &#x27;secuencia.delete(indice)&#x27;, es decir &#x27;secuencia.delete(3)&#x27; para borrar el item en el indice &#x27;3&#x27;.</p>
-    <code>var secuencia: seq[int]
+    <code>var secuencia: seq[int]  # Crear una secuencia de &#x27;int&#x27;.
 echo secuencia
-echo len(secuencia)
+echo len(secuencia)      # Longitud de la secuencia.
 secuencia.add(1)
-secuencia.add(2)
+secuencia.add(2)         # Agregar items a la secuencia.
 echo len(secuencia)
-echo secuencia[1]
+echo secuencia[1]        # Obtener un item de la secuencia por indice.
 secuencia.add(3)
-secuencia[1] = 9
-secuencia.delete(1)
+secuencia[1] = 9         # Asignar un item a la secuencia por indice.
 echo secuencia
+secuencia.delete(1)      # Borrar un item de la secuencia.
+
 # secuencia.add(2.0)  # ERROR: Es una secuencia de &#x27;int&#x27; y &#x27;2.0&#x27; es &#x27;float&#x27;.
 # secuencia[9] = 5    # ERROR: No existe el indice &#x27;9&#x27; en la secuencia.
 # echo secuencia[-1]  # ERROR: No existen los indices negativos.</code>
@@ -260,8 +281,8 @@ echo secuencia
     <p>Partir una secuencia en otra secuencia mas chica se llama &quot;Slicing&quot;,
     se realiza con el operador &#x27;[]&#x27; y &#x27;..&#x27; con rango de numeros enteros,
     es decir de la forma secuencia[inicio..fin],
-    por ejemplo &#x27;secuencia[0..3]&#x27; para una secuencia desde indice &#x27;0&#x27; hasta indice &#x27;3&#x27;,
-    tambien puede usarse Indices Reversos, con el operador &#x27;^&#x27; y el numero pegado, es decir secuencia[^inicio .. ^fin],
+    por ejemplo &#x27;secuencia[0..3]&#x27; para una secuencia desde indice &#x27;0&#x27; hasta indice &#x27;3&#x27;.</p>
+    <p>Indices Reversos se usan con el operador &#x27;^&#x27; y el numero pegado, es decir secuencia[^inicio .. ^fin],
     por ejemplo &#x27;secuencia[^2 .. ^1]&#x27; para una secuencia desde el ultimo indice hasta el anteultimo indice.</p>
     <code>var variable = [1, 2, 3, 4]
 assert variable[0 .. 0] == @[1]
